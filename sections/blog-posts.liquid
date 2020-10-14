@@ -14,7 +14,7 @@
           {{ section.settings.title | escape }}
         </h1>
       </div>
-     
+
     </header>
   {% endif %}
 
@@ -65,12 +65,14 @@
   {% endunless %}
 
 </div>
-<p style="text-align:center;">
-  {% if section.settings.view_all %}
-        <a href="{{ blog.url }}"  class="btn btn--secondary btn--small section-header__link">{{ 'blogs.article.view_all' | t }}</a>
-      {% endif %}
-</p>
-  
+
+{% if section.settings.view_all %}
+  <div class="section-cta">
+    <a href="{{ blog.url }}"  class="btn btn--inverse">{{ 'blogs.article.view_all' | t }}</a>
+  </div>
+{% endif %}
+
+
 {% if section.settings.divider %}</div>{% endif %}
 
 {% schema %}
