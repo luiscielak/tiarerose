@@ -6611,7 +6611,8 @@ input[type=image]{
   position:relative;
   height:100%;
   color:{{ settings.color_image_text | default: "#fff" }};
-  color:var(--colorHeroText)
+  color:var(--colorHeroText);
+
 }
 
 .video-interactable .hero__text-wrap{
@@ -6627,15 +6628,26 @@ input[type=image]{
 .hero__text-content{
   position:relative;
   padding:15px 0;
-  z-index:4
+  z-index:4;
 }
 
-@media only screen and (min-width:769px){
+@media only screen and (min-width: 769px){
 
-.hero__text-content{
-    padding:45px 0
-}
+  .hero__text-content{
+    padding:45px 0;
   }
+
+}
+
+
+@media only screen and (max-width: 1080px){
+
+  .hero__text-wrap {
+    background-color: #f1f1f1;
+  }
+
+}
+
 
 [data-arrows=true] .hero__text-content{
     padding-left:20px;
