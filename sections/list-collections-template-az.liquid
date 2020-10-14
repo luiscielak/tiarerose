@@ -1,0 +1,503 @@
+{% stylesheet %}
+.azmenu {
+  width: 100%;
+  list-style: none;
+  border-top: 1px solid #e6c603;
+  border-bottom: 1px solid #e6c603;
+  margin: auto 0;
+  display: table;
+}
+
+
+.azmenu__initial {
+  display: table-cell;
+  text-align: center;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.azmenu__link {
+  display: block;
+}
+
+{% endstylesheet %}
+
+
+<div class="page-width page-content">
+
+
+  {% if section.settings.title_enable %}
+    <header class="section-header">
+      <h1 class="section-header__title">{{ 'collections.general.catalog_title' | t }}</h1>
+    </header>
+  {% endif %}
+
+ 
+  
+  
+  {% comment %}<div class="grid">
+  
+  <ul class="azmenu">
+    <li class="azmenu__initial azmenu__initial--character">
+      <a href="##" class="azmenu__link">#</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#A" class="azmenu__link">A</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#B" class="azmenu__link">B</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#C" class="azmenu__link">C</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#D" class="azmenu__link">D</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#E" class="azmenu__link">E</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#F" class="azmenu__link">F</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#G" class="azmenu__link">G</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#H" class="azmenu__link">H</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#I" class="azmenu__link">I</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#J" class="azmenu__link">J</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#K" class="azmenu__link">K</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#L" class="azmenu__link">L</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#M" class="azmenu__link">M</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#N" class="azmenu__link">N</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#O" class="azmenu__link">O</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#P" class="azmenu__link">P</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#Q" class="azmenu__link">Q</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#R" class="azmenu__link">R</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#S" class="azmenu__link">S</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#T" class="azmenu__link">T</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#U" class="azmenu__link">U</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#V" class="azmenu__link">V</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#W" class="azmenu__link">W</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#X" class="azmenu__link">X</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#Y" class="azmenu__link">Y</a>
+    </li>
+    <li class="azmenu__initial">
+      <a href="#Z" class="azmenu__link">Z</a>
+    </li>
+  </ul>
+
+</div>{% endcomment %}
+  
+  {% assign alphabet = '' %}
+  
+  {% capture collection_listing %}
+    <!-- This code creates the list of brands -->
+    <div class ="hoopers-a-z-brands">
+      {% assign current = "" %}
+      {% assign previous = "" %}
+      
+      
+      {% comment %}
+      {% if section.settings.display_type == 'all' %}
+      	{% assign collections = collections %}
+      {% else %}
+      	{% assign collections = section.blocks %}
+      {% endif %}
+      {% endcomment %}
+      
+      {% assign selected_col_array = "" %}
+      {% if section.settings.display_type == 'selected' %}
+      	{% for block in section.blocks %}
+          {% assign selected_col_array = selected_col_array | append: block.settings.collection | append: ',' %}
+      	{% endfor %}
+      {% else %}
+      {% endif %}
+      
+     
+      {% for collection in collections %}
+      
+	  {% if section.settings.display_type == 'selected' %}
+      
+      	{% if selected_col_array contains collection.handle %}
+      
+      	{% assign first_letter = collection.title | strip_html | upcase | truncate: 1, '' %}
+        {% unless first_letter == current %}
+        {% if current != "" %}
+            </ul>
+        </div>
+        {% endif %}
+        {% assign alphabet = alphabet | append: "," | append: first_letter %}
+
+        <div class="gropu_wrapper">
+          <div class="clearfix"></div>
+          <h2 class="brand-list-letter"><a id="{{ first_letter }}" name="{{ first_letter }}"></a>{{ first_letter }}</h2>
+          <ul>
+            {% endunless %}
+
+            <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>  
+            {% assign current = first_letter %}
+
+            {% assign previous = first_letter %}
+      	{% endif %}
+      {% else %}
+          {% assign first_letter = collection.title | strip_html | upcase | truncate: 1, '' %}
+          {% unless first_letter == current %}
+          {% if current != "" %}
+              </ul>
+          </div>
+          {% endif %}
+          {% assign alphabet = alphabet | append: "," | append: first_letter %}
+
+          <div class="gropu_wrapper">
+            <div class="clearfix"></div>
+            <h2 class="brand-list-letter"><a id="{{ first_letter }}" name="{{ first_letter }}"></a>{{ first_letter }}</h2>
+            <ul>
+              {% endunless %}
+
+              <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>  
+              {% assign current = first_letter %}
+
+              {% assign previous = first_letter %}
+      {% endif %}
+      
+      
+      {% endfor %}
+      </div> 
+  {% endcapture %}
+  
+
+        {% assign abc = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z" | split: "," %}
+        
+        {% assign alphabet_array = alphabet | splut: ',' %}
+        <div class="grid grid-alpha">
+          <ul class="azmenu">
+            {% for letter in abc %}
+            <li class="azmenu__initial azmenu__initial--character {% if alphabet_array contains letter %} available{% else %}not-available{% endif %}">
+              <a href="#{{letter}}" class="alphaToggle azmenu__link" data-alpha-target="{{ letter }}">{{ letter }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+   	{{ collection_listing }}
+        
+        
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  {% comment %}
+  {%- assign blocks = section.blocks | sort: 'collection.all_products_count' -%}
+
+  {% case section.settings.grid %}
+    {% when '1' %}
+      {%- assign grid_item_width = '' -%}
+    {% when '2' %}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when '3' %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+    {% when '4' %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {% when '5' %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+  {% endcase %}
+
+  <div class="{% if section.settings.disable_images %}collection-list__grid {% endif %}grid grid--uniform{% unless settings.collection_grid_gutter %} grid--no-gutters{% endunless %}">
+    {% if section.settings.display_type == 'all' %}
+      {% case section.settings.sort %}
+        {% when 'products_high' or 'products_low' %}
+          {%- assign collections = collections | sort: 'all_products_count' -%}
+        {% when 'date' or 'date_reversed' %}
+          {%- assign collections = collections | sort: 'published_at' -%}
+      {% endcase %}
+      {% if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' %}
+        {% for collection in collections %}
+          {% render 'collection-grid-item', collection: collection, grid_item_width: grid_item_width %}
+        {% endfor %}
+      {% else %}
+        {% for collection in collections reversed %}
+          {% render 'collection-grid-item', collection: collection, grid_item_width: grid_item_width %}
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      {% for block in section.blocks %}
+        {%- assign collection = collections[block.settings.collection] -%}
+        {% render 'collection-grid-item', collection: collection, grid_item_width: grid_item_width %}
+      {% endfor %}
+    {% endif %}
+  </div>
+
+        {% endcomment %}
+</div>
+
+
+<style>
+  .section-header__title {
+    margin-bottom: 0; 
+  }
+  .section-header {
+    margin-bottom: 10px;
+  }
+  .page-content, .shopify-policy__container {
+    padding-top: 25px; 
+  }
+  .grid-alpha {
+    position: sticky;
+    top: 72px;
+    background-color: #fff;
+  }
+  .grid-alpha .azmenu__link {
+    display: block;
+    padding: 15px 0;
+    position: relative;
+  }
+  .grid-alpha .azmenu__link.selectedAlpha:after {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .gropu_wrapper ul {
+    list-style: none;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  .gropu_wrapper h2.brand-list-letter {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .gropu_wrapper {
+    margin-bottom: 30px;
+  }
+  .hoopers-a-z-brands {
+    margin-top: 30px;
+  }
+  .azmenu__initial.not-available {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+  }
+  .azmenu__initial.not-available:after {
+    content: "X";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 24px;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0.2;
+  }
+  
+  @media (max-width: 800px) {
+   
+    .grid-alpha .azmenu__link {
+      display: block;
+      padding: 10px 15px;
+    }
+    .grid-alpha {
+      top: 65px;
+      background-color: #fff;
+      margin-left: 0;
+      overflow: hidden;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .section-header__title {
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 550px) {
+    .gropu_wrapper ul {
+      grid-template-columns: auto;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Collections list page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "disable_images",
+        "label": "Disable Collection Images",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "title_enable",
+        "label": "Show title",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "All of your collections are listed by default. To customize your list, choose 'Selected' and add collections."
+      },
+      {
+        "type": "radio",
+        "id": "display_type",
+        "label": "Select collections to show",
+        "default": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All"
+          },
+          {
+            "value": "selected",
+            "label": "Selected"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "sort",
+        "label": "Sort collections by:",
+        "info": "Sorting only applies when 'All' is selected",
+        "default": "alphabetical",
+        "options": [
+          {
+            "value": "products_high",
+            "label": "Product count, high to low"
+          },
+          {
+            "value": "products_low",
+            "label": "Product count, low to high"
+          },
+          {
+            "value": "alphabetical",
+            "label": "Alphabetically, A-Z"
+          },
+          {
+            "value": "alphabetical_reversed",
+            "label": "Alphabetically, Z-A"
+          },
+          {
+            "value": "date",
+            "label": "Date, old to new"
+          },
+          {
+            "value": "date_reversed",
+            "label": "Date, new to old"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "grid",
+        "label": "Collections per row",
+        "default": "3",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script>
+  $("a").on('click', function(event) {
+    
+    $('.alphaToggle').removeClass('selectedAlpha');
+    $(this).addClass('selectedAlpha');
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 140
+      }, 500, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+//         window.location.hash = hash;
+      });
+    } // End if
+  });
+</script>

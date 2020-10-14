@@ -1,0 +1,167 @@
+
+var CheckAffiliateScript = setInterval(function () {
+    if (window.jQuery) {
+        clearInterval(CheckAffiliateScript);
+        if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7)) {
+            loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', function () {
+                jQuery191 = jQuery.noConflict(true);
+                LoadAffiliateScript(jQuery191);
+            });
+        }
+        else {
+            LoadAffiliateScript(jQuery);
+        }
+    }
+}, 100);
+
+var loadScript = function(url, callback){
+var script = document.createElement("script");
+  script.type = "text/javascript";
+
+  // If the browser is Internet Explorer.
+  if (script.readyState){ 
+    script.onreadystatechange = function(){
+      if (script.readyState == "loaded" || script.readyState == "complete"){
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  // For any other browser.
+  } else {
+    script.onload = function(){
+      callback();
+    };
+  }
+
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+ 
+};
+
+function LoadAffiliateScript($) {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var repId = url.searchParams.get("ambassador");
+
+    if (!repId) {
+        repId = url.searchParams.get("AMBASSADOR");
+    }
+    console.log("ambassador = " + repId);
+    if (repId) {
+        var data = 'attributes[rep]=' + repId;
+        $.ajax({
+            type: 'POST',
+            url: '/cart/update.js',
+            dataType: 'json',
+            data: data,
+            success: function (res) {
+                console.log("Added repId to cart note");
+            },
+
+        });
+    }
+
+    if (repId) {
+        var rep_id = repId.replace(/[^\d]/g, '');
+        var repname = repId.replace(/\d+/g, '');
+        console.log(rep_id);
+        console.log(repname);
+        var urlVal = "/apps/SalesRep?customerId=" + rep_id + "&customerName=" + repname + "&data=6";
+        $.ajax({
+            url: urlVal,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data, status) {
+                console.log(data.rep_info.repname);
+                
+                if (data.rep_info.bioStyle == "" || data.rep_info.bioStyle == null || data.rep_info.bioStyle == "Bottom Right") {
+                    var div = document.createElement("DIV");
+                    div.setAttribute('class', 'sr_popup');
+                    div.setAttribute('style', 'position: fixed;bottom: 0;right: 0;height: 20px;');
+                    var div2 = document.createElement("DIV");
+                    div2.setAttribute('class', 'popuptext');
+                    div2.setAttribute('id', 'myPopup');
+                    div2.setAttribute('style', 'animation-delay:0s;animation-direction:normal;animation-duration:1s;animation-fill-mode:none;animation-iteration-count:1;animation-name:fadeIn;animation-play-state:running;' +
+                        'animation-timing-function:ease;background-color:rgb(85, 85, 85);border-bottom-left-radius:6px;border-bottom-right-radius:6px; border-top-left-radius:6px;border-top-right-radius:6px;bottom:25px;box-sizing:border-box;' +
+                        'color:rgb(255, 255, 255);cursor:pointer;display:block;font-family:"Work Sans", HelveticaNeue, "Helvetica Neue",sans-serif; font-size:16px;left:0px;line-height:24px;margin-left:-270px;padding-bottom:8px;' +
+                        'padding-left:0px; padding-right:0px;padding-top:8px;position:absolute;text-align:center ;text-size-adjust: 100%;user-select:none;visibility:visible;width:250px;z-index:1;-webkit-font-smoothing:antialiased;');
+
+                }
+                else {
+                    if (data.rep_info.bioStyle == "Bottom Left") {
+                        var div = document.createElement("DIV");
+                        div.setAttribute('class', 'sr_popup');
+                        div.setAttribute('style', 'bottom: 0;right: 0;height: 20px;');
+                        var div2 = document.createElement("DIV");
+                        div2.setAttribute('class', 'popuptext');
+                        div2.setAttribute('id', 'myPopup');
+                        div2.setAttribute('style', 'animation-delay:0s;animation-direction:normal;animation-duration:1s;animation-fill-mode:none;animation-iteration-count:1;animation-name:fadeIn;animation-play-state:running;' +
+                            'animation-timing-function:ease;background-color:rgb(85, 85, 85);border-bottom-left-radius:6px;border-bottom-right-radius:6px; border-top-left-radius:6px;border-top-right-radius:6px;bottom:25px;box-sizing:border-box;' +
+                            'color:rgb(255, 255, 255);cursor:pointer;display:block;font-family:"Work Sans", HelveticaNeue, "Helvetica Neue",sans-serif; font-size:16px;left:0px;line-height:24px;padding-bottom:8px;' +
+                            'padding-left:0px; padding-right:0px;padding-top:8px;position:absolute;text-align:center ;text-size-adjust: 100%;user-select:none;visibility:visible;width:250px;z-index:1;-webkit-font-smoothing:antialiased;float:left;');
+
+                    }
+                    if (data.rep_info.bioStyle == "Bottom Middle") {
+                        var div = document.createElement("DIV");
+                        div.setAttribute('class', 'sr_popup');
+                        div.setAttribute('style', 'bottom: 0;right: 0;height: 20px;');
+                        var div2 = document.createElement("DIV");
+                        div2.setAttribute('class', 'popuptext');
+                        div2.setAttribute('id', 'myPopup');
+                        div2.setAttribute('style', 'animation-delay:0s;animation-direction:normal;animation-duration:1s;animation-fill-mode:none;animation-iteration-count:1;animation-name:fadeIn;animation-play-state:running;' +
+                            'animation-timing-function:ease;background-color:rgb(85, 85, 85);border-bottom-left-radius:6px;border-bottom-right-radius:6px; border-top-left-radius:6px;border-top-right-radius:6px;bottom:25px;box-sizing:border-box;' +
+                            'color:rgb(255, 255, 255);cursor:pointer;display:block;font-family:"Work Sans", HelveticaNeue, "Helvetica Neue",sans-serif; font-size:16px;left:0px;line-height:24px;margin-left:40%;padding-bottom:8px;' +
+                            'padding-left:0px; padding-right:0px;padding-top:8px;position:absolute;text-align:center ;text-size-adjust: 100%;user-select:none;visibility:visible;width:250px;z-index:1;-webkit-font-smoothing:antialiased;float:left;');
+
+                    }
+                    if (data.rep_info.bioStyle == "Top Left")
+                    {
+                        var div = document.createElement("DIV");
+                        div.setAttribute('class', 'sr_popup');
+                        div.setAttribute('style', 'bottom: 0;right: 0;height: 20px;');
+                        var div2 = document.createElement("DIV");
+                        div2.setAttribute('class', 'popuptext');
+                        div2.setAttribute('id', 'myPopup');
+                        div2.setAttribute('style', 'animation-delay:0s;animation-direction:normal;animation-duration:1s;animation-fill-mode:none;animation-iteration-count:1;animation-name:fadeIn;animation-play-state:running;' +
+                            'animation-timing-function:ease;background-color:rgb(85, 85, 85);border-bottom-left-radius:6px;border-bottom-right-radius:6px; border-top-left-radius:6px;border-top-right-radius:6px;box-sizing:border-box;' +
+                            'color:rgb(255, 255, 255);cursor:pointer;display:block;font-family:"Work Sans", HelveticaNeue, "Helvetica Neue",sans-serif; font-size:16px;left:0px;line-height:24px;padding-bottom:8px;' +
+                            'padding-left:0px; padding-right:0px;padding-top:8px;position:absolute;text-align:center ;text-size-adjust: 100%;user-select:none;visibility:visible;width:250px;z-index:1;-webkit-font-smoothing:antialiased;float:left;top:50px;');
+
+                    }
+                    if (data.rep_info.bioStyle == "Top Right") {
+                        var div = document.createElement("DIV");
+                        div.setAttribute('class', 'sr_popup');
+                        div.setAttribute('style', 'position: fixed;bottom: 0;right: 0;height: 20px;');
+                        var div2 = document.createElement("DIV");
+                        div2.setAttribute('class', 'popuptext');
+                        div2.setAttribute('id', 'myPopup');
+                        div2.setAttribute('style', 'animation-delay:0s;animation-direction:normal;animation-duration:1s;animation-fill-mode:none;animation-iteration-count:1;animation-name:fadeIn;animation-play-state:running;' +
+                            'animation-timing-function:ease;background-color:rgb(85, 85, 85);border-bottom-left-radius:6px;border-bottom-right-radius:6px; border-top-left-radius:6px;border-top-right-radius:6px;bottom:527px;box-sizing:border-box;' +
+                            'color:rgb(255, 255, 255);cursor:pointer;display:block;font-family:"Work Sans", HelveticaNeue, "Helvetica Neue",sans-serif; font-size:16px;left:0px;line-height:24px;margin-left:-270px;padding-bottom:8px;' +
+                            'padding-left:0px; padding-right:0px;padding-top:8px;position:absolute;text-align:center ;text-size-adjust: 100%;user-select:none;visibility:visible;width:250px;z-index:1;-webkit-font-smoothing:antialiased;');
+
+                    }
+                }
+
+                div.appendChild(div2);
+                document.body.appendChild(div);
+
+                document.getElementById('myPopup').innerHTML = data.rep_info.bio;
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("sr_show");
+            }
+        });
+    }
+}
+
+window.onload = function () {
+    CheckAffiliateScript();
+}
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

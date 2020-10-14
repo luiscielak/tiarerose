@@ -1,0 +1,144 @@
+{%- assign per_row = section.settings.per_row -%}
+{%- assign product_limit = per_row | times: section.settings.rows -%}
+{%- assign collection = collections[section.settings.home_featured_products] -%}
+
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div
+  id="CollectionSection-{{ section.id }} hc-slider-section"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-template">
+
+  <div class="page-width {% if section.settings.mobile_scrollable %}page-width--flush-small{% endif %}">
+    <div {% if section.settings.mobile_scrollable %}class="grid-overflow-wrapper hc-collection-slider-container"{% endif %}>
+      <div class="hc-collection-slider-title">
+        <h1>{{ section.settings.title }}</h1>
+        <p>{{ section.settings.subheading }}</p>   
+      </div>
+      <div class="slick-slider-hc" {% if section.settings.mobile_scrollable %}data-aos="overflow__animation"{% endif %}>
+        {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+
+        {% case per_row %}
+        {% when 1 %}
+          {%- assign grid_item_width = '' -%}
+        {% when 2 %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {% when 3 %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+        {% when 4 %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+        {% when 5 %}
+          {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+        {% endcase %}
+
+        {% if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 %}
+
+          {% unless emptyState %}
+            {%- assign emptyState = true -%}
+          {% endunless %}
+
+          <div class="">
+            <div class="grid grid--uniform">
+              {% for i in (1..product_limit) %}
+                <div class="grid__item grid-product {{ grid_item_width }}" data-aos="row-of-{{ per_row }}">
+                  <div class="grid-product__content">
+                    <a href="{{ product.url | within: collection }}" class="grid-product__link {% if sold_out %} grid-product__link--disabled{% endif %}">
+                      <div class="grid-product__image-mask">
+                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                        <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                      </div>
+                      <div class="grid-product__meta">
+                        <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                        <div class="grid-product__price">$29</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+        {% else %}
+          {% for product in collections[section.settings.home_featured_products].products %}
+        
+            {% render 'product-grid-item'
+              product: product,
+              grid_item_width: grid_item_width
+            %}
+          {% endfor %}
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if settings.quick_shop_enable %}
+  {% for product in collections[section.settings.home_featured_products].products limit: product_limit %}
+    {% render 'quick-shop-modal', product: product %}
+  {% endfor %}
+{% endif %}
+
+{% if section.settings.divider %}</div>{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Collection slider",
+    "class": "index-section",
+    "settings": [
+ 	  {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products",
+        "default": 4,
+        "min": 1,
+        "max": 55,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Rows of products",
+        "default": 1,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_scrollable",
+        "label": "Enable swipe on mobile",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "presets": [{
+      "name": "Collection Slider",
+      "category": "Collection"
+    }],
+    "blocks" : []
+  }
+{% endschema %}

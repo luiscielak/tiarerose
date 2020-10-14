@@ -1,0 +1,31 @@
+{% if settings.enable_custom_header_font_family %}
+{%- assign header_font = settings.custom_header_font_family -%}
+{% else %}
+{%- assign header_font = settings.type_header_font_family -%}
+{% endif %}
+
+{% if settings.enable_custom_base_font_family %}
+{%- assign base_font = settings.custom_base_font_family -%}
+{% else %}
+{%- assign base_font = settings.type_base_font_family -%}
+{% endif %}
+
+{% comment %}
+	HC - 02 OCT 2020
+
+	Before this change, the base_font | font_modify function had a weight of '600' (bold)
+	that made all global text of the page be bold without the ability to overwrite it
+	the client complained, hence why the value was changed from 600 to 400. (from bold to normal)
+{% endcomment %}
+{%- assign base_font_bold = base_font | font_modify: 'weight', '400' -%}
+{%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
+
+{% style %}
+  {{ header_font | font_face }}
+  {{ base_font | font_face }}
+
+  {{ base_font_bold | font_face }}
+  {{ base_font_italic | font_face }}
+  {{ base_font_bold_italic | font_face }}
+{% endstyle %}

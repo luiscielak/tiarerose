@@ -1,0 +1,278 @@
+<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
+{{ 'theme.css' | asset_url | stylesheet_tag }}
+<style> 
+
+  #Directorypage
+  {
+    display:flex;
+  }
+    table{
+        margin-bottom: 0px;
+    }
+    
+   .Polaris-Card{
+      margin-top: 2rem;
+   }
+     
+   .Polaris-DataTable__Cell--header {
+      font-weight: 700 !important;
+    }
+    
+    .Polaris-DataTable__Cell--numeric {
+       text-align: left !important;
+     } 
+
+  .grid-container {
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 15px 15px;
+} 
+
+.grid-item {
+  text-align: left;
+}
+  
+@media only screen and (min-width: 750px)
+input, textarea {
+    padding: 10px 18px;
+    font-size: 1.4rem;
+}
+  
+#custnamelist {
+  display : none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#custnamelist li a {
+  line-height: 0rem;
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  font-size: small;
+}
+
+#custnamelist li a:hover:not(.header) {
+  background-color: #eee;
+}
+  button{
+        background: linear-gradient(to bottom, black, black);
+    border-color: black;
+    box-shadow: inset 0 1px 0 0 black, 0 1px 0 0 rgba(22, 29, 37, 0.05), 0 0 0 0 transparent;
+    color: white;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 0;
+    width: auto;
+    min-width: 90px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #ffffff;
+    color: var(--colorBtnPrimaryText);
+  }
+  
+  button:hover {
+    background: linear-gradient(to bottom, black, black);
+    border-color: black;
+    box-shadow: inset 0 1px 0 0 black, 0 1px 0 0 rgba(22, 29, 37, 0.05), 0 0 0 0 transparent;
+    color: white;
+    opacity: 0.5;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 0;
+    width: auto;
+    min-width: 90px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #ffffff;
+    color: var(--colorBtnPrimaryText);
+}
+
+
+</style>
+<script>
+  var TagToSalesRep=function(id,salesrepname)
+  {
+    
+     $("#Leadsuccessmsg").hide()
+     $("#LeadErrror").hide();
+     $('#LeadEmptyErrror').hide();
+     var CustomerId, CustomerName;
+
+      	{% if customer %}
+			CustomerId = {{customer.id}};
+			CustomerName = "{{customer.first_name}}";
+		{% else %}
+			strUser = "";
+		{% endif %}
+
+      if(CustomerId==null){
+        $('#LoggedInErrror_'+id).show();
+      }
+     
+      else
+      {
+        $("#TagCustomer_"+id).text("Assigning...");
+      	var data = {
+          "CustomerId" : CustomerId,
+		  "CustomerName" : CustomerName,    
+          "SalesrepName":salesrepname,
+          "SalesRepId":id
+    
+         }
+        var leadData = JSON.stringify(data);
+        var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=26&data="+leadData;
+        $.post(
+				urlVal,
+				function (data, status) {     
+                
+                  if(data == "This customer is already tagged to a rep.")
+                      {        
+                        $("#Leadsuccessmsg_"+id).hide()
+                        $("#AddCustomerErrror_"+id).show();
+                        $("#AddCustomerErrror_"+id).html("This customer is already tagged to a rep.");
+                        $("#TagCustomer_"+id).text("Select Style Concierge");
+
+                      }
+                      else if(data == "Customer exists already. Successfully tag to rep.")
+                      {
+                        $("#Leadsuccessmsg_"+id).show();
+                        $("#Leadsuccessmsg_"+id).html("Thank you for your selection. Your Style Concierge will be in touch shortly. Feel free to add items to your Dressing Room.");
+                        $("#TagCustomer_"+id).text("Select Style Concierge");
+                        $("#AddCustomerErrror_"+id).hide();
+                      }
+                  	  else
+                      {
+                        $("#Leadsuccessmsg_"+id).hide()
+                        $("#TagCustomer_"+id).text("Select Style Concierge");
+                        $("#AddCustomerErrror_"+id).show();
+						$("#AddCustomerErrror_"+id).text(data);                        
+                  	  }
+
+                  }
+        );
+      }
+  }
+</script>
+{% assign Customer = customer.metafields.TaggedCustomer %}
+{% assign key = customer.id| downcase  %}
+
+			  <h2 id="dashheader"></h2>
+                 <div id="directory_card">            
+                 {% for rep in shop.metafields.SalesTeamApp %}
+                   
+                   <center>
+                        <div class="Polaris-Card card" style="margin: 2rem; width:50%;" id="">
+                          
+                          <div style="width: 50%;text-align: justify;float:left;padding: 10px;">
+                            <image src="https://images.unsplash.com/photo-1578489758854-f134a358f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="Image" style="border:2px solid;display:block;margin: 0 auto;"></image>
+                            <p ><b>{{ rep[1].StyleMotto }}</b></p>
+                          </div>
+                          <div style="text-align: justify;padding-right:1em;margin-left: 60%;">
+                            <p class="Polaris-Card__Header" style="margin-left: -21px;">
+                              <b style="font-size: 20px;text-transform: uppercase;">{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</b><br>
+                            <b style="font-size: 15px;">{{ rep[1].City }}, {{ rep[1].State }}</b><br>
+                              <b style="font-size: 15px;">{{ rep[1].InstagramHandle }}</b><br>
+                              <b style="font-size: 15px;">{{ rep[1].LinkedInHandle }}</b>
+                          </p>
+                            <p>
+                            {{ rep[1].NumberOfYearsForExperience }} years experience as a {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>
+                              Favorite brands:
+                              {%if rep[1].FirstBrand != ""%}
+                               {{ rep[1].FirstBrand }}
+                              	{%if rep[1].SecondBrand != "" or rep[1].ThirdBrand != "" %}
+                              	,
+                              	{%endif%}
+                              {%endif%}
+                              {%if rep[1].SecondBrand != ""%}
+                                {{ rep[1].SecondBrand }}
+                              	{%if rep[1].ThirdBrand != "" %}
+                              	,
+                              	{%endif%}
+                              {%endif%}
+                              {%if rep[1].ThirdBrand != ""%}
+                               {{ rep[1].ThirdBrand}}
+                              {%endif%}
+                            <br>
+                              When I’m not curating wardrobes, I like to {{ rep[1].LikeTo }}.<br>
+                            Add-on services:
+                              {%if rep[1].FirstAdditionalService != ""%}
+                                {{ rep[1].FirstAdditionalService }}
+                              	{%if rep[1].SecondAdditionalService != "" or rep[1].ThirdAdditionalService != "" %}
+                              	,
+                              	{%endif%}
+                              {%endif%}
+                              {%if rep[1].SecondAdditionalService != ""%}
+                                {{ rep[1].SecondAdditionalService }}
+                              	{%if rep[1].ThirdAdditionalService != "" %}
+                              	,
+                              	{%endif%}
+                               {%endif%}
+                              {%if rep[1].ThirdAdditionalService != ""%}
+                                {{ rep[1].ThirdAdditionalService }}
+                              {%endif%}
+                            </p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            {% if customer.metafields.TaggedCustomer != null %}
+                            {%if Customer[key] != null %}
+                               <div class="Polaris-Card__SectionHeader">
+                                 <p>You already have a Style Concierge. Email help@tiarerose.com and we can make this change for you.</p>                     
+                            </div>
+                            {%else%}
+                            <div class="Polaris-Card__SectionHeader">
+                           <center>
+                                <div class=""><button type="button" id="TagCustomer_{{rep[0]}}" class="" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
+                           </center>                            
+                            </div>
+                            {%endif%}
+                            {%else%}
+                            <div class="Polaris-Card__SectionHeader">
+                           <center>
+                                <div class=""><button type="button" id="TagCustomer_{{rep[0]}}" class="" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
+                           </center>                            
+                            </div>
+                            {%endif%}
+                           <div>
+                               <span id="AddCustomerErrror_{{rep[0]}}" style="color: #f80000; display:none"></span> 
+                                <span style="color: darkseagreen; display:none" id="Leadsuccessmsg_{{rep[0]}}"></span>
+                                <span id="LoggedInErrror_{{rep[0]}}" style="color: #f80000; display:none">Please log in to make your selection</span> 
+
+                             </div>
+                          </div>
+
+                        </div>
+                   </center>
+                   {% endfor %}
+
+                    </div>
+                
+             
+      

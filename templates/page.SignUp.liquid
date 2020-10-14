@@ -1,0 +1,898 @@
+<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
+
+<script>
+window.onload = function () {
+    CheckSignUpPageScript();
+}
+var CheckSignUpPageScript = setInterval(function () {
+    if (window.jQuery) {
+        clearInterval(CheckSignUpPageScript);
+        if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7)) {
+            loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', function () {
+                jQuery191 = jQuery.noConflict(true);
+                GetTeamManagerInfo(jQuery191);
+            });
+        }
+        else {
+            GetTeamManagerInfo(jQuery);
+        }
+    }
+}, 100);
+
+var loadScript = function(url, callback){
+var script = document.createElement("script");
+  script.type = "text/javascript";
+
+  // If the browser is Internet Explorer.
+  if (script.readyState){ 
+    script.onreadystatechange = function(){
+      if (script.readyState == "loaded" || script.readyState == "complete"){
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  // For any other browser.
+  } else {
+    script.onload = function(){
+      callback();
+    };
+  }
+
+  script.src = url;
+  document.getElementsByTagName("head")[0].appendChild(script);
+ 
+};
+</script>
+<style>
+.signupbtn {
+    background: black;
+}
+  @media screen and (min-width: 0px) and (max-width: 321px)
+  {
+    .container {
+    padding: 16px;
+	width: 250px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 80%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 75%;
+	}
+    
+
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 361px)
+  {
+    .container {
+    padding: 16px;
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 70%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 70%;
+	}
+    
+  }
+  
+  @media screen and (min-width: 361px) and (max-width: 533px)
+  {
+    .container {
+    padding: 16px;
+	width: 390px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 50%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 50%;
+	}
+    
+
+  }
+  
+  @media screen and (min-width: 534px) and (max-width: 641px)
+  {
+    .container {
+    padding: 16px;
+	width: 600px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 50%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 40%;
+	}
+    
+
+  }
+  
+  @media screen and (min-width: 641px) and (max-width: 733px)
+  {
+    .container {
+    padding: 16px;
+	width: 700px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 35%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 30%;
+	}
+    
+
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px)
+  {
+    .container {
+    padding: 16px;
+	width: 770px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 30%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+
+  }
+  
+  @media screen and (min-width: 1024px) and (max-width: 1366px)
+  {
+    .container {
+    padding: 16px;
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 15%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+
+  }
+  
+  @media screen and (min-width: 1366px) and (max-width: 2401px)
+  {
+    .container {
+    padding: 16px;
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 15%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+
+  }
+  
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+
+
+
+/*  signup buttons and add an equal width */
+
+
+.signupbtn {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+}
+
+.signupbtn:hover {
+    opacity:1;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  
+}  
+</style>
+
+<script>
+  var onSuccessGetData = function(response){ 		
+    	if(response.select.referralpage && response.IsTeamManager)
+		{
+		  $("#welcomemsg").show();
+		}
+  }
+  
+  
+  function GetTeamManagerInfo($){
+  
+    var urlVal= window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName=null&data=4";
+	
+      $.get(
+       	   urlVal,
+           function (data, status) {
+                 onSuccessGetData(data);
+        	}
+       );        
+  };
+  
+  	var onSuccessSubmit = function (response,textStatus)
+    {
+      if(response == false)
+      {
+        $("#errorsmsg").show();
+        $("#successmsg").hide();	
+      }
+      else
+      {
+        $("#successmsg").show();
+        $("#errorsmsg").hide();
+      }
+	  $(".signupbtn").html("Save Details");
+    }
+    
+	var submiteDetails = function() {   
+      var IsTeamManager=false;
+      var url_string = window.location.href;
+    var url = new URL(url_string);
+    var ManagerId = url.searchParams.get("manager");
+var isChecked=$('#IsTermsAccepted').is(":checked");
+      var isFirstServiceChecked=$('#FirstAdditionalService').is(":checked");
+      var isSecondServiceChecked=$('#SecondAdditionalService').is(":checked");
+      var isThirdServiceChecked=$('#ThirdAdditionalService').is(":checked");
+     var FirstService="";
+        var SecondService="";
+        var ThirdService="";
+        
+        if(isFirstServiceChecked)
+        {
+          FirstService=document.getElementById("FirstAdditionalService").value;
+        }
+        if(isSecondServiceChecked)
+        {
+          SecondService=document.getElementById("SecondAdditionalService").value;
+        }
+        if(isThirdServiceChecked)
+        {
+          ThirdService=document.getElementById("ThirdAdditionalService").value;
+        }
+    if (!ManagerId) {
+        ManagerId = url.searchParams.get("MANAGER");
+    }
+      if(ManagerId!=null)
+      {
+        IsTeamManager=true;
+      }
+       if(document.getElementById("Username").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("Lname").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("mailid").value==""){
+        $('#mandatoryError').show();
+      }
+     else if(document.getElementById("phone").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("City").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("State").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("Country").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("PaypallEmail").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("AnnualSaleAmount").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("InstagramInHandle").value==""){
+        $('#mandatoryError').show();
+      }
+     
+      else if(document.getElementById("NumberOfYearsForExperience").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("ExperienceAs").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("ExperienceAt").value==""){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("StyleMotto").value==""){
+        $('#mandatoryError').show();
+      }
+      else if((document.getElementById("FirstBrand").value=="")&&(document.getElementById("SecondBrand").value=="")&&(document.getElementById("ThirdBrand").value=="")){
+        $('#mandatoryError').show();
+      }
+      else if(document.getElementById("LikeTo").value==""){
+        $('#mandatoryError').show();
+      }
+      
+      else if(!isChecked){
+        $('#termserror').show();
+      }
+      else if(isNaN($('#NumberOfYearsForExperience').val())){
+            $('#ExperienceError').show();  
+      }
+      else if(isNaN($('#AnnualSaleAmount').val())){
+        $('#AnnualAmountError').show(); 
+      }
+      else
+      {
+        $('#mandatoryError').hide();
+        $('#termserror').hide();
+        $('#AnnualAmountError').hide();
+        $('#ExperienceError').hide();
+        $(".signupbtn").html("Saving Details...");
+		$("#errorsmsg").hide();
+		$("#successmsg").hide();
+        $("#OtherSuccessmsg").hide();
+        $("#RepExistErrorMsg").hide();
+     
+  		var usermail=document.getElementById("mailid").value;
+  		var username=document.getElementById("Username").value;
+        var Lname=document.getElementById("Lname").value;
+        var phone=document.getElementById("phone").value;
+        var City=document.getElementById("City").value;
+        var State=document.getElementById("State").value;
+        var Country=document.getElementById("Country").value;
+        var PaypallEmail=document.getElementById("PaypallEmail").value;
+        var AnnualSaleAmount=document.getElementById("AnnualSaleAmount").value;
+        var InstagramInHandle=document.getElementById("InstagramInHandle").value;
+        var LinkedInHandle=document.getElementById("LinkedInHandle").value;
+        var NumberOfYearsForExperience=document.getElementById("NumberOfYearsForExperience").value;
+        var ExperienceAs=document.getElementById("ExperienceAs").value;
+        var ExperienceAt=document.getElementById("ExperienceAt").value;
+        var StyleMotto=document.getElementById("StyleMotto").value;
+        var FirstBrand=document.getElementById("FirstBrand").value;
+        var SecondBrand=document.getElementById("SecondBrand").value;
+        var ThirdBrand=document.getElementById("ThirdBrand").value;
+        var LikeTo=document.getElementById("LikeTo").value;
+        var FirstAdditionalService=FirstService="";
+        var SecondAdditionalService=SecondService;
+        var ThirdAdditionalService=ThirdService;
+        var AnyQuestion=document.getElementById("AnyQuestion").value;
+        var IsTermsAccepted=true;
+  			    	
+		var strUser;
+		{% if customer %}
+			strUser = {{customer.id}};
+		{% else %}
+			strUser = "";
+		{% endif %}
+        
+         var TeamManagerName="{{customer.first_name}} {{customer.last_name}}"
+    	
+    	var user = {
+    		"salesrepId" : strUser,
+        	"email" : usermail,
+            "name" : username,
+            "TeamManagerName":TeamManagerName,
+            "Lname":Lname,
+          "phone":phone,
+          "City":City,
+          "State":State,
+          "Country":Country,
+          "PaypallEmail":PaypallEmail,
+          "AnnualSaleAmount":AnnualSaleAmount,
+          "InstagramInHandle":InstagramInHandle,
+          "LinkedInHandle":LinkedInHandle,
+          "NumberOfYearsForExperience":NumberOfYearsForExperience,
+          "ExperienceAs":ExperienceAs,
+          "ExperienceAt":ExperienceAt,
+          "StyleMotto":StyleMotto,
+          "FirstBrand":FirstBrand,
+          "SecondBrand":SecondBrand,
+          "ThirdBrand":ThirdBrand,
+          "LikeTo":LikeTo,
+          "FirstAdditionalService":FirstAdditionalService,
+          "SecondAdditionalService":SecondAdditionalService,
+          "ThirdAdditionalService":ThirdAdditionalService,
+          "AnyQuestion":AnyQuestion,
+          "IsTermsAccepted":IsTermsAccepted,
+          "IsBio":false,
+          "IsTeamManager":IsTeamManager,
+    	}
+        
+        var data = JSON.stringify(user);
+        var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=21&data="+data;
+        console.log(urlVal);
+        $.post(
+       		urlVal,
+		    function (data, status) {                 
+					   onSuccessSubmit(data, status);					                   
+					}
+			);
+      }
+		
+  	}
+    
+</script>
+
+<body>
+
+  <div class="container">
+    <h1 style="margin-top: 65px;">Style Concierge Application</h1>
+    <p>Please create an account here to start the application process. After submitting, check your email to continue.</p>
+    <hr>
+	
+    <div class="Polaris-Card__Section">       
+    <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter First Name <span style="color:red;font-weight:bold;">*</span> </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue">
+             <input id="Username" placeholder="First Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Last Name  <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Lname" placeholder="Last Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+       </div>
+     </div>
+  <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Email<span style="color:red;font-weight:bold;">*</span> </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue">
+             <input id="mailid" placeholder="Email" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Phone Number  <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="phone" placeholder="Phone Number" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+       </div>
+     </div>
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter City <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="City" placeholder="City" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter State  <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="State" placeholder="State" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Country  <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Country" placeholder="Country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+       </div>
+     </div>
+       <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Paypal Email (You must have an active PayPal account. We will use this to pay your commissions) <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="PaypallEmail" placeholder="Paypal Email" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+         </div>
+         </div>
+        <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Annual Sales Amount For Last Year  <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="AnnualSaleAmount" placeholder="Annual Sales Amount" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Instagram Handle <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="InstagramInHandle" placeholder="Instagram Handle" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter LinkedIn Handle </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="LinkedInHandle" placeholder="LinkedIn Handle" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+     <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">How many years of experience? <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="NumberOfYearsForExperience" placeholder="Years Of Experience" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Experience As? <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="ExperienceAs" placeholder="Experience As" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Experience At? <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="ExperienceAt" placeholder="Experience At" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">My top style advice/motto is: <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="StyleMotto" placeholder="ex. When in doubt, red shoes!" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">My 3 favorite brands are: <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue">
+             <input id="FirstBrand" placeholder="First Brand" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value=""><br>
+            <div class="Polaris-TextField__Backdrop"></div>
+            </div><br/>
+             <div class="Polaris-TextField Polaris-TextField--hasValue">
+             <input id="SecondBrand" placeholder="Second Brand" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value=""><br>
+            <div class="Polaris-TextField__Backdrop"></div>
+            </div><br/>
+               <div class="Polaris-TextField Polaris-TextField--hasValue">
+               <input id="ThirdBrand" placeholder="Third Brand" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+             <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+      
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        
+          <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">When I’m not curating wardrobes, I like to: <span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="LikeTo" placeholder="ex. Enter latte art competitions" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div><br/>
+  
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">I offer these additional services: </label></div>
+            </div>
+            </div>
+        </div>
+        </div>
+      <div role="group" class="Polaris-FormLayout--condensed"style="text-align: left;">
+          <div class="Polaris-FormLayout__Item">
+            <div class="">
+              <input type="checkbox" name="checkbox" value="Closet organization" id="FirstAdditionalService" required><span> Closet organization</span>
+            </div>
+            </div>
+        </div>
+      <div role="group" class="Polaris-FormLayout--condensed"style="text-align: left;">
+          <div class="Polaris-FormLayout__Item">
+            <div class="">
+              <input type="checkbox" name="checkbox" value="Consignment liaison" id="SecondAdditionalService" required><span> Consignment liaison</span>
+            </div>
+            </div>
+        </div>
+      <div role="group" class="Polaris-FormLayout--condensed" style="text-align: left;">
+          <div class="Polaris-FormLayout__Item">
+            <div class="">
+              <input type="checkbox" name="checkbox" value="Repairs, alterations and cleaning liaison" id="ThirdAdditionalService" required><span> Repairs, alterations and cleaning liaison</span>
+          </div>
+        </div>
+         </div>
+  
+      <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Is there anything else you want us to know?</label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="AnyQuestion" placeholder="" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+         </div>
+         </div>
+      <div role="group" class="Polaris-FormLayout--condensed" style="text-align: left;">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <input type="checkbox" name="checkbox" value="check" id="IsTermsAccepted" required><a href="https://tiarerose.com/pages/style-concierge-terms-conditions " target="_blank"> <u>I have read and agree to the Style Concierge Terms & Conditions</u></a>
+          </div>
+        </div>
+        </div>
+      </div>
+   <br>
+    <h4 style="color: #f80000;display:none" id="mandatoryError">Please fill all mandatory fields</h4>
+    <h4 style="color: #f80000;display:none" id="termserror">Please accept Terms & Conditions</h4>
+    <h4 style="color: #f80000;display:none" id="ExperienceError">Please enter experience in number</h4>
+          <h4 style="color: #f80000;display:none" id="AnnualAmountError">Please enter Annual Amount in number</h4>
+
+    <div class="clearfix">
+      <button class="btn btn--full cart__checkout" onclick="submiteDetails()" style="border-radius: 24px;">Save Details</button>
+    </div>
+    
+  </div> 
+    
+    <h4 style="color: darkseagreen; display:none" id="successmsg">Thank you for applying. Look for an email response within 48 hours.</h4>
+    <h4 style="color: darkseagreen; display:none" id="OtherSuccessmsg">Sales rep registered successfully.</h4>
+    <h4 style="color: #f80000;display:none" id="errorsmsg">Error while saving the details. This user email may already have an account on the store.</h4>
+    <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User is already exist as a rep.</h4>
+  </div>
+    
+</body>
