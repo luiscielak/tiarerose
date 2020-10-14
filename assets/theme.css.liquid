@@ -6180,10 +6180,13 @@ input[type=image]{
   }
 
 .feature-row{
+  background-color: #f1f1f1;
   margin:0 auto;
   display:flex;
   justify-content:space-between;
   align-items:center
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 @media only screen and (min-width:1050px){
@@ -7013,8 +7016,6 @@ input[type=image]{
   }
 
 .feature-row__callout-image+.feature-row__text .feature-row__content{
-  background-color:{{ settings.color_body_bg | default: "#fff" }};
-  background-color:var(--colorBody);
   position:relative;
   z-index:3;
   margin:-10px;
