@@ -416,77 +416,14 @@
               "section_height": "450px",
               "mobile_height": "auto"
             }
-          },
-          "1600972273852": {
-            "type": "rich-text",
-            "settings": {
-              "title": "ADD-oN SErVICES",
-              "text": "<p>We aim to provide the ultimate style experience which is why we extend our services from our website to your closet.<\/p><p><\/p><p><em>To book a service, please consult your Style Concierge. Not all Style Concierges offer all or any services as is it up to their discretion. You can view general rates on their profiles but recommend confirming prior to hiring for an add-on service. <\/em><\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
-            }
-          },
-          "1602564087497": {
-            "type": "text-and-image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Closet.jpg",
-              "image_width": 500,
-              "subtitle": "CLOSET",
-              "title": "OrGANIZATION",
-              "text": "<p>Declutter your closet to make your closet functional, yet contemporary, for your everyday needs. <\/p><p><\/p><p>This service includes: emptying then sorting for keep, donate, disposal and consign; identifying repairs, alterations and dry cleaning; organizing wardrobe by season, style and color; maximizing closet space; creating an inventory of replacement items.<\/p>",
-              "button_label": "",
-              "layout": "left"
-            }
-          },
-          "1602564162645": {
-            "type": "text-and-image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Consignment_image.jpg",
-              "image_width": 300,
-              "subtitle": "CONSIGNMENT",
-              "title": "LIASON",
-              "text": "<p>We make it easy to turn your closet into cash with our consignment valet service. Our Style Concierges manage this time-consuming and strenuous task by handling the hauling, the negotiations and the transaction.<\/p>",
-              "button_label": "",
-              "layout": "right"
-            }
-          },
-          "1602564220388": {
-            "type": "text-and-image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Leather_repair.jpg",
-              "image_width": 500,
-              "subtitle": "ALTERATIONS\/REPAIRS",
-              "title": "VALET",
-              "text": "<p>Put your wardrobe maintenance on autopilot with our repairs, alterations and dry cleaning valet service. Simply label your items needs and preferred service location, and your Style Concierge will pick it up from you and drop it off directly with the business. They will also deliver it back to you when it is ready. Some of our Style Concierges will even pin\/mark your alterations.<\/p>",
-              "button_label": "",
-              "layout": "left"
-            }
-          },
-          "1602564278366": {
-            "type": "text-and-image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Lookbook_image.jpg",
-              "image_width": 300,
-              "subtitle": "DIGITAL LOOKBOOK",
-              "title": "DESIGNEr",
-              "text": "<p>Allow your Style Concierge to go through your existing wardrobe and document complete looks you can pull up for quick and stress-free getting ready.<\/p>",
-              "button_label": "",
-              "layout": "right"
-            }
           }
         },
         "block_order": [
-          "1600971759427",
-          "1600972273852",
-          "1602564087497",
-          "1602564162645",
-          "1602564220388",
-          "1602564278366"
+          "1600971759427"
         ],
         "settings": {
-          "page_title_enable": false,
-          "page_content_enable": false
+          "page_title_enable": true,
+          "page_content_enable": true
         }
       },
       "newsletter-popup": {
@@ -1086,6 +1023,35 @@
         "settings": {
           "page_title_enable": false,
           "page_content_enable": false
+        }
+      },
+      "page-hero-template": {
+        "type": "page-hero-template",
+        "blocks": {
+          "5f8b2c7e-860d-4f48-8c46-223ba5c51b9c": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": false,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_2303632.jpg",
+              "focal_point": "center center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "5f8b2c7e-860d-4f48-8c46-223ba5c51b9c"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
         }
       }
     },
