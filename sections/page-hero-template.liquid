@@ -1,3 +1,42 @@
+<div class="page-blocks">
+  {% for block in section.blocks %}
+    <div {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+        {% when 'image-hero' %}
+          {% include 'page-block-image-hero' %}
+
+      {% endcase %}
+    </div>
+  {% endfor %}
+</div>
+
+
+{% if section.settings.page_title_enable or section.settings.page_content_enable %}
+  <div class="page-width page-content page-content--with-hero">
+    {%- render 'breadcrumbs' -%}
+
+    <div class="grid">
+      <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
+
+        {% if section.settings.page_title_enable %}
+
+          <h1 class="h2 text-center">{{ page.title }}</h1>
+
+        {% endif %}
+
+        {% if section.settings.page_content_enable %}
+          <div class="rte text-spacing">
+            {{ page.content }}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
 
 <div class="page-blocks">
   {% for block in section.blocks %}
@@ -15,9 +54,6 @@
 
         {% when 'hero-video' %}
           {% include 'page-block-hero-video' %}
-
-        {% when 'image-hero' %}
-          {% include 'page-block-image-hero' %}
 
         {% when 'image-row' %}
           {% include 'page-block-image-row' %}
@@ -44,31 +80,6 @@
     </div>
   {% endfor %}
 </div>
-
-
-{% if section.settings.page_title_enable or section.settings.page_content_enable %}
-  <div class="page-width page-content{% if section.blocks.size > 0 %} page-content--with-blocks{% endif %}">
-    {%- render 'breadcrumbs' -%}
-
-    <div class="grid">
-      <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
-
-        {% if section.settings.page_title_enable %}
-          <header class="section-header">
-            <h1 class="section-header__title">{{ page.title }}</h1>
-          </header>
-        {% endif %}
-
-        {% if section.settings.page_content_enable %}
-          <div class="rte text-spacing">
-            {{ page.content }}
-          </div>
-        {% endif %}
-
-      </div>
-    </div>
-  </div>
-{% endif %}
 
 
 
