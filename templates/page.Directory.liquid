@@ -84,8 +84,6 @@ input, textarea {
     border: 1px solid transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
-    color: #ffffff;
-    color: var(--colorBtnPrimaryText);
   }
   
   button:hover {
@@ -111,10 +109,19 @@ input, textarea {
     border: 1px solid transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
-    color: #ffffff;
-    color: var(--colorBtnPrimaryText);
 }
-
+  .profileImage
+  {
+    width: 200px;
+        height: 200px;
+        overflow: hidden;
+  }
+  .profileImage img
+  {
+        height: 200px;
+        margin: -75px 0 0 -100px;
+    object-fit: cover;
+  }
 
 </style>
 <script>
@@ -189,18 +196,30 @@ input, textarea {
                  {% for rep in shop.metafields.SalesTeamApp %}
                    
                    <center>
-                        <div class="Polaris-Card card" style="margin: 2rem; width:50%;" id="">
-                          
-                          <div style="width: 50%;text-align: justify;float:left;padding: 10px;">
-                            <image src="https://images.unsplash.com/photo-1578489758854-f134a358f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="Image" style="border:2px solid;display:block;margin: 0 auto;"></image>
-                            <p ><b>{{ rep[1].StyleMotto }}</b></p>
+                        <div class="Polaris-Card card" style="margin: 2rem; width:65%;" id="">
+                          <div style="text-align: justify;float:left;padding: 10px;margin-left: 30px;">
+                          <div class="profileImage">
+                            {%if rep[1].ProfileImagePath == null%}
+                            <image src="{{'user.png' | asset_img_url : '100x100'}}" alt="Image" style="display:block;margin: 0 auto;"></image>
+                            {%else%}
+                            <image src="{{rep[1].ProfileImagePath}}" alt="Image" style="display:block;margin: 0 auto;"></image>
+                            {%endif%}
+                            
+                            
                           </div>
-                          <div style="text-align: justify;padding-right:1em;margin-left: 60%;">
+                          <div><p ><b>{{ rep[1].StyleMotto }}</b></p></div>
+                          </div>
+                          <div style="text-align: justify;padding-right:3em;margin-left: 38%;">
                             <p class="Polaris-Card__Header" style="margin-left: -21px;">
                               <b style="font-size: 20px;text-transform: uppercase;">{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</b><br>
                             <b style="font-size: 15px;">{{ rep[1].City }}, {{ rep[1].State }}</b><br>
-                              <b style="font-size: 15px;">{{ rep[1].InstagramHandle }}</b><br>
-                              <b style="font-size: 15px;">{{ rep[1].LinkedInHandle }}</b>
+                              {%if rep[1].InstagramHandle != ""%}
+                              <b style="font-size: 15px;"><img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <u><a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a></u>
+                                </b><br>
+                              {%endif%}
+                              {%if rep[1].LinkedInHandle != ""%}
+                              <b style="font-size: 15px;"><img src="{{'LinkedInHandle.png' | asset_img_url : '17x17'}}"> <u><a href="https://www.linkedin.com/{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></u></b>
+                              {%endif%}
                           </p>
                             <p>
                             {{ rep[1].NumberOfYearsForExperience }} years experience as a {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>

@@ -6,7 +6,7 @@
     "color_savings_text": "#ff4e4e",
     "color_borders": "#e6c603",
     "color_button": "rgba(0,0,0,0)",
-    "color_button_text": "#ffffff",
+    "color_button_text": "#000000",
     "color_sale_tag": "#1c1d1d",
     "color_sale_tag_text": "#ffffff",
     "color_cart_dot": "#e6c603",
@@ -71,7 +71,7 @@
     "product_hover_image": false,
     "product_color_swatches": true,
     "collection_color_swatches": false,
-    "swatch_style": "round",
+    "swatch_style": "square",
     "trust_image": "",
     "product_content_1": "",
     "product_content_collapse_1": true,
@@ -98,7 +98,7 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "",
-    "social_facebook_link": "https:\/\/www.facebook.com\/tiare_rose",
+    "social_facebook_link": "https:\/\/www.facebook.com\/tiareroseus",
     "social_twitter_link": "",
     "social_pinterest_link": "",
     "social_instagram_link": "https:\/\/instagram.com\/tiare_rose",
@@ -151,17 +151,15 @@
           "1521051841065": {
             "type": "announcement",
             "settings": {
-              "text": "Launching November 1st",
-              "link_text": "Snag the exclusive invite from your Style Concierge",
-              "link": "shopify:\/\/pages\/sc"
+              "text": "Launching November 9th: SNAG THE EXCLUSIVE INVITE FROM YOUR STYLE CONCIERGE",
+              "link_text": ""
             }
           },
           "1520888647304": {
             "type": "announcement",
             "settings": {
-              "text": "Complimentary",
-              "link_text": "2-Day Shipping & Returns",
-              "link": "shopify:\/\/pages\/returns"
+              "text": "Complimentary SHIPPING & RETURNS",
+              "link_text": ""
             }
           }
         },
@@ -217,7 +215,6 @@
           "1601688385724": {
             "type": "logo_social",
             "settings": {
-              "logo": "",
               "desktop_logo_height": 50,
               "container_width": 25
             }
@@ -254,7 +251,7 @@
         "type": "product-template",
         "settings": {
           "description_style": "default",
-          "social_enable": true,
+          "social_enable": false,
           "image_position": "left",
           "image_size": "medium",
           "thumbnail_position": "below",
@@ -384,9 +381,8 @@
             "settings": {
               "subtitle": "Why shop with us?",
               "title": "You have evolved. The department store hasn't.",
-              "text": "<p>This isn't about you having to go through all the styles of every designer each season to find the pieces that will work for you. Your Style Concierge&nbsp;does that for you so you get the best looks with the best fit. And if it doesn't work, you get industry-leading easiest returns, free.<\/p>",
+              "text": "<p>This isn&#x27;t about you having to go through all the styles of every designer each season to find the pieces that will work for you. Your Style Concierge does that for you so you get the best looks with the best fit. And if it doesn&#x27;t work, you get industry-leading easiest returns, free.<\/p>",
               "button_label": "",
-              "button_link": "",
               "image": "shopify:\/\/shop_images\/Sustainability_image.jpg",
               "alignment": "center",
               "color_border": "#ffffff",
@@ -411,9 +407,7 @@
               "title": "",
               "title_size": 80,
               "subheading": "",
-              "link": "",
               "link_text": "",
-              "link_2": "",
               "link_text_2": "",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-center horizontal-center",
@@ -427,7 +421,7 @@
             "type": "rich-text",
             "settings": {
               "title": "ADD-oN SErVICES",
-              "text": "<p>We aim to provide the ultimate style experience which is why we extend our services from our website to your closet.<\/p>\n<p><\/p>\n<p><i>To book a service, please consult your Style Concierge. Not all Style Concierges offer all or any services as is it up to their discretion. You can view general rates on their profiles but recommend confirming prior to hiring for an add-on service. <\/i><\/p>",
+              "text": "<p>We aim to provide the ultimate style experience which is why we extend our services from our website to your closet.<\/p><p><\/p><p><em>To book a service, please consult your Style Concierge. Not all Style Concierges offer all or any services as is it up to their discretion. You can view general rates on their profiles but recommend confirming prior to hiring for an add-on service. <\/em><\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
@@ -440,9 +434,8 @@
               "image_width": 500,
               "subtitle": "CLOSET",
               "title": "OrGANIZATION",
-              "text": "<p>Declutter your closet to&nbsp;make your closet functional, yet contemporary, for your everyday needs.&nbsp;<\/p>\n<p><\/p>\n<p>This service includes: emptying then sorting for keep, donate, disposal and consign; identifying&nbsp;repairs, alterations and dry cleaning; organizing wardrobe by season, style and color; maximizing closet space;&nbsp;creating an inventory of replacement items.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "",
+              "text": "<p>Declutter your closet to make your closet functional, yet contemporary, for your everyday needs. <\/p><p><\/p><p>This service includes: emptying then sorting for keep, donate, disposal and consign; identifying repairs, alterations and dry cleaning; organizing wardrobe by season, style and color; maximizing closet space; creating an inventory of replacement items.<\/p>",
+              "button_label": "",
               "layout": "left"
             }
           },
@@ -454,8 +447,7 @@
               "subtitle": "CONSIGNMENT",
               "title": "LIASON",
               "text": "<p>We make it easy to turn your closet into cash with our consignment valet service. Our Style Concierges manage this time-consuming and strenuous task by handling the hauling, the negotiations and the transaction.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "",
+              "button_label": "",
               "layout": "right"
             }
           },
@@ -466,9 +458,8 @@
               "image_width": 500,
               "subtitle": "ALTERATIONS\/REPAIRS",
               "title": "VALET",
-              "text": "<p>Put your wardrobe maintenance on autopilot with our repairs, alterations and dry cleaning valet service. Simply label your items needs and preferred service location, and our Style Concierges will pick it up directly from you and drop it off directly with the business. They will also deliver it back to you when it is ready.&nbsp;Some of our Style Concierges will even pin\/mark the alterations.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "",
+              "text": "<p>Put your wardrobe maintenance on autopilot with our repairs, alterations and dry cleaning valet service. Simply label your items needs and preferred service location, and your Style Concierge will pick it up from you and drop it off directly with the business. They will also deliver it back to you when it is ready. Some of our Style Concierges will even pin\/mark your alterations.<\/p>",
+              "button_label": "",
               "layout": "left"
             }
           },
@@ -479,9 +470,8 @@
               "image_width": 300,
               "subtitle": "DIGITAL LOOKBOOK",
               "title": "DESIGNEr",
-              "text": "<p>Allow us to go through your existing wardrobe and&nbsp;document complete looks you can pull up for quick and stress-free getting ready.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "",
+              "text": "<p>Allow your Style Concierge to go through your existing wardrobe and document complete looks you can pull up for quick and stress-free getting ready.<\/p>",
+              "button_label": "",
               "layout": "right"
             }
           }
@@ -506,12 +496,10 @@
           "popup_seconds": 5,
           "popup_days": 30,
           "popup_title": "Sign up to Stay in the Know",
-          "popup_image": "",
           "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
           "close_text": "No thanks",
           "enable_newsletter": true,
           "button_label": "Optional button",
-          "button_link": "",
           "enable_button": false
         }
       },
@@ -624,7 +612,7 @@
               "link_text_2": "Select Style Concierge",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/hero-image_9c89abbb-60b5-4e0a-b984-b7e14a6dd6a9.jpg",
+              "image": "shopify:\/\/shop_images\/hero-image_5c3ccce5-9b4d-4b25-a2ff-c235b4c82675.jpg",
               "focal_point": "top center"
             }
           }
@@ -714,21 +702,21 @@
         "type": "password-header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/TiareRose_Logo_Color.png",
-          "desktop_logo_height": 50,
+          "desktop_logo_height": 64,
           "mobile_logo_height": 60
         }
       },
       "password-content": {
         "type": "password-content",
         "settings": {
-          "title": "Launching November 1st",
+          "title": "Launching November 9th",
           "newsletter_enable": true,
           "newsletter_heading": "<p>Get the exclusive invite<\/p>",
           "newsletter_placeholder": "Enter email",
           "newsletter_button_text": "Submit",
-          "show_share_buttons": true,
+          "show_share_buttons": false,
           "show_image": true,
-          "image": ""
+          "image": "shopify:\/\/shop_images\/Art_Deco_shopping.jpg"
         }
       },
       "product-recommendations": {
@@ -828,7 +816,7 @@
         ],
         "settings": {
           "title": "Perks & Points. Be Our Style VIP.",
-          "text": "<p>Receive seasonal 25% off coupons, exclusive access to sales, insider updates, &ldquo;just because&rdquo; gifts, and more. This is how we <i>luxe<\/i>.&nbsp;<\/p>",
+          "text": "<p>Receive seasonal 25% off coupons, exclusive access to sales, insider updates, “just because” gifts, and more. This is how we <em>luxe<\/em>. <\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -850,28 +838,28 @@
             "type": "question",
             "settings": {
               "title": "Do I need an account to place an order?",
-              "text": "<p>Yes. In order to work with a Style Concierge and place orders, you will need to create an account.&nbsp;<\/p>"
+              "text": "<p>Yes. In order to work with a Style Concierge and place orders, you will need to create an account. <\/p>"
             }
           },
           "1600970772520": {
             "type": "question",
             "settings": {
               "title": "Can I purchase items without the assistance of my Style Concierge?",
-              "text": "<p>Absolutely! Add the items you love in your Dressing Room and proceed to Checkout as usual.&nbsp;<\/p>"
+              "text": "<p>Absolutely! Add the items you love in your Dressing Room and proceed to Checkout as usual. <\/p>"
             }
           },
           "1600970882067": {
             "type": "question",
             "settings": {
               "title": "Can I amend or cancel an item from my order?",
-              "text": "<p>Depending on the status of your order, it may be possible to cancel an item or change it to a different size. Please note, we&rsquo;re unable to combine or add an item to an existing order. If you need to make any amendments to your purchase, please&nbsp;contact us or your Style Concierge as soon as possible and we&rsquo;ll see what we can do.<\/p>"
+              "text": "<p>Depending on the status of your order, it may be possible to cancel an item or change it to a different size. Please note, we’re unable to combine or add an item to an existing order. If you need to make any amendments to your purchase, please contact us or your Style Concierge as soon as possible and we’ll see what we can do.<\/p>"
             }
           },
           "1600970935039": {
             "type": "question",
             "settings": {
               "title": "What is a pre-order?",
-              "text": "<p>Pre-order allows early access to the next season&rsquo;s most-coveted collections and securing the must-have items everyone is talking about before they sell out. Once your order is placed, we will deliver it to you as soon as it&rsquo;s available.<\/p>"
+              "text": "<p>Pre-order allows early access to the next season’s most-coveted collections and securing the must-have items everyone is talking about before they sell out. Once your order is placed, we will deliver it to you as soon as it’s available.<\/p>"
             }
           },
           "page-faq-template-0": {
@@ -915,7 +903,7 @@
             "type": "question",
             "settings": {
               "title": "What payment methods are accepted?",
-              "text": "<p>We accept Credit&nbsp;&amp; Debit cards (Visa, MasterCard, American Express, Discover) as well as PayPal&nbsp;&amp; Apple Pay.<\/p>"
+              "text": "<p>We accept Credit &amp; Debit cards (Visa, MasterCard, American Express, Discover) as well as PayPal &amp; Apple Pay.<\/p>"
             }
           }
         },
@@ -933,7 +921,7 @@
           "1600971269977"
         ],
         "settings": {
-          "page_title_enable": false,
+          "page_title_enable": true,
           "page_content_enable": true
         }
       },
@@ -953,7 +941,7 @@
         ],
         "settings": {
           "title": "AT YOUR SERVICE",
-          "text": "<p>At Tiare Rose, we combine luxury shopping with premier services for an all-inclusive experience that is absolutely complimentary. From curating a wardrobe using your favorite brands and offering up-to-date trend advice, to coordinating gifts and securing the most sought-after pieces, our dedicated Style Concierges work directly with you to make shopping how it should be - convenient, relaxing and fun!<\/p>",
+          "text": "<p>At Tiare Rose, we combine luxury shopping with premier services for an all-inclusive experience that is absolutely complimentary. From curating a wardrobe using your favorite brands and offering up-to-date trend advice, to coordinating gifts and securing the most sought-after pieces, our dedicated Style Concierges work directly with you to personalize your experience and provide the utmost convenience.<\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -1031,15 +1019,13 @@
               "title": "",
               "title_size": 80,
               "subheading": "",
-              "link": "",
               "link_text": "",
-              "link_2": "",
               "link_text_2": "",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-bottom horizontal-center",
-              "image": "shopify:\/\/shop_images\/Lookbook_image.jpg",
+              "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_2303632.jpg",
               "focal_point": "center center",
-              "section_height": "450px",
+              "section_height": "550px",
               "mobile_height": "auto"
             }
           },
@@ -1047,7 +1033,7 @@
             "type": "rich-text",
             "settings": {
               "title": "WHO WE ArE",
-              "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
+              "text": "<p><strong>Tiare:<\/strong>  \/tiːˈɑːreɪ\/ (in Tahiti) a gardenia of a variety bearing fragrant white flowers, symbolizing harmony.<\/p><p><\/p><p><strong>Our goal is to create harmony in the fashion industry by creating a platform where brands, sales professionals and their clients all win.<\/strong><\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
@@ -1056,37 +1042,37 @@
           "1602567782567": {
             "type": "text-and-image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Consignment_image.jpg",
-              "image_width": 500,
+              "image": "shopify:\/\/shop_images\/Lookbook_image.jpg",
+              "image_width": 300,
               "subtitle": "ULTIMATE",
-              "title": "CONVENIENCE",
-              "text": "<p>No more wasting time browsing through 700 styles. No more in-store sales pressure. Your personal Style Concierge specifically curates a wardrobe just for you from brands&nbsp;you love.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "",
+              "title": "PERSONALIZATION",
+              "text": "<p>Tiare Rose connects top luxury retail sales professionals and their client base with contemporary and designer brands they love for an exclusive, bespoke shopping experience. Style Concierges provide personal recommendations and in-person services that are impossible in e-commerce.<\/p>",
+              "button_label": "",
               "layout": "left"
             }
           },
           "1602567899417": {
             "type": "text-and-image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Stocksy_txpcace6b1dpxq200_Medium_2731466.jpg",
-              "image_width": 500,
-              "subtitle": "COMPREHENSIVE",
-              "title": "SErVICES",
-              "text": "<p>Your style is beyond just fashion. That&rsquo;s why we offer concierge add-on services including closet purging and organization, consignment assistance, and repairs\/ alterations, all at&nbsp;reasonable rates.<\/p>",
+              "image": "shopify:\/\/shop_images\/Consignment_image.jpg",
+              "image_width": 300,
+              "subtitle": "INCOMPARABLE",
+              "title": "CONVENIENCE",
+              "text": "<p>Your Style Concierge is a professional. They are constantly continuing their education in each of the brands we carry to provide you the right style with the perfect fit. They take the time and drama out of online shopping and keep you from having to step inside a department store.<\/p><p><\/p><p>Your style is beyond just fashion. That’s why we offer concierge add-on services including closet purging and organization, consignment assistance, and repairs\/ alterations, all at reasonable rates.<\/p>",
               "button_label": "",
-              "button_link": "",
               "layout": "right"
             }
           },
-          "1602568130294": {
-            "type": "rich-text",
+          "95e23530-282a-4e27-8ee3-487274eff82d": {
+            "type": "text-and-image",
             "settings": {
-              "title": "Create Your Account",
-              "text": "<p>THEN INDULGE IN THE EXPERIENCE&nbsp;<\/p>\n<p>Your Style Concierge will attend to you just as if you were shopping in-store. They will add items to your Dressing Room for you to review, assist with different sizes and colors, and advise you on the current trends.&nbsp; Return anything you don't love within 14 days of delivery with industry-leading free and easy returns.<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
+              "image": "shopify:\/\/shop_images\/Stocksy_txpcace6b1dpxq200_Medium_2731466.jpg",
+              "image_width": 300,
+              "subtitle": "SHARED",
+              "title": "VALUES",
+              "text": "<p>We value human capital and believe our Style Concierges should be compensated fairly for their expertise. Increased sustainability is the fashion industry is imperative.<\/p>",
+              "button_label": "",
+              "layout": "left"
             }
           }
         },
@@ -1095,7 +1081,7 @@
           "1602610107382",
           "1602567782567",
           "1602567899417",
-          "1602568130294"
+          "95e23530-282a-4e27-8ee3-487274eff82d"
         ],
         "settings": {
           "page_title_enable": false,

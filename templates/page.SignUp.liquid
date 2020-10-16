@@ -44,8 +44,57 @@ var script = document.createElement("script");
 };
 </script>
 <style>
-.signupbtn {
+#signupbtn {
     background: black;
+}
+  #signupbtn{
+        background: linear-gradient(to bottom, black, black);
+    border-color: black;
+    box-shadow: inset 0 1px 0 0 black, 0 1px 0 0 rgba(22, 29, 37, 0.05), 0 0 0 0 transparent;
+    color: white;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 0;
+    width: auto;
+    min-width: 90px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  #signupbtn:hover {
+    background: linear-gradient(to bottom, black, black);
+    border-color: black;
+    box-shadow: inset 0 1px 0 0 black, 0 1px 0 0 rgba(22, 29, 37, 0.05), 0 0 0 0 transparent;
+    color: white;
+    opacity: 0.5;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 0;
+    width: auto;
+    min-width: 90px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
   @media screen and (min-width: 0px) and (max-width: 321px)
   {
@@ -73,9 +122,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 75%;
 	}
     
 
@@ -107,9 +155,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 70%;
 	}
     
   }
@@ -140,9 +187,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 50%;
 	}
     
 
@@ -174,9 +220,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 40%;
 	}
     
 
@@ -208,9 +253,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 30%;
 	}
     
 
@@ -242,9 +286,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 20%;
 	}
     
 
@@ -276,9 +319,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 20%;
 	}
     
 
@@ -310,9 +352,8 @@ var script = document.createElement("script");
   margin:auto;
 	}
     
-    .signupbtn {
+    #signupbtn {
   float: center;
-  width: 20%;
 	}
     
 
@@ -333,22 +374,6 @@ hr {
 
 
 /*  signup buttons and add an equal width */
-
-
-.signupbtn {
-    background-color: black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-    opacity: 0.9;
-}
-
-.signupbtn:hover {
-    opacity:1;
-}
 
 /* Clear floats */
 .clearfix::after {
@@ -393,7 +418,7 @@ hr {
         $("#successmsg").show();
         $("#errorsmsg").hide();
       }
-	  $(".signupbtn").html("Save Details");
+	  $("#signupbtn").html("Save Details");
     }
     
 	var submiteDetails = function() {   
@@ -428,6 +453,10 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
       {
         IsTeamManager=true;
       }
+      var fileUpload = $('#file')[0].files[0];
+        var fileData = new FormData();
+        fileData.append('postedFile', fileUpload);
+    	
        if(document.getElementById("Username").value==""){
         $('#mandatoryError').show();
       }
@@ -493,7 +522,7 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
         $('#termserror').hide();
         $('#AnnualAmountError').hide();
         $('#ExperienceError').hide();
-        $(".signupbtn").html("Saving Details...");
+        $("#signupbtn").html("Saving Details...");
 		$("#errorsmsg").hide();
 		$("#successmsg").hide();
         $("#OtherSuccessmsg").hide();
@@ -518,7 +547,7 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
         var SecondBrand=document.getElementById("SecondBrand").value;
         var ThirdBrand=document.getElementById("ThirdBrand").value;
         var LikeTo=document.getElementById("LikeTo").value;
-        var FirstAdditionalService=FirstService="";
+        var FirstAdditionalService=FirstService;
         var SecondAdditionalService=SecondService;
         var ThirdAdditionalService=ThirdService;
         var AnyQuestion=document.getElementById("AnyQuestion").value;
@@ -567,12 +596,19 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
         var data = JSON.stringify(user);
         var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=21&data="+data;
         console.log(urlVal);
-        $.post(
-       		urlVal,
-		    function (data, status) {                 
-					   onSuccessSubmit(data, status);					                   
-					}
-			);
+$.ajax({
+            url: urlVal,
+            type: "POST",
+            contentType: false, // Not to set any content header  
+            processData: false, // Not to process data  
+            data: fileData,
+            success: function (data, status) {
+                onSuccessSubmit(data, status);
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        }); 
       }
 		
   	}
@@ -652,7 +688,7 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter State  <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter State  <span style="color:red;font-weight:bold;">* 2 character state code</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="State" placeholder="State" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -662,7 +698,7 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Country  <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Country  <span style="color:red;font-weight:bold;">* 2 character country code</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Country" placeholder="Country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -693,6 +729,21 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
             <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Annual Sales Amount For Last Year  <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="AnnualSaleAmount" placeholder="Annual Sales Amount" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+      </div>
+       </div>
+<div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">photo upload (Photos must be professional, appropriate and only include yourself).<span style="color:red;font-weight:bold;">*</span></label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="file" type="file" name="postedFile" placeholder="" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
              </div>
           </div>
@@ -884,15 +935,13 @@ var isChecked=$('#IsTermsAccepted').is(":checked");
           <h4 style="color: #f80000;display:none" id="AnnualAmountError">Please enter Annual Amount in number</h4>
 
     <div class="clearfix">
-      <button class="btn btn--full cart__checkout" onclick="submiteDetails()" style="border-radius: 24px;">Save Details</button>
+      <button type="button" id="signupbtn" class="Polaris-Button Polaris-Button--primary" onclick="submiteDetails()">Save Details</button>
     </div>
     
-  </div> 
     
     <h4 style="color: darkseagreen; display:none" id="successmsg">Thank you for applying. Look for an email response within 48 hours.</h4>
     <h4 style="color: darkseagreen; display:none" id="OtherSuccessmsg">Sales rep registered successfully.</h4>
     <h4 style="color: #f80000;display:none" id="errorsmsg">Error while saving the details. This user email may already have an account on the store.</h4>
     <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User is already exist as a rep.</h4>
   </div>
-    
 </body>

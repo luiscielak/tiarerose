@@ -8,6 +8,7 @@ Clientproduct=[];
   ClientInvoiceselectedProduct=[];
   InvoiceOrders=[]; 
    var CommissionanddiscountOn="";
+           var commissionAr=0;
   
   var ClientInvoiceCartData = function(CartData)
        {
@@ -1160,6 +1161,7 @@ function showTeamDetails(thisrep)
         var companystate=document.getElementById("cust_company_state").value;
         var companycountry=document.getElementById("cust_company_country").value;
         var companypincode=document.getElementById("cust_company_pincode").value;
+		  		  				var business_name=document.getElementById("cust_company_name").value;
   		
 		var salesrepid, salesrepname;
 
@@ -1547,8 +1549,10 @@ var BacktoYourClientPage = function(){
           ThirdService=document.getElementById("ThirdAdditionalService").value;
         }
    
-      
-       if((document.getElementById("Username").value=="")&&(document.getElementById("Lname").value=="")&&(document.getElementById("mailid").value=="")&&(document.getElementById("phone").value=="")&&(document.getElementById("City").value=="")&&(document.getElementById("State").value=="")&&(document.getElementById("Country").value=="")&&(document.getElementById("PaypallEmail").value=="")&&(document.getElementById("AnnualSaleAmount").value=="")&&(document.getElementById("InstagramHandle").value=="")&&(document.getElementById("NumberOfYearsForExperience").value=="")&&(document.getElementById("ExperienceAs").value=="")&&(document.getElementById("ExperienceAt").value=="")&&(document.getElementById("StyleMotto").value=="")&&(document.getElementById("FirstBrand").value=="")&&(document.getElementById("SecondBrand").value=="")&&(document.getElementById("ThirdBrand").value=="")&&(document.getElementById("LikeTo").value=="")&&(document.getElementById("AnyQuestion").value=="")&&((!isFirstServiceChecked)&&(!isSecondServiceChecked)&&(!isThirdServiceChecked))){
+      var fileUpload = $('#file')[0].files[0];
+        var fileData = new FormData();
+        fileData.append('postedFile', fileUpload);
+       if((document.getElementById("Username").value=="")&&(document.getElementById("Lname").value=="")&&(document.getElementById("mailid").value=="")&&(document.getElementById("phone").value=="")&&(document.getElementById("City").value=="")&&(document.getElementById("State").value=="")&&(document.getElementById("Country").value=="")&&(document.getElementById("PaypallEmail").value=="")&&(document.getElementById("AnnualSaleAmount").value=="")&&(document.getElementById("InstagramInHandle").value=="")&&(document.getElementById("NumberOfYearsForExperience").value=="")&&(document.getElementById("ExperienceAs").value=="")&&(document.getElementById("ExperienceAt").value=="")&&(document.getElementById("StyleMotto").value=="")&&(document.getElementById("FirstBrand").value=="")&&(document.getElementById("SecondBrand").value=="")&&(document.getElementById("ThirdBrand").value=="")&&(document.getElementById("LikeTo").value=="")&&(document.getElementById("AnyQuestion").value=="")&&((!isFirstServiceChecked)&&(!isSecondServiceChecked)&&(!isThirdServiceChecked))){
         $('#mandatoryError').show();
       }
       else if(isNaN($('#NumberOfYearsForExperience').val())){
@@ -1562,7 +1566,7 @@ var BacktoYourClientPage = function(){
         $('#mandatoryError').hide();
         $('#AnnualAmountError').hide();
         $('#ExperienceError').hide();
-        $("#UpdateBio_btn").html("Saving Details...");
+        $("#UpdateBio_btn").html("Updating...");
 		$("#Bioerrorsmsg").hide();
 		$("#Biosuccessmsg").hide();
      
@@ -1575,7 +1579,7 @@ var BacktoYourClientPage = function(){
         var Country=document.getElementById("Country").value;
         var PaypallEmail=document.getElementById("PaypallEmail").value;
         var AnnualSaleAmount=document.getElementById("AnnualSaleAmount").value;
-        var InstagramHandle=document.getElementById("InstagramHandle").value;
+        var InstagramInHandle=document.getElementById("InstagramInHandle").value;
         var LinkedInHandle=document.getElementById("LinkedInHandle").value;
         var NumberOfYearsForExperience=document.getElementById("NumberOfYearsForExperience").value;
         var ExperienceAs=document.getElementById("ExperienceAs").value;
@@ -1585,7 +1589,7 @@ var BacktoYourClientPage = function(){
         var SecondBrand=document.getElementById("SecondBrand").value;
         var ThirdBrand=document.getElementById("ThirdBrand").value;
         var LikeTo=document.getElementById("LikeTo").value;
-        var FirstAdditionalService=FirstService="";
+        var FirstAdditionalService=FirstService;
         var SecondAdditionalService=SecondService;
         var ThirdAdditionalService=ThirdService;
         var AnyQuestion=document.getElementById("AnyQuestion").value;
@@ -1612,7 +1616,7 @@ var BacktoYourClientPage = function(){
           "Country":Country,
           "PaypallEmail":PaypallEmail,
           "AnnualSaleAmount":AnnualSaleAmount,
-          "InstagramHandle":InstagramHandle,
+          "InstagramInHandle":InstagramInHandle,
           "LinkedInHandle":LinkedInHandle,
           "NumberOfYearsForExperience":NumberOfYearsForExperience,
           "ExperienceAs":ExperienceAs,
@@ -1634,12 +1638,20 @@ var BacktoYourClientPage = function(){
         var data = JSON.stringify(user);
         var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=21&data="+data;
         console.log(urlVal);
-        $.post(
-       		urlVal,
-		    function (data, status) {                 
-					   onSuccessBioSubmit(data, status);					                   
-					}
-			);
+        $.ajax({
+            url: urlVal,
+            type: "POST",
+            contentType: false, // Not to set any content header  
+            processData: false, // Not to process data  
+            data: fileData,
+            success: function (data, status) {
+                onSuccessBioSubmit(data, status);
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        }); 
+
       }
 		
   	}
@@ -1655,6 +1667,7 @@ var BacktoYourClientPage = function(){
         $("#Biosuccessmsg").show();
         $("#Bioerrorsmsg").hide();
       }
-	  $("#UpdateBio_btn").html("Save Details");
+    location.reload();
+	  $("#UpdateBio_btn").html("Update");
   }
 </script>

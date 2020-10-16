@@ -304,8 +304,6 @@ var script = document.createElement("script");
     border: 1px solid transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
-    color: #ffffff;
-    color: var(--colorBtnPrimaryText);
 }
   .Polaris-Button
   {
@@ -335,8 +333,6 @@ var script = document.createElement("script");
     border: 1px solid transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
-    color: #ffffff;
-    color: var(--colorBtnPrimaryText);
 }
 
 /* Outer */
@@ -534,11 +530,9 @@ var script = document.createElement("script");
    	
    	<br>
     <div style = "margin-left:20px;">
-{% for article in blogs.what-we-love.articles limit: 1 %}
-      <h2>Latest News: <u>{{ article.title | link_to: article.url }}</u></h2>
-    {% endfor %}
+
  
-       {% for article in blogs.sales-professionals.articles limit: 1 %}
+       {% for article in blogs.news.articles limit: 1 %}
       <h2>Latest News: <u>{{ article.title | link_to: article.url }}</u></h2>
     {% endfor %}    </div>
         
@@ -1430,11 +1424,7 @@ var script = document.createElement("script");
          </div>
       </h2>
     </div>
-    <div class="Polaris-Card__Section"> 
-    
-     <!-- Page Content -->
-    <div class="page_content" id="salesrepbio">  
-      {% assign salesrepInfo = shop.metafields.SalesTeamApp %}
+            {% assign salesrepInfo = shop.metafields.SalesTeamApp %}
       {% assign key = customer.id| downcase %}
       
       {% assign FirstName = salesrepInfo[key].FirstName %}
@@ -1446,7 +1436,7 @@ var script = document.createElement("script");
       {% assign Country = salesrepInfo[key].Country %}
       {% assign PaypallEmail = salesrepInfo[key].PaypallEmail %}
       {% assign AnnualSaleAmount = salesrepInfo[key].AnnualSaleAmount %}
-      {% assign InstagramHandle = salesrepInfo[key].InstagramHandle %}
+      {% assign InstagramInHandle = salesrepInfo[key].InstagramHandle %}
       {% assign LinkedInHandle = salesrepInfo[key].LinkedInHandle %}
       {% assign NumberOfYearsForExperience = salesrepInfo[key].NumberOfYearsForExperience %}
       {% assign ExperienceAs = salesrepInfo[key].ExperienceAs %}
@@ -1460,6 +1450,32 @@ var script = document.createElement("script");
       {% assign SecondAdditionalService = salesrepInfo[key].SecondAdditionalService %}
       {% assign ThirdAdditionalService = salesrepInfo[key].ThirdAdditionalService %}
       {% assign AnyQuestion = salesrepInfo[key].AnyQuestion %}
+      {% assign ProfilePhoto = salesrepInfo[key].ProfileImagePath %}
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                   {%if ProfilePhoto!=""%}
+                      <image src="{{ProfilePhoto}}" alt="Image" style="border:2px solid;width: 100px;"></image><br>
+                      <p>Update Profile Photo</p>
+                    {%else%}
+                       <p>Upload Profile Photo</p>
+       
+                     {%endif%}   
+                   <span><input id="file" type="file" name="postedFile" placeholder="" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value=""></span>
+
+                  </div>
+                </div>
+         </div>
+      </h2>
+    </div>
+
+
+    <div class="Polaris-Card__Section"> 
+    
+     <!-- Page Content -->
+    <div class="page_content" id="salesrepbio">  
       
     <div class="Polaris-Card__Section">       
     <div role="group" class="Polaris-FormLayout--condensed">
@@ -1582,7 +1598,7 @@ var script = document.createElement("script");
             <div class="Polaris-Labelled__LabelWrapper">
             <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Instagram Handle</label></div>
             </div>
-           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="InstagramHandle" placeholder="{{InstagramHandle}}" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="InstagramInHandle" placeholder="{{InstagramInHandle}}" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
              </div>
           </div>
