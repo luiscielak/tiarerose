@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
-
 <script>
 window.onload = function () {
     CheckSignUpPageScript();
 }
 var CheckSignUpPageScript = setInterval(function () {
+  
+ 
     if (window.jQuery) {
         clearInterval(CheckSignUpPageScript);
         if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7)) {
@@ -386,6 +387,60 @@ hr {
 </style>
 
 <script>
+   var getStates = function (){
+	var states = '<option value="">-- SELECT --</option>'+
+    '<option value="Alabama">Alabama</option>'+
+	'<option value="Alaska">Alaska</option>'+
+	'<option value="Arizona">Arizona</option>'+
+	'<option value="Arkansas">Arkansas</option>'+
+	'<option value="California">California</option>'+
+	'<option value="Colorado">Colorado</option>'+
+	'<option value="Connecticut">Connecticut</option>'+
+	'<option value="Delaware">Delaware</option>'+
+	'<option value="Florida">Florida</option>'+
+	'<option value="Georgia">Georgia</option>'+
+	'<option value="Hawaii">Hawaii</option>'+
+	'<option value="Idaho">Idaho</option>'+
+	'<option value="Illinois">Illinois</option>'+
+	'<option value="Indiana">Indiana</option>'+
+	'<option value="Iowa">Iowa</option>'+
+	'<option value="Kansas">Kansas</option>'+
+	'<option value="Kentucky">Kentucky</option>'+
+	'<option value="Louisiana">Louisiana</option>'+
+	'<option value="Maine">Maine</option>'+
+	'<option value="Maryland">Maryland</option>'+
+	'<option value="Massachusetts">Massachusetts</option>'+
+	'<option value="Michigan">Michigan</option>'+
+	'<option value="Minnesota">Minnesota</option>'+
+	'<option value="Mississippi">Mississippi</option>'+
+	'<option value="Missouri">Missouri</option>'+
+	'<option value="Montana">Montana</option>'+
+	'<option value="Nebraska">Nebraska</option>'+
+	'<option value="Nevada">Nevada</option>'+
+	'<option value="New Hampshire">New Hampshire</option>'+
+	'<option value="New Jersey">New Jersey</option>'+
+	'<option value="New Mexico">New Mexico</option>'+
+	'<option value="New York">New York</option>'+
+	'<option value="North Carolina">North Carolina</option>'+
+	'<option value="North Dakota">North Dakota</option>'+
+	'<option value="Ohio">Ohio</option>'+
+	'<option value="Oklahoma">Oklahoma</option>'+
+        '<option value="Oregon">Oregon</option>'+
+        '<option value="Pennsylvania">Pennsylvania</option>'+
+        '<option value="Rhode Island">Rhode Island</option>'+
+        '<option value="South Carolina">South Carolina</option>'+
+        '<option value="South Dakota">South Dakota</option>'+
+        '<option value="Tennessee">Tennessee</option>'+
+        '<option value="Texas">Texas</option>'+
+        '<option value="Utah">Utah</option>'+
+        '<option value="Vermont">Vermont</option>'+
+        '<option value="Virginia">Virginia</option>'+
+        '<option value="Washington">Washington</option>'+
+        '<option value="West Virginia">West Virginia</option>'+
+        '<option value="Wisconsin">Wisconsin</option>'+
+        '<option value="Wyoming">Wyoming</option>';
+  	return states;
+   }
   var onSuccessGetData = function(response){ 		
     	if(response.select.referralpage && response.IsTeamManager)
 		{
@@ -395,13 +450,15 @@ hr {
   
   
   function GetTeamManagerInfo($){
-  
+    
     var urlVal= window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName=null&data=4";
 	
       $.get(
        	   urlVal,
            function (data, status) {
                  onSuccessGetData(data);
+               states=getStates();
+$('#State').html(states);
         	}
        );        
   };
@@ -618,7 +675,7 @@ $.ajax({
 <body>
 
   <div class="container">
-    <h1 style="margin-top: 65px;">Style Concierge Application</h1>
+    <h3>Style Concierge Application</h3>
     <p>Please create an account here to start the application process. After submitting, check your email to continue.</p>
     <hr>
 	
@@ -628,7 +685,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter First Name <span style="color:red;font-weight:bold;">*</span> </label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">First Name <span style="color:red;font-weight:bold;">*</span> </label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue">
              <input id="Username" placeholder="First Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
@@ -639,7 +696,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Last Name  <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Last Name  <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Lname" placeholder="Last Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -653,7 +710,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Email<span style="color:red;font-weight:bold;">*</span> </label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Email<span style="color:red;font-weight:bold;">*</span> </label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue">
              <input id="mailid" placeholder="Email" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
@@ -664,7 +721,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Phone Number  <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Phone Number  <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="phone" placeholder="Phone Number" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -678,7 +735,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter City <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">City <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="City" placeholder="City" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -687,20 +744,20 @@ $.ajax({
         </div>
         <div class="Polaris-FormLayout__Item">
           <div class="">
-            <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter State  <span style="color:red;font-weight:bold;">* 2 character state code</span></label></div>
-            </div>
-           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="State" placeholder="State" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
-            <div class="Polaris-TextField__Backdrop"></div>
-             </div>
+            <div class="grid-item field field--required field--third field--show-floating-label" data-address-field="zip" data-autocomplete-field-container="true">
+                            <div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_address_state">State<span style="color:red;font-weight:bold;">*</span></label>
+                              <select name="state" id="State" class="form-control" style="width: 190px;">
+                              </select>
+                            </div>
+                        </div>
           </div>
         </div>
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Country  <span style="color:red;font-weight:bold;">* 2 character country code</span></label></div>
+              <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Country <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
-           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Country" placeholder="Country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Country" placeholder="Country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="US" readonly>
             <div class="Polaris-TextField__Backdrop"></div>
              </div>
           </div>
@@ -756,7 +813,7 @@ $.ajax({
         <div class="Polaris-FormLayout__Item">
           <div class="">
             <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Instagram Handle <span style="color:red;font-weight:bold;">*</span></label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Instagram Handle <span style="color:red;font-weight:bold;">*</span></label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="InstagramInHandle" placeholder="Instagram Handle" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -766,7 +823,7 @@ $.ajax({
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter LinkedIn Handle </label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">LinkedIn Handle </label></div>
             </div>
            <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="LinkedInHandle" placeholder="LinkedIn Handle" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
@@ -942,6 +999,6 @@ $.ajax({
     <h4 style="color: darkseagreen; display:none" id="successmsg">Thank you for applying. Look for an email response within 48 hours.</h4>
     <h4 style="color: darkseagreen; display:none" id="OtherSuccessmsg">Sales rep registered successfully.</h4>
     <h4 style="color: #f80000;display:none" id="errorsmsg">Error while saving the details. This user email may already have an account on the store.</h4>
-    <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User is already exist as a rep.</h4>
+    <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User already exists as a rep.</h4>
   </div>
 </body>

@@ -1456,13 +1456,15 @@ var script = document.createElement("script");
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
+                    <div style="width: 200px;height: 250px;">
                    {%if ProfilePhoto!=""%}
-                      <image src="{{ProfilePhoto}}" alt="Image" style="border:2px solid;width: 100px;"></image><br>
+                      <image src="{{ProfilePhoto}}" alt="Image" style="height: 200px;"></image><br>
                       <p>Update Profile Photo</p>
                     {%else%}
                        <p>Upload Profile Photo</p>
        
-                     {%endif%}   
+                     {%endif%}  
+                    </div>
                    <span><input id="file" type="file" name="postedFile" placeholder="" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value=""></span>
 
                   </div>

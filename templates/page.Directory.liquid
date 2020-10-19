@@ -207,51 +207,59 @@ input, textarea {
                             
                             
                           </div>
-                          <div><p ><b>{{ rep[1].StyleMotto }}</b></p></div>
+                            <div style="width: 200px;word-break: break-all;"><p><h5>{{ rep[1].StyleMotto }}</h5></p></div>
                           </div>
                           <div style="text-align: justify;padding-right:3em;margin-left: 38%;">
                             <p class="Polaris-Card__Header" style="margin-left: -21px;">
-                              <b style="font-size: 20px;text-transform: uppercase;">{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</b><br>
-                            <b style="font-size: 15px;">{{ rep[1].City }}, {{ rep[1].State }}</b><br>
+                              <h3>{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</h3><br>
+                            <h4>{{ rep[1].City }}, {{ rep[1].State }}<br>
                               {%if rep[1].InstagramHandle != ""%}
-                              <b style="font-size: 15px;"><img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <u><a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a></u>
-                                </b><br>
+                              <img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <u><a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a></u>
+                                <br>
                               {%endif%}
                               {%if rep[1].LinkedInHandle != ""%}
-                              <b style="font-size: 15px;"><img src="{{'LinkedInHandle.png' | asset_img_url : '17x17'}}"> <u><a href="https://www.linkedin.com/{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></u></b>
+                              <img src="{{'LinkedInHandle.png' | asset_img_url : '17x17'}}"> <u><a href="https://www.linkedin.com/in/{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></u></h4>
                               {%endif%}
                           </p>
                             <p>
-                            {{ rep[1].NumberOfYearsForExperience }} years experience as a {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>
+                            {{ rep[1].NumberOfYearsForExperience }} years experience as {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>
                               Favorite brands:
-                              {%if rep[1].FirstBrand != ""%}
-                               {{ rep[1].FirstBrand }}
-                              	{%if rep[1].SecondBrand != "" or rep[1].ThirdBrand != "" %}
-                              	,
-                              	{%endif%}
-                              {%endif%}
-                              {%if rep[1].SecondBrand != ""%}
-                                {{ rep[1].SecondBrand }}
-                              	{%if rep[1].ThirdBrand != "" %}
-                              	,
-                              	{%endif%}
-                              {%endif%}
-                              {%if rep[1].ThirdBrand != ""%}
-                               {{ rep[1].ThirdBrand}}
+                              {%if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
+                               {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand}}
+                              
+                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
+                              {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}
+                              
+                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
+                              {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand }}
+                              
+                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
+                              {{ rep[1].FirstBrand }}, {{ rep[1].ThirdBrand }}
+                              
+                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand == ""%}
+                              {{ rep[1].FirstBrand }}
+                              
+                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
+                              {{ rep[1].SecondBrand }}
+                              
+                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
+                              {{ rep[1].ThirdBrand }}
+                              
+                              	
                               {%endif%}
                             <br>
-                              When I’m not curating wardrobes, I like to {{ rep[1].LikeTo }}.<br>
+                              When I’m not curating wardrobes, I like to {{ rep[1].LikeTo }}<br>
                             Add-on services:
                               {%if rep[1].FirstAdditionalService != ""%}
                                 {{ rep[1].FirstAdditionalService }}
                               	{%if rep[1].SecondAdditionalService != "" or rep[1].ThirdAdditionalService != "" %}
-                              	,
+                              	|
                               	{%endif%}
                               {%endif%}
                               {%if rep[1].SecondAdditionalService != ""%}
                                 {{ rep[1].SecondAdditionalService }}
                               	{%if rep[1].ThirdAdditionalService != "" %}
-                              	,
+                              	|
                               	{%endif%}
                                {%endif%}
                               {%if rep[1].ThirdAdditionalService != ""%}

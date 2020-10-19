@@ -120,7 +120,7 @@
     "predictive_image_size": "square",
     "show_breadcrumbs": false,
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/TiareRose_Logo_Color_a13186bf-6b43-4d27-96f2-f172f50385e7.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -128,10 +128,10 @@
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#f5f5f5",
-    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-    "checkout_accent_color": "#e6c603",
-    "checkout_button_color": "#ca9fb2",
+    "checkout_heading_font": "Raleway",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#e6e6e6",
+    "checkout_button_color": "#000000",
     "checkout_error_color": "#ff6d6d",
     "breadcrumb": false,
     "product_fixed_image_height": false,
@@ -416,10 +416,62 @@
               "section_height": "450px",
               "mobile_height": "auto"
             }
+          },
+          "082b95dc-ea4e-409a-9060-6da1187bb449": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Closet.jpg",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "",
+              "layout": "left"
+            }
+          },
+          "2a1cf8ba-14eb-484f-b9b9-7d04c0ec93a9": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Consignment_image_copy.jpg",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "",
+              "layout": "right"
+            }
+          },
+          "92e05879-7402-4386-9c7f-88d6fa46f40a": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Leather_repair.jpg",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "",
+              "layout": "left"
+            }
+          },
+          "2a6bf955-eaf4-47a4-a443-2103fe779b07": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Picture.png",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "",
+              "layout": "right"
+            }
           }
         },
         "block_order": [
-          "1600971759427"
+          "1600971759427",
+          "082b95dc-ea4e-409a-9060-6da1187bb449",
+          "2a1cf8ba-14eb-484f-b9b9-7d04c0ec93a9",
+          "92e05879-7402-4386-9c7f-88d6fa46f40a",
+          "2a6bf955-eaf4-47a4-a443-2103fe779b07"
         ],
         "settings": {
           "page_title_enable": true,
@@ -456,7 +508,7 @@
             "settings": {
               "title": "Color",
               "tag_list": "Beige\nBlack\nBlue\nBrown\nClear\nGreen\nGrey\nOrange\nPink\nPurple\nRed\nWhite\nYellow",
-              "collapsed": true
+              "collapsed": false
             }
           },
           "1602544575228": {
@@ -763,6 +815,23 @@
       "page-faq-template": {
         "type": "page-faq-template",
         "blocks": {
+          "45b0cb0b-5379-44d4-ba92-ab5b77ceba9a": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_3322168.jpg",
+              "focal_point": "center center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          },
           "1600970695756": {
             "type": "rich-text",
             "settings": {
@@ -833,7 +902,7 @@
             "type": "question",
             "settings": {
               "title": "How do I ship my order back to you?",
-              "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+              "text": "<p>We use Returnly for industry leading EASY returns.<\/p>"
             }
           },
           "1600971269977": {
@@ -845,6 +914,7 @@
           }
         },
         "block_order": [
+          "45b0cb0b-5379-44d4-ba92-ab5b77ceba9a",
           "1600970695756",
           "1600970719085",
           "1600970772520",
@@ -859,7 +929,7 @@
         ],
         "settings": {
           "page_title_enable": true,
-          "page_content_enable": true
+          "page_content_enable": false
         }
       },
       "1601170446059": {
@@ -868,8 +938,8 @@
           "1601955043815": {
             "type": "button",
             "settings": {
-              "link": "shopify:\/\/pages\/about-us",
-              "linktext": "How it works"
+              "link": "shopify:\/\/pages\/about",
+              "linktext": "LEARN MORE"
             }
           }
         },
@@ -960,8 +1030,8 @@
               "link_text_2": "",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-bottom horizontal-center",
-              "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_2303632.jpg",
-              "focal_point": "center center",
+              "image": "shopify:\/\/shop_images\/Picture4.png",
+              "focal_point": "top center",
               "section_height": "550px",
               "mobile_height": "auto"
             }
@@ -1033,7 +1103,7 @@
             "settings": {
               "parallax": false,
               "title": "",
-              "title_size": 80,
+              "title_size": 74,
               "subheading": "",
               "link_text": "",
               "link_text_2": "",
@@ -1048,6 +1118,242 @@
         },
         "block_order": [
           "5f8b2c7e-860d-4f48-8c46-223ba5c51b9c"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
+        }
+      },
+      "page-faq-sc-template": {
+        "type": "page-faq-sc-template",
+        "blocks": {
+          "75570fa4-c4d7-443f-87e4-95bffbc992a2": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Style_Concierges_450h.jpg",
+              "focal_point": "center center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          },
+          "page-faq-sc-template-0": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Earn Money",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "page-faq-sc-template-1": {
+            "type": "question",
+            "settings": {
+              "title": "Higher Commissions",
+              "text": "<p>Competitive commission rates that are based on your annual sales:<br\/>18%  $0-$100k<br\/>20%  $100K-$500k<br\/>25%  $500K+<\/p>"
+            }
+          },
+          "page-faq-sc-template-2": {
+            "type": "question",
+            "settings": {
+              "title": "Extra income",
+              "text": "<p>Earn additional income at your hourly rate with Add-on Services.<\/p>"
+            }
+          },
+          "acf6c572-40ae-4318-b389-5cba72141b4e": {
+            "type": "question",
+            "settings": {
+              "title": "Referral bonus",
+              "text": "<p>Get $250 cash when an approved new Style Concierge you refer completes $2500 in net sales within 45 days of approval.<\/p>"
+            }
+          },
+          "page-faq-sc-template-3": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Build Your Business",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "page-faq-sc-template-4": {
+            "type": "question",
+            "settings": {
+              "title": "Marketing",
+              "text": "<p>Benefit from our advertising tactics which directly markets you and your services.<\/p>"
+            }
+          },
+          "281b679d-4914-49ea-b8a1-2102167044be": {
+            "type": "question",
+            "settings": {
+              "title": "Acquire new clients",
+              "text": "<p>   Benefit from our advertising tactics which directly markets you and your services.<\/p>"
+            }
+          },
+          "918d39b4-df1c-42ef-9969-3487fc567810": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Benefits",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "64017340-94b5-41a9-9614-49f63011d15a": {
+            "type": "question",
+            "settings": {
+              "title": "Increased flexibility",
+              "text": "<p>Work for yourself and choose what hours best fit with your schedule.<\/p>"
+            }
+          },
+          "00586d94-7695-41a8-962a-0e7939ea1baa": {
+            "type": "question",
+            "settings": {
+              "title": "Access to brands",
+              "text": "<p>Gain access to brands possibly not offered at your current or former store.<\/p>"
+            }
+          },
+          "c6df258f-b06d-4ef6-8738-fc0f1c0b4fd5": {
+            "type": "question",
+            "settings": {
+              "title": "Personal purchases",
+              "text": "<p>Apply your commission level as your minimum personal discount and also get additional amounts off during certain specials.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "75570fa4-c4d7-443f-87e4-95bffbc992a2",
+          "page-faq-sc-template-0",
+          "page-faq-sc-template-1",
+          "page-faq-sc-template-2",
+          "acf6c572-40ae-4318-b389-5cba72141b4e",
+          "page-faq-sc-template-3",
+          "page-faq-sc-template-4",
+          "281b679d-4914-49ea-b8a1-2102167044be",
+          "918d39b4-df1c-42ef-9969-3487fc567810",
+          "64017340-94b5-41a9-9614-49f63011d15a",
+          "00586d94-7695-41a8-962a-0e7939ea1baa",
+          "c6df258f-b06d-4ef6-8738-fc0f1c0b4fd5"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": false
+        }
+      },
+      "page-hero-loyalty-template": {
+        "type": "page-hero-loyalty-template",
+        "blocks": {
+          "b41fac6a-e68b-460c-bc90-4ff3476d9107": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/TrLoyalty_Header.jpg",
+              "focal_point": "bottom center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "b41fac6a-e68b-460c-bc90-4ff3476d9107"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
+        }
+      },
+      "page-hero-sustain-template": {
+        "type": "page-hero-sustain-template",
+        "blocks": {
+          "14bc3c67-58ce-47f2-8fd6-677957e1d0c1": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Sustainability_image.jpg",
+              "focal_point": "bottom center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "14bc3c67-58ce-47f2-8fd6-677957e1d0c1"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
+        }
+      },
+      "page-hero-shipping-template": {
+        "type": "page-hero-shipping-template",
+        "blocks": {
+          "375e4d58-0a54-462e-abb5-9eb71b8c4496": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_2303632.jpg",
+              "focal_point": "bottom center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "375e4d58-0a54-462e-abb5-9eb71b8c4496"
+        ],
+        "settings": {
+          "page_title_enable": true,
+          "page_content_enable": true
+        }
+      },
+      "page-hero-brands-template": {
+        "type": "page-hero-brands-template",
+        "blocks": {
+          "15402ad5-ef87-496b-b1f6-6d41c4cfe95c": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "",
+              "title_size": 80,
+              "subheading": "",
+              "link_text": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Art_Deco_shopping.jpg",
+              "focal_point": "center center",
+              "section_height": "450px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "15402ad5-ef87-496b-b1f6-6d41c4cfe95c"
         ],
         "settings": {
           "page_title_enable": true,
