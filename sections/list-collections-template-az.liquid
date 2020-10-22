@@ -32,11 +32,11 @@
     </header>
   {% endif %}
 
- 
-  
-  
+
+
+
   {% comment %}<div class="grid">
-  
+
   <ul class="azmenu">
     <li class="azmenu__initial azmenu__initial--character">
       <a href="##" class="azmenu__link">#</a>
@@ -122,16 +122,16 @@
   </ul>
 
 </div>{% endcomment %}
-  
+
   {% assign alphabet = '' %}
-  
+
   {% capture collection_listing %}
     <!-- This code creates the list of brands -->
     <div class ="hoopers-a-z-brands">
       {% assign current = "" %}
       {% assign previous = "" %}
-      
-      
+
+
       {% comment %}
       {% if section.settings.display_type == 'all' %}
       	{% assign collections = collections %}
@@ -139,7 +139,7 @@
       	{% assign collections = section.blocks %}
       {% endif %}
       {% endcomment %}
-      
+
       {% assign selected_col_array = "" %}
       {% if section.settings.display_type == 'selected' %}
       	{% for block in section.blocks %}
@@ -147,14 +147,14 @@
       	{% endfor %}
       {% else %}
       {% endif %}
-      
-     
+
+
       {% for collection in collections %}
-      
+
 	  {% if section.settings.display_type == 'selected' %}
-      
+
       	{% if selected_col_array contains collection.handle %}
-      
+
       	{% assign first_letter = collection.title | strip_html | upcase | truncate: 1, '' %}
         {% unless first_letter == current %}
         {% if current != "" %}
@@ -169,7 +169,7 @@
           <ul>
             {% endunless %}
 
-            <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>  
+            <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>
             {% assign current = first_letter %}
 
             {% assign previous = first_letter %}
@@ -189,20 +189,20 @@
             <ul>
               {% endunless %}
 
-              <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>  
+              <li class="collection-order"><a href="{{ collection.url }}" title="Discover {{ collection.title }} at Hoopers">{{ collection.title }}</a></li>
               {% assign current = first_letter %}
 
               {% assign previous = first_letter %}
       {% endif %}
-      
-      
+
+
       {% endfor %}
-      </div> 
+      </div>
   {% endcapture %}
-  
+
 
         {% assign abc = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z" | split: "," %}
-        
+
         {% assign alphabet_array = alphabet | splut: ',' %}
         <div class="grid grid-alpha">
           <ul class="azmenu">
@@ -213,20 +213,20 @@
             {% endfor %}
           </ul>
         </div>
-        
+
    	{{ collection_listing }}
-        
-        
 
 
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
 
   {% comment %}
   {%- assign blocks = section.blocks | sort: 'collection.all_products_count' -%}
@@ -275,13 +275,13 @@
 
 <style>
   .section-header__title {
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
   .section-header {
     margin-bottom: 10px;
   }
   .page-content, .shopify-policy__container {
-    padding-top: 25px; 
+    padding-top: 25px;
   }
   .grid-alpha {
     position: sticky;
@@ -333,9 +333,9 @@
     transform: translateX(-50%) translateY(-50%);
     opacity: 0.2;
   }
-  
+
   @media (max-width: 800px) {
-   
+
     .grid-alpha .azmenu__link {
       display: block;
       padding: 10px 15px;
@@ -474,10 +474,10 @@
   }
 {% endschema %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   $("a").on('click', function(event) {
-    
+
     $('.alphaToggle').removeClass('selectedAlpha');
     $(this).addClass('selectedAlpha');
 
