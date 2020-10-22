@@ -1064,7 +1064,10 @@ var SaveBio = function()
                              onSuccess(data, status);							
                       }
                     );
-    }            
+    }  
+function bioAffiliateLink(event) {
+  	$('#aff_link').text(window.location.protocol +"//"+ window.location.hostname + "/" + event.target.value);
+ };
   
 </script>
 

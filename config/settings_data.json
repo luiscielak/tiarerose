@@ -105,7 +105,7 @@
     "social_snapchat_link": "",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
-    "social_linkedin_link": "https:\/\/www.linkedin.com\/in\/tiare-rose",
+    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/69079760\/",
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "share_facebook": true,
@@ -417,14 +417,24 @@
               "mobile_height": "auto"
             }
           },
+          "e9645675-9393-4917-914f-3472a9f63b1a": {
+            "type": "rich-text",
+            "settings": {
+              "title": "ADD-oN SErVICES",
+              "text": "<p>We aim to provide the ultimate style experience which is why we extend our services from our website to your closet.<\/p><p><em>To book a service, please consult your Style Concierge. Not all Style Concierges offer all or any services as is it up to their discretion. You can view general rates on their profiles but recommend confirming prior to hiring for an add-on service.<\/em><\/p>",
+              "align_text": "center",
+              "narrow_column": true,
+              "enlarge_text": true
+            }
+          },
           "082b95dc-ea4e-409a-9060-6da1187bb449": {
             "type": "text-and-image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Closet.jpg",
               "image_width": 500,
-              "subtitle": "Improved",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "subtitle": "CLOSET",
+              "title": "OrGANIZATION",
+              "text": "<p>Declutter your closet to make your closet functional, yet contemporary, for your everyday needs. <\/p><p>This service includes: emptying then sorting for keep, donate, disposal and consign; identifying repairs, alterations and dry cleaning; organizing wardrobe by season, style and color; maximizing closet space; creating an inventory of replacement items.<\/p><p><\/p>",
               "button_label": "",
               "layout": "left"
             }
@@ -434,9 +444,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Consignment_image_copy.jpg",
               "image_width": 500,
-              "subtitle": "Improved",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "subtitle": "CONSIGNMENT",
+              "title": "LIASON",
+              "text": "<p>We make it easy to turn your closet into cash with our consignment valet service. Our Style Concierges manage this time-consuming and strenuous task by handling the hauling, the negotiations and the transaction.<\/p><p><\/p>",
               "button_label": "",
               "layout": "right"
             }
@@ -446,9 +456,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Leather_repair.jpg",
               "image_width": 500,
-              "subtitle": "Improved",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "subtitle": "ALTERATIONS \/ REPAIRS",
+              "title": "VALET",
+              "text": "<p>Put your wardrobe maintenance on autopilot with our repairs, alterations and dry cleaning valet service. Simply label your items needs and preferred service location, and your Style Concierge will pick it up from you and drop it off directly with the business. They will also deliver it back to you when it is ready. Some of our Style Concierges will even pin\/mark your alterations.<\/p><p><\/p>",
               "button_label": "",
               "layout": "left"
             }
@@ -458,9 +468,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Picture.png",
               "image_width": 500,
-              "subtitle": "Improved",
-              "title": "Image with text",
-              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "subtitle": "DIGITAL LOOKBOOK",
+              "title": "DESIGNEr",
+              "text": "<p>Allow your Style Concierge to go through your existing wardrobe and document complete looks you can pull up for quick and stress-free getting ready.<\/p><p><\/p>",
               "button_label": "",
               "layout": "right"
             }
@@ -468,13 +478,14 @@
         },
         "block_order": [
           "1600971759427",
+          "e9645675-9393-4917-914f-3472a9f63b1a",
           "082b95dc-ea4e-409a-9060-6da1187bb449",
           "2a1cf8ba-14eb-484f-b9b9-7d04c0ec93a9",
           "92e05879-7402-4386-9c7f-88d6fa46f40a",
           "2a6bf955-eaf4-47a4-a443-2103fe779b07"
         ],
         "settings": {
-          "page_title_enable": true,
+          "page_title_enable": false,
           "page_content_enable": true
         }
       },
@@ -597,8 +608,7 @@
               "subheading": "all complimentary and from the comfort of your home",
               "link": "https:\/\/tiarerose.com\/account\/register",
               "link_text": "Create my account",
-              "link_2": "shopify:\/\/pages\/sc",
-              "link_text_2": "Select Style Concierge",
+              "link_text_2": "",
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-center horizontal-left",
               "image": "shopify:\/\/shop_images\/hero-image_5c3ccce5-9b4d-4b25-a2ff-c235b4c82675.jpg",
@@ -756,22 +766,22 @@
           "1596593559239-0": {
             "type": "collection",
             "settings": {
-              "collection": "fall-in-love",
+              "collection": "kaai",
               "subtitle_one": "",
               "subtitle_two": "View Collection",
-              "description": "Romance in ruffles, rouge and racy minis",
-              "title": "Fall In Love",
+              "description": "Simple, chic, organized",
+              "title": "KAAI",
               "focal_point": "center center"
             }
           },
           "1596593559239-1": {
             "type": "collection",
             "settings": {
-              "collection": "lounge-in-luxe",
+              "collection": "vanessa-gade",
               "subtitle_one": "",
               "subtitle_two": "VIEW COLLECTION",
-              "description": "Because WFH doesn’t have to be boring",
-              "title": "Lounge In Luxe",
+              "description": "Architectural movement in metal",
+              "title": "VANESSA GADE",
               "focal_point": "20% 100%"
             }
           }
@@ -828,7 +838,7 @@
               "text_align": "vertical-center horizontal-center",
               "image": "shopify:\/\/shop_images\/Stocksy_txp61b5a4fa0br200_Medium_3322168.jpg",
               "focal_point": "center center",
-              "section_height": "450px",
+              "section_height": "550px",
               "mobile_height": "auto"
             }
           },
@@ -999,6 +1009,32 @@
             "settings": {
               "collection": "veronica-b"
             }
+          },
+          "5b8563f1-aa7e-4cf0-b4f3-d140abe02247": {
+            "type": "collection",
+            "settings": {
+              "collection": "kaai"
+            }
+          },
+          "270d4f2d-ed30-41e2-983d-a37ff7e8aa5e": {
+            "type": "collection",
+            "settings": {
+              "collection": "vanessa-gade"
+            }
+          },
+          "47e88d8f-bce3-4681-a057-3784dd7d8232": {
+            "type": "collection",
+            "settings": {}
+          },
+          "a172c13c-bfba-4656-99f1-40c711b64b82": {
+            "type": "collection",
+            "settings": {
+              "collection": "mymiel"
+            }
+          },
+          "e70c6dc4-6440-4cca-bf6b-bad4689be32e": {
+            "type": "collection",
+            "settings": {}
           }
         },
         "block_order": [
@@ -1006,7 +1042,12 @@
           "1602543360855",
           "1602020342634",
           "1602543372923",
-          "1602543414077"
+          "1602543414077",
+          "5b8563f1-aa7e-4cf0-b4f3-d140abe02247",
+          "270d4f2d-ed30-41e2-983d-a37ff7e8aa5e",
+          "47e88d8f-bce3-4681-a057-3784dd7d8232",
+          "a172c13c-bfba-4656-99f1-40c711b64b82",
+          "e70c6dc4-6440-4cca-bf6b-bad4689be32e"
         ],
         "settings": {
           "disable_images": true,
@@ -1140,8 +1181,16 @@
               "text_align": "vertical-center horizontal-center",
               "image": "shopify:\/\/shop_images\/Style_Concierges_450h.jpg",
               "focal_point": "center center",
-              "section_height": "450px",
+              "section_height": "550px",
               "mobile_height": "auto"
+            }
+          },
+          "6bf9c4ac-3091-452b-9765-624df5290371": {
+            "type": "rich-text",
+            "settings": {
+              "title": "",
+              "text": "<p>Join us and win!<\/p>",
+              "align_text": "center"
             }
           },
           "page-faq-sc-template-0": {
@@ -1155,7 +1204,7 @@
           "page-faq-sc-template-1": {
             "type": "question",
             "settings": {
-              "title": "Higher Commissions",
+              "title": "Higher commissions",
               "text": "<p>Competitive commission rates that are based on your annual sales:<br\/>18%  $0-$100k<br\/>20%  $100K-$500k<br\/>25%  $500K+<\/p>"
             }
           },
@@ -1198,7 +1247,7 @@
           "918d39b4-df1c-42ef-9969-3487fc567810": {
             "type": "rich-text",
             "settings": {
-              "title": "Benefits",
+              "title": "Get Benefits",
               "text": "",
               "align_text": "left"
             }
@@ -1227,6 +1276,7 @@
         },
         "block_order": [
           "75570fa4-c4d7-443f-87e4-95bffbc992a2",
+          "6bf9c4ac-3091-452b-9765-624df5290371",
           "page-faq-sc-template-0",
           "page-faq-sc-template-1",
           "page-faq-sc-template-2",
@@ -1260,7 +1310,7 @@
               "text_align": "vertical-center horizontal-center",
               "image": "shopify:\/\/shop_images\/TrLoyalty_Header.jpg",
               "focal_point": "bottom center",
-              "section_height": "450px",
+              "section_height": "550px",
               "mobile_height": "auto"
             }
           }
@@ -1288,8 +1338,8 @@
               "color_accent": "rgba(0,0,0,0)",
               "text_align": "vertical-center horizontal-center",
               "image": "shopify:\/\/shop_images\/Sustainability_image.jpg",
-              "focal_point": "bottom center",
-              "section_height": "450px",
+              "focal_point": "center center",
+              "section_height": "550px",
               "mobile_height": "auto"
             }
           }

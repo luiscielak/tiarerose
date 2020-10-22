@@ -1137,6 +1137,35 @@ var script = document.createElement("script");
                           <a style="color:#3f4eae !important; font-size: 15px;" id="affiliate_link" target="_blank"></a></label> 
                     </div>
      				<br />
+              <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Unique Link </label></div>
+          </div>
+        <span style="color:#3f4eae !important; font-size: 15px;" id="aff_link" target="_blank"></span>  
+          <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="uniquelink"  onkeyup="bioAffiliateLink(event)" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+          </div>
+        </div>
+              <br>
+                  <span class="Polaris-TextStyle--variationNegative" id="error_link" style="display:none;">Link Already Taken. Please try different</span>
+
+         <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Your Bio </label></div>
+          </div>
+
+           <div class="Polaris-TextField Polaris-TextField--hasValue Polaris-TextField--multiline">
+					<textarea id="repbio" class="Polaris-TextField__Input" placeholder="Enter in 100 words" aria-label="Shipping address" aria-labelledby="TextField14Label" aria-invalid="false" aria-multiline="true" style="height: 59px;"></textarea>
+					<div class="Polaris-TextField__Backdrop"></div>
+          </div>
+          </div>
+              <br>
+              <br>
+              <div>
+                 <div class="Polaris-ButtonGroup__Item">
+                   <button type="button" id="save_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="SaveBio()">
+                     <span class="Polaris-Button__Content"><span> Save </span></span></button></div>
+               </div><br>
       			<div>
                   <label class="Polaris-Label__Text">Commission On: <br />
                       <a style="color:#3f4eae !important; font-size: 15px;" id="commission_on" target="_blank"></a></label> 
@@ -3245,19 +3274,20 @@ var ProductsArray = [];
       $("#TeamSignUpPage").attr('href',"{{shop.url}}/pages/sales-representative-sign-up?manager={{customer.first_name| downcase }}{{customer.id | modulo:1000}}");  
     }
 
+	var shopurl = window.location.protocol +"//"+ window.location.hostname;
 	if((response.select.microsites && response.select.AffiliateLink) || (response.select.microsites&&response.select.AffiliateLinkCommissionPerRep))
     {
         $("#repbio").val(response.rep_info.bio);
 		  if(response.rep_info.uniquelink == null || response.rep_info.uniquelink == " ")
 		  {	                       
-			  document.getElementById("affiliate_link").innerHTML = response.SingleSalesRep.SalesRepAffiliateUrl;
+			  document.getElementById("affiliate_link").innerHTML = shopurl + "/" + response.SingleSalesRep.SalesRepAffiliateUrl;
 			  $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);                                  
 		  }
 		  else{
 			  $("#uniquelink").val(response.rep_info.uniquelink);
-			  document.getElementById("affiliate_link").innerHTML = response.rep_info.uniquelink;
+			  document.getElementById("affiliate_link").innerHTML = shopurl + "/" +response.rep_info.uniquelink;
 			  $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
-			  //document.getElementById("aff_link").innerHTML = response.rep_info.uniquelink;
+			  document.getElementById("aff_link").innerHTML = shopurl + "/" + response.rep_info.uniquelink;
 			  $("#aff_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
          
 		  }
@@ -3265,7 +3295,7 @@ var ProductsArray = [];
 	else
 	{
 		 document.getElementById("sr_Yourbio_head").style.display = "none";
-	   document.getElementById("affiliate_link").innerHTML = response.SingleSalesRep.SalesRepAffiliateUrl;
+	   document.getElementById("affiliate_link").innerHTML = shopurl + "/" + response.SingleSalesRep.SalesRepAffiliateUrl;
 	   $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
 	}
 
