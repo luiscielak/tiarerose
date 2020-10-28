@@ -6463,4 +6463,18 @@ window.addEventListener('DOMContentLoaded', function(){
       }
     ]
   });
+
+  /* Blog slider component - 22 Oct '20' */  
+  if($('#blog-main-slider').length != 0){
+    $('#blog-main-slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      adaptiveHeight: true
+    });
+  }
+
 });

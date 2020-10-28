@@ -1342,10 +1342,22 @@
               "section_height": "550px",
               "mobile_height": "auto"
             }
+          },
+          "4d760ea3-43eb-4422-b2f1-1fe467ea769b": {
+            "type": "text-and-image",
+            "settings": {
+              "image_width": 500,
+              "subtitle": "tread lightly",
+              "title": "planet health",
+              "text": "<p>Our goal of harmony not only embodies wins for our human players, but also for planet. As an organization we are committed to the following:<\/p><p>Reduction of plastic in packaging<\/p><p>Reduction of emissions<\/p><p>Reduction in returns<\/p>",
+              "button_label": "",
+              "layout": "left"
+            }
           }
         },
         "block_order": [
-          "14bc3c67-58ce-47f2-8fd6-677957e1d0c1"
+          "14bc3c67-58ce-47f2-8fd6-677957e1d0c1",
+          "4d760ea3-43eb-4422-b2f1-1fe467ea769b"
         ],
         "settings": {
           "page_title_enable": true,
