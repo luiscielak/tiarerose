@@ -519,7 +519,7 @@
             "settings": {
               "title": "Color",
               "tag_list": "Beige\nBlack\nBlue\nBrown\nClear\nGreen\nGrey\nOrange\nPink\nPurple\nRed\nWhite\nYellow",
-              "collapsed": false
+              "collapsed": true
             }
           },
           "1602544575228": {
@@ -527,7 +527,7 @@
             "settings": {
               "title": "Clothing",
               "tag_list": "Active\nBlouses\nCoats\nDenim\nDresses\nEvening\nJackets\nJumpsuits\nKnitwear\nLeather\nLounge\nPants\nShorts\nSkirts\nSuits\/Sets\nSwim\nTops",
-              "collapsed": false
+              "collapsed": true
             }
           },
           "1602544803934": {
@@ -1081,7 +1081,7 @@
             "type": "rich-text",
             "settings": {
               "title": "WHO WE ArE",
-              "text": "<p><strong>Tiare:<\/strong>  \/tiːˈɑːreɪ\/ (in Tahiti) a gardenia of a variety bearing fragrant white flowers, symbolizing harmony.<\/p><p><\/p><p><strong>Our goal is to create harmony in the fashion industry by creating a platform where brands, sales professionals and their clients all win.<\/strong><\/p>",
+              "text": "<p><em><strong>Tiare:<\/strong><\/em><em>  \/tiːˈɑːreɪ\/ (in Tahiti) a gardenia of a variety bearing fragrant white flowers, symbolizing harmony.<\/em><\/p><p><\/p><p><strong>Tiare Rose combines personalized services with luxury goods for an elevated, comprehensive style experience.<\/strong><\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
@@ -1092,9 +1092,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Lookbook_image.jpg",
               "image_width": 300,
-              "subtitle": "ULTIMATE",
-              "title": "PERSONALIZATION",
-              "text": "<p>Tiare Rose connects top luxury retail sales professionals and their client base with contemporary and designer brands they love for an exclusive, bespoke shopping experience. Style Concierges provide personal recommendations and in-person services that are impossible in e-commerce.<\/p>",
+              "subtitle": "personalized",
+              "title": "SERVICES",
+              "text": "<p>Your Style Concierge is a professional and an expert. They are constantly continuing their education in each of the brands we carry to provide you the right style with the perfect fit. They take the time and drama out of online shopping and keep you from having to step inside a department store.<\/p>",
               "button_label": "",
               "layout": "left"
             }
@@ -1104,9 +1104,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Consignment_image.jpg",
               "image_width": 300,
-              "subtitle": "INCOMPARABLE",
-              "title": "CONVENIENCE",
-              "text": "<p>Your Style Concierge is a professional. They are constantly continuing their education in each of the brands we carry to provide you the right style with the perfect fit. They take the time and drama out of online shopping and keep you from having to step inside a department store.<\/p><p><\/p><p>Your style is beyond just fashion. That’s why we offer concierge add-on services including closet purging and organization, consignment assistance, and repairs\/ alterations, all at reasonable rates.<\/p>",
+              "subtitle": "luxury",
+              "title": "Goods",
+              "text": "<p>Your Style Concierge is a professional. They are constantly continuing their education in each of the brands we carry to provide you the right style with the perfect fit. They take the time and drama out of online shopping and keep you from having to step inside a department store.<\/p>",
               "button_label": "",
               "layout": "right"
             }
@@ -1116,9 +1116,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Stocksy_txpcace6b1dpxq200_Medium_2731466.jpg",
               "image_width": 300,
-              "subtitle": "SHARED",
-              "title": "VALUES",
-              "text": "<p>We value human capital and believe our Style Concierges should be compensated fairly for their expertise. Increased sustainability is the fashion industry is imperative.<\/p>",
+              "subtitle": "elevated",
+              "title": "EXPErIENCE",
+              "text": "<p>We value human capital and believe our Style Concierges should be compensated fairly for their expertise. Increased sustainability is the fashion industry is imperative.<\/p><p>Our goal is to create harmony in the fashion industry by creating a platform where brands, sales professionals and their clients all win.<\/p>",
               "button_label": "",
               "layout": "left"
             }
@@ -1346,22 +1346,36 @@
           "4d760ea3-43eb-4422-b2f1-1fe467ea769b": {
             "type": "text-and-image",
             "settings": {
-              "image_width": 500,
-              "subtitle": "tread lightly",
-              "title": "planet health",
-              "text": "<p>Our goal of harmony not only embodies wins for our human players, but also for planet. As an organization we are committed to the following:<\/p><p>Reduction of plastic in packaging<\/p><p>Reduction of emissions<\/p><p>Reduction in returns<\/p>",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-27_at_5.52.30_AM.png",
+              "image_width": 330,
+              "subtitle": "healthy",
+              "title": "planet",
+              "text": "<p>Our goal of harmony not only embodies wins for our human players, but also for planet. As an organization we are committed to the following:<\/p><p>∙ Reduction of plastic in packaging<\/p><p>∙ Reduction of emissions<\/p><p>∙ Reduction in returns<\/p>",
               "button_label": "",
               "layout": "left"
+            }
+          },
+          "4440738f-2849-4a7d-8d0c-788ce4a93723": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-27_at_10.59.21_AM.png",
+              "image_width": 330,
+              "subtitle": "Measurable",
+              "title": "Impact",
+              "text": "<p>In an effort to substantiate and qualify claims of (dubious) sustainability, Tiare Rose vets brands and gives badges for:<\/p><p>∙ Local (design\/made in same location)<\/p><p>∙ Artisan crafted<\/p><p>∙ Use of majority recycled\/reclaimed material<\/p><p>∙ Sustainably sourced\/manufactured<\/p><p>∙ Clean or non-toxic<\/p>",
+              "button_label": "",
+              "layout": "right"
             }
           }
         },
         "block_order": [
           "14bc3c67-58ce-47f2-8fd6-677957e1d0c1",
-          "4d760ea3-43eb-4422-b2f1-1fe467ea769b"
+          "4d760ea3-43eb-4422-b2f1-1fe467ea769b",
+          "4440738f-2849-4a7d-8d0c-788ce4a93723"
         ],
         "settings": {
           "page_title_enable": true,
-          "page_content_enable": true
+          "page_content_enable": false
         }
       },
       "page-hero-shipping-template": {

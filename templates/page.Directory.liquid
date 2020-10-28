@@ -2,6 +2,7 @@
 {{ 'theme.css' | asset_url | stylesheet_tag }}
 <style> 
 
+  
   #Directorypage
   {
     display:flex;
@@ -214,11 +215,11 @@ input, textarea {
                               <h3>{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</h3><br>
                             <h4>{{ rep[1].City }}, {{ rep[1].State }}<br>
                               {%if rep[1].InstagramHandle != ""%}
-                              <img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <u><a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a></u>
+                              <img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a>
                                 <br>
                               {%endif%}
                               {%if rep[1].LinkedInHandle != ""%}
-                              <img src="{{'LinkedInHandle.png' | asset_img_url : '17x17'}}"> <u><a href="https://www.linkedin.com/in/{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></u></h4>
+                              <a href="{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></h4>
                               {%endif%}
                           </p>
                             <p>

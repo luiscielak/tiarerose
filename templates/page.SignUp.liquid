@@ -46,7 +46,7 @@ var script = document.createElement("script");
 </script>
 <style>
 #signupbtn {
-    background: black;
+    background: transparent;
 }
   #signupbtn{
         background: linear-gradient(to bottom, black, black);
@@ -360,7 +360,7 @@ var script = document.createElement("script");
 
   }
   
-body {font-family: Arial, Helvetica, sans-serif;}
+body 
 * {box-sizing: border-box}
 
 
@@ -672,13 +672,12 @@ $.ajax({
     
 </script>
 
+<h1>Style Concierge Application</h1>
 <body>
-
   <div class="container">
-    <h3>Style Concierge Application</h3>
-    <p>Please create an account here to start the application process. After submitting, check your email to continue.</p>
-    <hr>
-	
+    
+    <p>Start the application process then check your email after submitting.</p>
+    <hr>	
     <div class="Polaris-Card__Section">       
     <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
@@ -823,9 +822,9 @@ $.ajax({
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
-            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">LinkedIn Handle </label></div>
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">website </label></div>
             </div>
-           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="LinkedInHandle" placeholder="LinkedIn Handle" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="LinkedInHandle" placeholder="http://website.com" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
              </div>
           </div>
@@ -986,19 +985,19 @@ $.ajax({
         </div>
       </div>
    <br>
-    <h4 style="color: #f80000;display:none" id="mandatoryError">Please fill all mandatory fields</h4>
+    <h4 style="color: #f80000;display:none" id="mandatoryError">Please fill in all mandatory fields</h4>
     <h4 style="color: #f80000;display:none" id="termserror">Please accept Terms & Conditions</h4>
-    <h4 style="color: #f80000;display:none" id="ExperienceError">Please enter experience in number</h4>
-          <h4 style="color: #f80000;display:none" id="AnnualAmountError">Please enter Annual Amount in number</h4>
+    <h4 style="color: #f80000;display:none" id="ExperienceError">Please enter experience with only numbers</h4>
+          <h4 style="color: #f80000;display:none" id="AnnualAmountError">Please enter amount with only numbers</h4>
 
     <div class="clearfix">
-      <button type="button" id="signupbtn" class="Polaris-Button Polaris-Button--primary" onclick="submiteDetails()">Save Details</button>
+      <button type="button" id="signupbtn" class="Polaris-Button Polaris-Button--primary" onclick="submiteDetails()">Submit</button>
     </div>
     
     
     <h4 style="color: darkseagreen; display:none" id="successmsg">Thank you for applying. Look for an email response within 48 hours.</h4>
     <h4 style="color: darkseagreen; display:none" id="OtherSuccessmsg">Sales rep registered successfully.</h4>
-    <h4 style="color: #f80000;display:none" id="errorsmsg">Error while saving the details. This user email may already have an account on the store.</h4>
+    <h4 style="color: #f80000;display:none" id="errorsmsg">Error: this user email is already registered.</h4>
     <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User already exists as a rep.</h4>
   </div>
 </body>
