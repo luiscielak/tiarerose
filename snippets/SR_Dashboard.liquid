@@ -1,30 +1,30 @@
 <script>
 function OpenNav(){
 if(screen.width < 800)
-        {	
+        {
           $("#AppFrameNav").show();
         }
-    } 
+    }
 window.onload=function(){
- 
+
     CheckInterval2();
 }
      var CheckInterval2=setInterval(function(){
        if(window.jQuery){
         clearInterval(CheckInterval2);
-        if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7)) 
+        if ((typeof jQuery === 'undefined') || (parseFloat(jQuery.fn.jquery) < 1.7))
         {
           loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', function () {
           jQuery191 = jQuery.noConflict(true);
           LoadSRClickHandlers(jQuery191);
-          GetBaseModelData(jQuery191);		
+          GetBaseModelData(jQuery191);
         });
-       } 
+       }
       else {
        LoadSRClickHandlers(jQuery);
        GetBaseModelData(jQuery);
-      }                
-        
+      }
+
        }
      },100);
 var loadScript = function(url, callback){
@@ -32,7 +32,7 @@ var script = document.createElement("script");
   script.type = "text/javascript";
 
   // If the browser is Internet Explorer.
-  if (script.readyState){ 
+  if (script.readyState){
     script.onreadystatechange = function(){
       if (script.readyState == "loaded" || script.readyState == "complete"){
         script.onreadystatechange = null;
@@ -48,19 +48,19 @@ var script = document.createElement("script");
 
   script.src = url;
   document.getElementsByTagName("head")[0].appendChild(script);
- 
+
 };
 
     function HideNav()
     {
       if(screen.width < 800)
-        {	
+        {
           $("#AppFrameNav").hide();
         }
     }
 
     function LoadSRClickHandlers($){
-      
+
       if(screen.width > 800)
         {
            $("#dash_card").css('display','flex');
@@ -68,58 +68,58 @@ var script = document.createElement("script");
            $(".card").css('margin-right', '20px');
         }
         else
-        {           
-           $("#dash_card").css('display','block');          
+        {
+           $("#dash_card").css('display','block');
         }
          $('#CreateInvoice').hide();
          $('#CustomDiscount').hide();
-      
-    $("#loadGif").show();   
-  	$("#SR_Dashboard").hide();  
+
+    $("#loadGif").show();
+  	$("#SR_Dashboard").hide();
     $("#SR_CustomerOrder").hide();
     $("#SR_Wholesale").hide();
-    $("#SR_ViewCustomerOrder").hide();        
+    $("#SR_ViewCustomerOrder").hide();
   	$("#SR_Discount").hide();
-   	$("#SR_YourBio").hide(); 
-	$("#SR_TeamDetails").hide(); 
+   	$("#SR_YourBio").hide();
+	$("#SR_TeamDetails").hide();
     $("#SR_Lead").hide();
-	$("#SR_Clients").hide();  
+	$("#SR_Clients").hide();
     $("#SR_PreviousOrder").hide();
     $("#SR_MyOrder").hide();
-  
+
   	// setting up header click handlers:
   	$("#Dashboard").click(function(){
          HideNav();
-        $("#SR_Dashboard").show();  		
+        $("#SR_Dashboard").show();
         $("#SR_CustomerOrder").hide();
         $("#SR_ViewCustomerOrder").hide();
         $("#SR_Wholesale").hide();
-        $("#SR_Discount").hide();  
-		$("#SR_YourBio").hide();   
-		$("#SR_TeamDetails").hide(); 
+        $("#SR_Discount").hide();
+		$("#SR_YourBio").hide();
+		$("#SR_TeamDetails").hide();
         $("#SR_Lead").hide();
 		$("#SR_Clients").hide();
       $("#SR_PreviousOrder").hide();
       $("#SR_MyOrder").hide();
-  	
+
   	});
-    
+
   	$("#sr_Wholesale_head").click(function(){
        HideNav();
-        $("#SR_Wholesale").show();	      
+        $("#SR_Wholesale").show();
         $("#SR_CustomerOrder").hide();
         $("#SR_ViewCustomerOrder").hide();
         $("#SR_Discount").hide();
-        $("#SR_Dashboard").hide(); 
-	    $("#SR_YourBio").hide(); 
-		$("#SR_TeamDetails").hide(); 
+        $("#SR_Dashboard").hide();
+	    $("#SR_YourBio").hide();
+		$("#SR_TeamDetails").hide();
        $("#SR_Lead").hide();
 	   $("#SR_Clients").hide();
       $("#SR_PreviousOrder").hide();
       $("#SR_MyOrder").hide();
-		    	
+
   	});
-  
+
   	$("#sr_CustomerOrder_head").click(function(){
         HideNav();
         $("#SR_CustomerOrder").show();
@@ -127,40 +127,40 @@ var script = document.createElement("script");
         $("#SR_ViewCustomerOrder").hide();
         $("#SR_Discount").hide();
         $("#SR_Dashboard").hide();
-		$("#SR_YourBio").hide(); 
-		$("#SR_TeamDetails").hide();   
+		$("#SR_YourBio").hide();
+		$("#SR_TeamDetails").hide();
         $("#SR_Lead").hide();
 		$("#SR_Clients").hide();
       $("#SR_PreviousOrder").hide();
       $("#SR_MyOrder").hide();
 
   	});
-  
+
   	$("#sr_Affiliate_head").click(function(){
-  		 HideNav();	
+  		 HideNav();
         $("#SR_ViewCustomerOrder").show();
         $("#SR_Discount").hide();
         $("#SR_CustomerOrder").hide();
         $("#SR_Wholesale").hide();
         $("#SR_Dashboard").hide();
-     	$("#SR_YourBio").hide(); 
-		$("#SR_TeamDetails").hide(); 
+     	$("#SR_YourBio").hide();
+		$("#SR_TeamDetails").hide();
        $("#SR_Lead").hide();
 	   $("#SR_Clients").hide();
       $("#SR_PreviousOrder").hide();
       $("#SR_MyOrder").hide();
 
   	});
-  
+
   	$("#sr_Discount_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_Discount").show();
         $("#SR_ViewCustomerOrder").hide();
         $("#SR_CustomerOrder").hide();
         $("#SR_Wholesale").hide();
         $("#SR_Dashboard").hide();
-    	$("#SR_YourBio").hide();  
-		$("#SR_TeamDetails").hide(); 
+    	$("#SR_YourBio").hide();
+		$("#SR_TeamDetails").hide();
         $("#SR_Lead").hide();
 		$("#SR_Clients").hide();
       $("#SR_PreviousOrder").hide();
@@ -169,8 +169,8 @@ var script = document.createElement("script");
   	});
 
 	 $("#sr_Yourbio_head").click(function(){
-    	 HideNav();	
-		$("#SR_YourBio").show();    
+    	 HideNav();
+		$("#SR_YourBio").show();
         $("#SR_Discount").hide();
         $("#SR_ViewCustomerOrder").hide();
         $("#SR_CustomerOrder").hide();
@@ -184,7 +184,7 @@ var script = document.createElement("script");
   	});
 
 	 $("#sr_Team_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_TeamDetails").show();
         $("#SR_Discount").hide();
         $("#SR_ViewCustomerOrder").hide();
@@ -196,11 +196,11 @@ var script = document.createElement("script");
 		$("#SR_Clients").hide();
        $("#SR_PreviousOrder").hide();
        $("#SR_MyOrder").hide();
-     
+
   	});
-    
+
      $("#sr_Lead_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_Lead").show();
         $("#SR_TeamDetails").hide();
         $("#SR_Discount").hide();
@@ -212,11 +212,11 @@ var script = document.createElement("script");
 		$("#SR_Clients").hide();
        $("#SR_PreviousOrder").hide();
        $("#SR_MyOrder").hide();
-     
+
   	});
-      
+
        $("#sr_Clients_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_Clients").show();
         $("#SR_Lead").hide();
         $("#SR_TeamDetails").hide();
@@ -228,11 +228,11 @@ var script = document.createElement("script");
 		$("#SR_YourBio").hide();
         $("#SR_PreviousOrder").hide();
          $("#SR_MyOrder").hide();
-     
+
   	});
-      
+
        $("#sr_PreviousOrder_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_PreviousOrder").show();
         $("#SR_Lead").hide();
         $("#SR_TeamDetails").hide();
@@ -244,10 +244,10 @@ var script = document.createElement("script");
 		$("#SR_YourBio").hide();
         $("#SR_Clients").hide();
          $("#SR_MyOrder").hide();
-     
-  	}); 
+
+  	});
        $("#sr_MyOrders_head").click(function(){
-    	 HideNav();	
+    	 HideNav();
         $("#SR_PreviousOrder").hide();
         $("#SR_Lead").hide();
         $("#SR_TeamDetails").hide();
@@ -259,28 +259,28 @@ var script = document.createElement("script");
 		$("#SR_YourBio").hide();
         $("#SR_Clients").hide();
          $("#SR_MyOrder").show();
-     
-  	}); 
+
+  	});
   }
   </script>
-   
 
-<style> 
+
+<style>
     table{
         margin-bottom: 0px;
     }
-    
+
    .Polaris-Card{
       margin-top: 2rem;
    }
-     
+
    .Polaris-DataTable__Cell--header {
       font-weight: 700 !important;
     }
-    
+
     .Polaris-DataTable__Cell--numeric {
        text-align: left !important;
-     } 
+     }
   .Polaris-Button--primary {
     background: linear-gradient(to bottom, black, black);
     border-color: black;
@@ -290,7 +290,7 @@ var script = document.createElement("script");
     text-decoration: none;
     text-align: center;
     white-space: normal;
-    
+
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3em;
@@ -396,10 +396,10 @@ var script = document.createElement("script");
 
 <!--SalesRep App-->
 
-<div id="SR_App" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);">  
+<div id="SR_App" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);">
       <div class="Polaris-Frame Polaris-Frame--hasNav Polaris-Frame--hasTopBar" data-polaris-layer="true" data-has-navigation="true">
 
-          <div class="Polaris-TopBar" style="background-color: #f4f6f8;">
+          <div class="Polaris-TopBar">
 				<button type="button" class="Polaris-TopBar__NavigationIcon" aria-label="Toggle menu" onclick="OpenNav()">
 				  <span class="Polaris-Icon Polaris-Icon--colorWhite">
 					 <svg class="Polaris-Icon__Svg" viewBox="0 0 32 32" focusable="false" aria-hidden="true" style="fill: black;">
@@ -407,7 +407,7 @@ var script = document.createElement("script");
 					</svg>
 				  </span>
 				</button>
-				
+
           </div>
         <!--Nav bar-->
         <div>
@@ -424,32 +424,32 @@ var script = document.createElement("script");
                      <span class="Polaris-Navigation-UserMenu__Detail">{{customer.first_name}}</span></span>
                 </li>
                 </ul>
-              
+
               <div class="Polaris-Navigation__PrimaryNavigation Polaris-Scrollable Polaris-Scrollable--vertical" data-polaris-scrollable="true" polaris="[object Object]">
-                
+
                 <ul class="Polaris-Navigation__Section Polaris-Navigation__Section--withSeparator">
-                 
+
                   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="Dashboard">
                       <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
                             <path d="M19.664 8.252l-9-8a1 1 0 0 0-1.328 0L8 1.44V1a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v5.773L.336 8.252a1.001 1.001 0 0 0 1.328 1.496L2 9.449V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9.449l.336.299a.997.997 0 0 0 1.411-.083 1.001 1.001 0 0 0-.083-1.413zM16 18h-2v-5a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v5H4V7.671l6-5.333 6 5.333V18zm-8 0v-4h4v4H8zM4 2h2v1.218L4 4.996V2z" fill-rule="evenodd"></path>
                           </svg></span></div><span class="Polaris-Navigation__Text">Dashboard</span>
                     </button>
                   </li>
-                  
+
                   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_CustomerOrder_head">
                       <div class="Polaris-Navigation__Icon"><img style="filter: brightness(0.3);" src="{{ 'customericon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Customer Invoice</span>
                     </button>
                   </li>
-                  
+
                     <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Wholesale_head">
                       <div class="Polaris-Navigation__Icon"><img style="filter: brightness(0.3);" src="{{ 'wholesaleicon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Personal Order</span>
                     </button></li>
-                  
+
                     <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Affiliate_head">
                       <div class="Polaris-Navigation__Icon"><img style="filter: brightness(0.3);" src="{{ 'affiliateicon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Affiliate Link</span>
                       </button>
                     </li>
-                  
+
                     <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Discount_head">
                       <div class="Polaris-Navigation__Icon"><div class="p_2IX94"><span class="p_2-hnq"><svg class="p_v3ASA" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
                         <g  fill-rule="evenodd">
@@ -457,34 +457,34 @@ var script = document.createElement("script");
                         </g></svg></span></div></div><span class="Polaris-Navigation__Text">Discount Coupon</span>
                      </button>
                    </li>
-                  
+
                   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Yourbio_head">
                       <div class="Polaris-Navigation__Icon">
                         <div class="p_2IX94"><span class="p_2-hnq"><svg class="p_v3ASA" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
-                          
+
                           <g  fill-rule="evenodd"><path d="M10 13c-4 0-7 3-7 3l1 3h12l1-3s-3-3-7-3" fill="currentColor"/>
                             <path d="M17.707 15.293a.999.999 0 0 1 .241 1.023l-1 3A.999.999 0 0 1 16 20H4a1 1 0 0 1-.949-.684l-1-3a.999.999 0 0 1 .242-1.023C2.427 15.158 5.635 12 10 12c4.364 0 7.572 3.158 7.707 3.293zM15.28 18l.562-1.687c-.92-.752-3.155-2.313-5.84-2.313-2.704 0-4.928 1.558-5.844 2.31L4.72 18h10.56zM10 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0 8c2.757 0 5-2.243 5-5s-2.243-5-5-5-5 2.243-5 5 2.243 5 5 5" />
                           </g></svg></span></div></div><span class="Polaris-Navigation__Text">Your Bio</span>
                         </button>
-                    </li>  
-                  
+                    </li>
+
                   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Team_head">
                       <div class="Polaris-Navigation__Icon">
                        <img style="filter: brightness(0.3);" src="{{ 'affiliateicon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Team</span>
                         </button>
-                  </li>    
-					
+                  </li>
+
 				   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Lead_head">
                       <div class="Polaris-Navigation__Icon">
                        <img style="filter: brightness(0.3);" src="{{ 'customericon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Add Customer</span>
                         </button>
-                   </li> 
-				   
+                   </li>
+
 				   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Clients_head">
                       <div class="Polaris-Navigation__Icon">
                        <img style="filter: brightness(0.3);" src="{{ 'customericon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">My Customers</span>
                         </button>
-                   </li> 
+                   </li>
 				    <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_PreviousOrder_head">
                       <div class="Polaris-Navigation__Icon">
                        <img style="filter: brightness(0.3);" src="{{ 'affiliateicon.png' | asset_url }}"/></div><span class="Polaris-Navigation__Text">Your Sales - Order Details</span>
@@ -503,45 +503,45 @@ var script = document.createElement("script");
                 </ul>
               </div>
             </nav>
-            
+
           </div>
-        </div>  
-		    
- <!--Main Frame -->       
+        </div>
+
+ <!--Main Frame -->
  <main class="Polaris-Frame__Main" id="AppFrameMain" data-has-global-ribbon="false" style="padding-top: 1.6rem;">
    <div class="Polaris-Frame__Content">
      <div class="Polaris-Page" style="max-width: 140.8rem;">
-  
-<!-- Dashboard-->   
-              
-<div id="SR_Dashboard" style="display:none;">  
+
+<!-- Dashboard-->
+
+<div id="SR_Dashboard" style="display:none;">
  <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
             <div class="Polaris-Page-Header__Title">
                  <div>
                     <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Dashboard</h1>
                   </div>
-                           
+
             </div>
          </div></h2>
     </div>
-   	
+
    	<br>
     <div style = "margin-left:20px;">
 
- 
+
        {% for article in blogs.news.articles limit: 1 %}
       <h2>Latest News: <u>{{ article.title | link_to: article.url }}</u></h2>
     {% endfor %}    </div>
-        
-    <div class="Polaris-Card__Section">        
+
+    <div class="Polaris-Card__Section">
           <div class="Polaris-Page__Content">
               <!-- Page Content -->
               <div class="page_content" id="dashboardpage">
 			  <h2 id="dashheader"></h2>
-                 <div id="dash_card">            
+                 <div id="dash_card">
 
                         <div class="Polaris-Card card" style="height:100%;" id="ClientWidget">
                           <div class="Polaris-Card__Header">
@@ -643,7 +643,7 @@ var script = document.createElement("script");
                               <h3 aria-label="Reports" class="Polaris-Subheading">Orders</h3>
                             </div>
                             <p id="TagCustomerOrders_Paid"></p>
-                            </div>                         
+                            </div>
                         </div>
 
                         <div class="Polaris-Card card" style="height:100%;" id="TeamleadWidget">
@@ -657,7 +657,7 @@ var script = document.createElement("script");
                             <p id="TeamLead_Commission"></p>
                             </div>
                         </div>
-                   
+
                    <div class="Polaris-Card card" style="height:100%;" id="POSWidget">
                           <div class="Polaris-Card__Header">
                             <h2 class="Polaris-Heading Polaris-Link">POS COMMISSION</h2>
@@ -673,7 +673,7 @@ var script = document.createElement("script");
                               <h3 aria-label="Reports" class="Polaris-Subheading">Orders</h3>
                             </div>
                             <p id="POSOrders_Paid"></p>
-                            </div>                         
+                            </div>
                         </div>
 
                         </div>
@@ -706,14 +706,14 @@ var script = document.createElement("script");
           </div>
   <br>
   </div>
- 
-      
+
+
 <!--Client Invoice -->
-  
+
 <div id="SR_CustomerOrder" style="display:none;">
   <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -724,11 +724,11 @@ var script = document.createElement("script");
          </div>
       </h2>
     </div>
-    <div class="Polaris-Card__Section">  
-         
-          <!--View Client Orders Page Content--> 
-	      <div class="page_content" id="ViewOrders" style="display:none;"> 
-      
+    <div class="Polaris-Card__Section">
+
+          <!--View Client Orders Page Content-->
+	      <div class="page_content" id="ViewOrders" style="display:none;">
+
                <br/>
                <div>
                    <div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="BacktoClientPage()"><span class="Polaris-Button__Content"><span>Back</span></span></button></div>
@@ -761,17 +761,17 @@ var script = document.createElement("script");
 
                <br/>
        </div>
-         
-          <!--View Client Orders Page Content--> 
+
+          <!--View Client Orders Page Content-->
           <div class="page_content" id="clientorder">
-            <br/>	           
+            <br/>
                 <div>
                    <div class="Polaris-ButtonGroup__Item"><button type="button" id="Order_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="ViewInvoiceOrders()"><span class="Polaris-Button__Content"><span>View Previous Orders</span></span></button></div>
                 </div>
                 <br>
             	<div>
                   <label class="Polaris-Label__Text">Discount and Commission On: <br />
-                      <a style="color:#3f4eae !important; font-size: 15px;" id="discount_commission_on" target="_blank"></a></label> 
+                      <a style="color:#3f4eae !important; font-size: 15px;" id="discount_commission_on" target="_blank"></a></label>
                 </div>
                 <br>
            			 <div class="Polaris-Page__Content">
@@ -797,18 +797,18 @@ var script = document.createElement("script");
                       </div>
             	<br>
                 <label class="Polaris-Label__Text">Add customer details and select products to send invoice.</label>
-			  
-            	<br/>   
-       
+
+            	<br/>
+
                 <div class="allcustomers">
                   <div class="Polaris-Labelled__LabelWrapper">
                       <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Customer:</label></div>
-                    </div> 					  
+                    </div>
 				   <select id="custname" style="width:100%;">
-                         
-			       </select>    			
-  				</div> 
-           
+
+			       </select>
+  				</div>
+
                <br/>
 			    <div class="ProRep">
   		               <label class="Polaris-Choice" for="reppro"><span class="Polaris-Choice__Control"><span class="Polaris-Checkbox"><input id="reppro" type="checkbox" class="Polaris-Checkbox__Input" aria-invalid="false" role="checkbox" aria-checked="false" value="pro"><span class="Polaris-Checkbox__Backdrop"></span>
@@ -817,10 +817,10 @@ var script = document.createElement("script");
                   <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
                 </svg></span></span></span></span><span class="Polaris-Choice__Label">Select checkbox to send pro invite</span></label>
                 </div>
-                
+
 				<br/>
                 <br>
-            
+
                   <div class="">
                     <div class="Polaris-Labelled__LabelWrapper">
                       <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer Email Id: </label></div>
@@ -863,15 +863,15 @@ var script = document.createElement("script");
                             </svg></span></div><input id="ProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
                         <div class="Polaris-TextField__Backdrop"></div>
                  </div>
-                 
+
              <br><center>
                   <div id="clientSpinner" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);"><svg viewBox="0 0 44 44" class="Polaris-Spinner Polaris-Spinner--colorTeal Polaris-Spinner--sizeLarge" role="status">
                     <path d="M15.542 1.487A21.507 21.507 0 0 0 .5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 0 0-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 1 0-.9-2.863z"></path>
                   </svg></div>
                 </center>
 			 <br>
-        
-              <div class="Polaris-Page" style="display:none;" id="clientinvoicetable">  
+
+              <div class="Polaris-Page" style="display:none;" id="clientinvoicetable">
                 <div class="Polaris-Page__Content">
                   <div class="Polaris-Card">
                     <div class="">
@@ -882,7 +882,7 @@ var script = document.createElement("script");
                                 </svg></span></span></span></button></div>
                       <div class="Polaris-DataTable">
                         <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
-                          <table class="Polaris-DataTable__Table" id="clienttable">                       
+                          <table class="Polaris-DataTable__Table" id="clienttable">
                           </table>
                         </div>
                       </div>
@@ -892,8 +892,8 @@ var script = document.createElement("script");
               </div>
 
               <span class="Polaris-TextStyle--variationNegative" id="sr_customerOrder_error1" style="display:none;">
-                   * all customer fields are mandatory. Please enter the customer's  email and first name  
-              </span> 
+                   * all customer fields are mandatory. Please enter the customer's  email and first name
+              </span>
             	<br>
 	  			<p id="SalesRep_order" class="third" style="color: #3f4eae !important; font-size: 16px;"> </p>
   				<br>
@@ -908,7 +908,7 @@ var script = document.createElement("script");
                  <button type="button" id="Customedraft_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="CustomDiscountDraftOrder()">
                    <span class="Polaris-Button__Content"><span>Create Invoice</span></span></button></div>
             </div>
-            	
+
   				<p id="productnotselect1" class="third"> </p>
             	<br>
                <div class="Polaris-Page__Content">
@@ -925,27 +925,27 @@ var script = document.createElement("script");
                             <div class="Polaris-DataTable">
                               <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
                                 <table class="Polaris-DataTable__Table" id="productTable">
-									
+
                                 </table>
                               </div>
                             </div>
                           </div>
                         </div>
-                 </div>           		
+                 </div>
           </div>
     </div>
  </div>
   <br>
 </div>
 
- 
-<!--Wholesale Orders-->      
-      
+
+<!--Wholesale Orders-->
+
 <div id="SR_Wholesale" style="display:none;">
 
   <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -955,20 +955,20 @@ var script = document.createElement("script");
                 </div>
               </div></h2>
     </div>
-    <div class="Polaris-Card__Section">  
-  
+    <div class="Polaris-Card__Section">
+
           	<div class="page_content">
             <br>
               <label class="Polaris-Label__Text"> You can purchase products at special wholesale prices. </label>
-              	
-             <br>  
-              
+
+             <br>
+
               <div>
               	<label class="Polaris-Label__Text">Discount On: <br />
-                	<a style="color:#3f4eae !important; font-size: 15px;" id="discount_on" target="_blank"></a></label> 
+                	<a style="color:#3f4eae !important; font-size: 15px;" id="discount_on" target="_blank"></a></label>
               </div>
      		  <br>
-              
+
               <div class="Polaris-Page__Content">
                         <div class="Polaris-Card">
                           <div class="">
@@ -997,7 +997,7 @@ var script = document.createElement("script");
                         </svg></span></div><input id="WholesaleProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
                     <div class="Polaris-TextField__Backdrop"></div>
               </div>
-           
+
             <br>
 			  <center>
                   <div id="wholesaleSpinner" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);"><svg viewBox="0 0 44 44" class="Polaris-Spinner Polaris-Spinner--colorTeal Polaris-Spinner--sizeLarge" role="status">
@@ -1005,8 +1005,8 @@ var script = document.createElement("script");
                   </svg></div>
                </center>
 	       <br>
-                       
-        <div class="Polaris-Page" style="display:none;" id="wholesaleinvoicetable">  
+
+        <div class="Polaris-Page" style="display:none;" id="wholesaleinvoicetable">
                 <div class="Polaris-Page__Content">
                   <div class="Polaris-Card">
                     <div class="">
@@ -1017,7 +1017,7 @@ var script = document.createElement("script");
                                 </svg></span></span></span></button></div>
                       <div class="Polaris-DataTable">
                         <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
-                          <table class="Polaris-DataTable__Table" id="wholesaletable">                        
+                          <table class="Polaris-DataTable__Table" id="wholesaletable">
                           </table>
                         </div>
                       </div>
@@ -1027,19 +1027,19 @@ var script = document.createElement("script");
               </div>
 
               <br>
-   
+
    				<p  id="SalesRepWholesale_order" class="third" style="color:rgba(0,149,136,1.0) !important;font-size: 14px;"> </p>
    				<br>
-                  
+
                       <div class="Polaris-ButtonGroup__Item">
                       <button type="button" id="draftWholesale_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DraftWholesaleOrder()">
                       <span class="Polaris-Button__Content"><span>Check Out</span></span></button></div>
-                    <br>         				
+                    <br>
                <div><span id="totalPrice"></span><br><span id="DiscountedPrice"></span><br></div>
-	
+
   				<p id="productnotselect" class="third"> </p>
               <br>
-   				
+
                <div class="Polaris-Page__Content">
                         <div class="Polaris-Card">
                           <div class="">
@@ -1062,16 +1062,16 @@ var script = document.createElement("script");
                         </div>
                       </div>
           	</div>
-    </div>  
+    </div>
 </div>
 </div>
-      
-<!--Affiliate Orders -->      
-   
+
+<!--Affiliate Orders -->
+
 <div id="SR_ViewCustomerOrder" style="display:none;">
  <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -1082,10 +1082,10 @@ var script = document.createElement("script");
         </div>
       </h2>
     </div>
-    <div class="Polaris-Card__Section">  
-      
+    <div class="Polaris-Card__Section">
+
       <!--View Affiliate Orders-->
-           <div class="page_content" id="View_AffiliateOrders" style="display:none;">      
+           <div class="page_content" id="View_AffiliateOrders" style="display:none;">
                <br/>
                <div>
                    <div class="Polaris-ButtonGroup__Item">
@@ -1120,9 +1120,9 @@ var script = document.createElement("script");
 
                <br/>
            </div>
-      
+
         <!-- Affiliate Page -->
-          <div class="page_content" id="affiliateorder">          	
+          <div class="page_content" id="affiliateorder">
 
              </div>
 
@@ -1134,14 +1134,14 @@ var script = document.createElement("script");
                     <br />
                     <div>
                         <label class="Polaris-Label__Text">Your Affiliate Link: <br />
-                          <a style="color:#3f4eae !important; font-size: 15px;" id="affiliate_link" target="_blank"></a></label> 
+                          <a style="color:#3f4eae !important; font-size: 15px;" id="affiliate_link" target="_blank"></a></label>
                     </div>
      				<br />
               <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
             <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Unique Link </label></div>
           </div>
-        <span style="color:#3f4eae !important; font-size: 15px;" id="aff_link" target="_blank"></span>  
+        <span style="color:#3f4eae !important; font-size: 15px;" id="aff_link" target="_blank"></span>
           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="uniquelink"  onkeyup="bioAffiliateLink(event)" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
             <div class="Polaris-TextField__Backdrop"></div>
           </div>
@@ -1168,7 +1168,7 @@ var script = document.createElement("script");
                </div><br>
       			<div>
                   <label class="Polaris-Label__Text">Commission On: <br />
-                      <a style="color:#3f4eae !important; font-size: 15px;" id="commission_on" target="_blank"></a></label> 
+                      <a style="color:#3f4eae !important; font-size: 15px;" id="commission_on" target="_blank"></a></label>
                 </div>
                 <br>
       				<div class="Polaris-Page__Content">
@@ -1199,8 +1199,8 @@ var script = document.createElement("script");
                          <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/> </a>
                          <a href="http://instagram.com/###?ref={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>
                          <a href="https://twitter.com/share?url={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}&amp;text={{shop.name}}" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/> </a>
-                         <a href="http://www.facebook.com/sharer.php?u={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>					
-                    </div>     				  				
+                         <a href="http://www.facebook.com/sharer.php?u={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>
+                    </div>
                     <br />
 					  <div class="Polaris-TextField">
                         <div class="Polaris-TextField__Prefix" id="TextField2Prefix"><span class="Polaris-Icon Polaris-Icon--colorSkyDark Polaris-Icon--isColored"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
@@ -1208,15 +1208,15 @@ var script = document.createElement("script");
                             </svg></span></div><input id="AffiliateProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
                         <div class="Polaris-TextField__Backdrop"></div>
                  </div>
-                  
+
                <br>
 			    <center>
                   <div id="affiliateSpinner" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);"><svg viewBox="0 0 44 44" class="Polaris-Spinner Polaris-Spinner--colorTeal Polaris-Spinner--sizeLarge" role="status">
                     <path d="M15.542 1.487A21.507 21.507 0 0 0 .5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 0 0-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 1 0-.9-2.863z"></path>
                   </svg></div>
                 </center>
-			   <br>        
-                     <div class="Polaris-Page" style="display:none;" id="AffiliateProductTable">  
+			   <br>
+                     <div class="Polaris-Page" style="display:none;" id="AffiliateProductTable">
 						<div class="Polaris-Page__Content">
 						  <div class="Polaris-Card">
 							<div class="">
@@ -1227,16 +1227,16 @@ var script = document.createElement("script");
 										</svg></span></span></span></button></div>
 							  <div class="Polaris-DataTable">
 								<div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
-								  <table class="Polaris-DataTable__Table" id="affiliatetable" style="width: 124%;">                       
+								  <table class="Polaris-DataTable__Table" id="affiliatetable" style="width: 124%;">
 								  </table>
 								</div>
 							  </div>
 							</div>
 						  </div>
 						</div>
-					  </div> 
-       <br>        
-                     <div class="Polaris-Page" style="display:none;" id="AffiliateCartProductTable">  
+					  </div>
+       <br>
+                     <div class="Polaris-Page" style="display:none;" id="AffiliateCartProductTable">
 						<div class="Polaris-Page__Content">
 						  <div class="Polaris-Card">
 							<div class="">
@@ -1247,7 +1247,7 @@ var script = document.createElement("script");
 										</svg></span></span></span></button></div>
 							  <div class="Polaris-DataTable">
 								<div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
-								  <table class="Polaris-DataTable__Table" id="affiliateCartProdtable" style="width: 124%;">                       
+								  <table class="Polaris-DataTable__Table" id="affiliateCartProdtable" style="width: 124%;">
 								  </table>
 								</div>
 							  </div>
@@ -1259,16 +1259,16 @@ var script = document.createElement("script");
      </div>
    </div>
 </div>
-      
-<!--Discount Coupon -->      
-   
+
+<!--Discount Coupon -->
+
 <div id="SR_Discount" style="display:none;height:100%">
   <div class="Polaris-Card">
-    
+
      <!--View One Time Discount Coupon Page Content -->
 	 <div class="page_content" id="View_DiscountCoupons" style="display:none;">
             <div class="Polaris-Card__Header">
-              <h2 class="Polaris-Heading"> 
+              <h2 class="Polaris-Heading">
                 <div class="Polaris-Page-Header">
                         <div class="Polaris-Page-Header__Title">
                           <div>
@@ -1279,7 +1279,7 @@ var script = document.createElement("script");
                 </div>
               </h2>
             </div>
-            <div class="Polaris-Card__Section">      
+            <div class="Polaris-Card__Section">
 
                <br/>
                  <div>
@@ -1289,7 +1289,7 @@ var script = document.createElement("script");
                  </div>
 
                      <br/>
-                   <span class="Polaris-TextStyle--variationNegative" id="nodiscountcoupon" style="display:none;">You have not created any Discount Coupon</span>         
+                   <span class="Polaris-TextStyle--variationNegative" id="nodiscountcoupon" style="display:none;">You have not created any Discount Coupon</span>
 
                  <div class="Polaris-Page__Content">
                     <div class="Polaris-Card">
@@ -1314,14 +1314,14 @@ var script = document.createElement("script");
                   </div>
 
                <br/>
-               </div>		
+               </div>
      </div>
-    
+
       <!-- Discount Coupon Page Content -->
      <div class="page_content" id="Discount_Coupon">
-              
+
                 <div class="Polaris-Card__Header">
-                  <h2 class="Polaris-Heading"> 
+                  <h2 class="Polaris-Heading">
                     <div class="Polaris-Page-Header">
                             <div class="Polaris-Page-Header__Title">
                               <div>
@@ -1332,9 +1332,9 @@ var script = document.createElement("script");
                     </div>
                   </h2>
                 </div>
-              
+
               <br>
-             <div class="Polaris-Card__Section">  
+             <div class="Polaris-Card__Section">
               	<label class="Polaris-Label__Text">
   					Share your Discount Coupon Code on your social media and email. You will get a commission for everytime your Discount Coupon Code is used!
 				</label>
@@ -1349,13 +1349,13 @@ var script = document.createElement("script");
                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myInput" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
                        <div class="Polaris-TextField__Backdrop"></div>
                    </div>
- 					
+
                    <div>
                      <div class="Polaris-ButtonGroup__Item">
                        <button type="button" id="btnmsg" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="myFunction()">
                          <span class="Polaris-Button__Content"><span> Copy text </span></span></button></div>
                    </div>
-					
+
  				</div>
               	<br>
   				<div class="sr_body">
@@ -1368,13 +1368,13 @@ var script = document.createElement("script");
                </div>
        </div>
    </div>
-  
+
      <!--One Time Discount Coupon Page Content -->
     <div class="page_content" id="salesrepcoupon">
          <div class="Polaris-Card">
-                  
+
             <div class="Polaris-Card__Header">
-                  <h2 class="Polaris-Heading"> 
+                  <h2 class="Polaris-Heading">
                     <div class="Polaris-Page-Header">
                             <div class="Polaris-Page-Header__Title">
                               <div>
@@ -1385,7 +1385,7 @@ var script = document.createElement("script");
                     </div>
                   </h2>
                 </div>
-                  	
+
                   <br>
                   <div class="Polaris-Card__Section">
                    <div>
@@ -1393,7 +1393,7 @@ var script = document.createElement("script");
                        <button type="button" id="Coupon_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="ShowCouponTable()">
                          <span class="Polaris-Button__Content"><span> View Coupons </span></span></button></div>
                    </div>
-                
+
                  <br/>
                     <br/>
                      <div>
@@ -1420,15 +1420,15 @@ var script = document.createElement("script");
                           <div class="Polaris-TextField__Backdrop"></div>
                         </div>
                       </div>
-                       <span class="Polaris-TextStyle--variationNegative" id="sr_coupon_error1" style="display:none">Please enter the coupon code and discount</span> 
+                       <span class="Polaris-TextStyle--variationNegative" id="sr_coupon_error1" style="display:none">Please enter the coupon code and discount</span>
                        <span class="Polaris-TextStyle--variationNegative" id="couponempty"></span>
-                        
+
                        <br>
                         <div>
                            <div class="Polaris-ButtonGroup__Item">
                              <button type="button" id="submit" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="CreateCoupon()">
                                <span class="Polaris-Button__Content"><span>Create Coupon</span></span></button></div>
-                        </div>                      	
+                        </div>
 
                   </div>
               	</div>
@@ -1437,13 +1437,13 @@ var script = document.createElement("script");
 
   <br>
 </div>
-      
-<!--Your Bio-->      
-   
+
+<!--Your Bio-->
+
 <div id="SR_YourBio" style="display:none;">
   <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -1455,7 +1455,7 @@ var script = document.createElement("script");
     </div>
             {% assign salesrepInfo = shop.metafields.SalesTeamApp %}
       {% assign key = customer.id| downcase %}
-      
+
       {% assign FirstName = salesrepInfo[key].FirstName %}
       {% assign LastName = salesrepInfo[key].LastName %}
       {% assign email = salesrepInfo[key].email %}
@@ -1481,7 +1481,7 @@ var script = document.createElement("script");
       {% assign AnyQuestion = salesrepInfo[key].AnyQuestion %}
       {% assign ProfilePhoto = salesrepInfo[key].ProfileImagePath %}
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -1491,8 +1491,8 @@ var script = document.createElement("script");
                       <p>Update Profile Photo</p>
                     {%else%}
                        <p>Upload Profile Photo</p>
-       
-                     {%endif%}  
+
+                     {%endif%}
                     </div>
                    <span><input id="file" type="file" name="postedFile" placeholder="" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value=""></span>
 
@@ -1503,12 +1503,12 @@ var script = document.createElement("script");
     </div>
 
 
-    <div class="Polaris-Card__Section"> 
-    
+    <div class="Polaris-Card__Section">
+
      <!-- Page Content -->
-    <div class="page_content" id="salesrepbio">  
-      
-    <div class="Polaris-Card__Section">       
+    <div class="page_content" id="salesrepbio">
+
+    <div class="Polaris-Card__Section">
     <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -1621,7 +1621,7 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -1646,7 +1646,7 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
      <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -1671,10 +1671,10 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
-        
+
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -1687,10 +1687,10 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
-        
+
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -1703,10 +1703,10 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
-        
+
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -1728,10 +1728,10 @@ var script = document.createElement("script");
         </div>
      </div>
       </div>
-      
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
-        
+
           <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -1744,7 +1744,7 @@ var script = document.createElement("script");
         </div>
      </div>
       </div><br/>
-  
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
           <div class="">
@@ -1759,7 +1759,7 @@ var script = document.createElement("script");
             <div class="">
               {%if FirstAdditionalService != ""%}
               <input type="checkbox" name="checkbox" value="Closet organization" id="FirstAdditionalService" required checked><span> Closet organization</span>
-              
+
               {%else%}
                  <input type="checkbox" name="checkbox" value="Closet organization" id="FirstAdditionalService" required><span> Closet organization</span>
 
@@ -1790,7 +1790,7 @@ var script = document.createElement("script");
             </div>
         </div>
          </div>
-  
+
       <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -1824,22 +1824,22 @@ var script = document.createElement("script");
           <h4 style="color: #f80000;display:none" id="AnnualAmountError">Please enter Annual Amount in number</h4>    <div>
       <div class="Polaris-ButtonGroup__Item"><button type="button" id="UpdateBio_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="UpdateBio()"><span class="Polaris-Button__Content"><span>Update</span></span></button></div>
     </div>
-    
-  </div> 
+
+  </div>
       </div>
     </div>
 </div>
 </div>
-              
+
 <!--Team Details-->
 
 <div id="SR_TeamDetails" style="display:none;">
-  <div class="Polaris-Card">    
-    
+  <div class="Polaris-Card">
+
      <!--Team Details Page Content -->
-     <div class="page_content" id="teamdetails">       
+     <div class="page_content" id="teamdetails">
        <div class="Polaris-Card__Header">
-            <h2 class="Polaris-Heading"> 
+            <h2 class="Polaris-Heading">
               <div class="Polaris-Page-Header">
                       <div class="Polaris-Page-Header__Title">
                         <div>
@@ -1849,7 +1849,7 @@ var script = document.createElement("script");
                </div>
             </h2>
          </div>
-              	 
+
 		<div class="Polaris-Card__Section">
          <div class="">
          	<div class="Polaris-Labelled__LabelWrapper">
@@ -1888,9 +1888,9 @@ var script = document.createElement("script");
          <h4 style="color: darkseagreen; display:none" id="successmsg">Added successfully! Please check your email for the activation instructions.</h4>
          <h4 style="color: #f80000;display:none" id="errorsmsg">Error while updating. This user email may already have an account on the store.</h4>
 </div>
-       
+
          <div class="Polaris-Card__Header">
-            <h2 class="Polaris-Heading"> 
+            <h2 class="Polaris-Heading">
               <div class="Polaris-Page-Header">
                       <div class="Polaris-Page-Header__Title">
                         <div>
@@ -1903,22 +1903,22 @@ var script = document.createElement("script");
          <div class="Polaris-Card__Section">
            <div>
                         <label class="Polaris-Label__Text">Sign Up Page: <br />
-                          <a style="color:#3f4eae !important; font-size: 15px;" id="TeamSignUpPage" target="_blank"></a></label> 
+                          <a style="color:#3f4eae !important; font-size: 15px;" id="TeamSignUpPage" target="_blank"></a></label>
                     </div>
               <br>
                 <span class="Polaris-TextStyle--variationNegative" id="NoTeamDetails" style="display:none;">No Team Details</span>
                  <div>
                     <div class="Polaris-Labelled__LabelWrapper">
                         <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select SalesRep:</label></div>
-                      </div> 					  
+                      </div>
                      <select id="repname" onmousedown="this.value='';" onchange="showTeamDetails(this);" style="width:100%;">
 
-                     </select>    			
-                  </div> 
+                     </select>
+                  </div>
 
              <br><br>
            <h2 id="teamdata" style="display:none;"><b>Last Two Months Order Details</b></h2>
-           
+
            <div class="Polaris-Page__Content" id="ClientOrderTeamMember" style="display:none;">
              <center>
 								  <div id="TeamOrderloadGif" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);"><svg viewBox="0 0 44 44" class="Polaris-Spinner Polaris-Spinner--colorTeal Polaris-Spinner--sizeLarge" role="status">
@@ -1939,24 +1939,24 @@ var script = document.createElement("script");
                 <div class="Polaris-DataTable">
                 	<div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
                     	<table class="Polaris-DataTable__Table" id="ViewClientOrderTeamMember">
-							
+
                         </table>
                     </div>
                 </div>
             </div>
 		</div>
        </div>
-           
-        </div>	
+
+        </div>
      </div>
   </div>
-</div> 
+</div>
 
  <!--Add Customer Lead -->
 <div id="SR_Lead" style="display:none;">
   <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -1967,8 +1967,8 @@ var script = document.createElement("script");
          </div>
       </h2>
     </div>
-    
-<div class="Polaris-Card__Section">       
+
+<div class="Polaris-Card__Section">
     <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -1993,7 +1993,7 @@ var script = document.createElement("script");
         </div>
        </div>
      </div>
-  
+
   <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <!--<div class="Polaris-FormLayout__Item">
@@ -2044,11 +2044,11 @@ var script = document.createElement("script");
 							<option value="Contacted">Contacted</option>
 							<option value="Open">Open</option>
                             <option value="Closed">Closed</option>
-						</select>				
+						</select>
   				</div>
         </div>
         <div class="Polaris-FormLayout__Item">
-         
+
                <div class="">
   					<div class="Polaris-Labelled__LabelWrapper">
                       <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Lead Rating:</label></div>
@@ -2058,11 +2058,11 @@ var script = document.createElement("script");
 							<option value="Hot">Hot</option>
 							<option value="Warm">Warm</option>
 							<option value="Cold">Cold</option>
-						</select>				
+						</select>
   				</div>
           </div>
         <div class="Polaris-FormLayout__Item">
-				
+
                 <div class="">
   					<div class="Polaris-Labelled__LabelWrapper">
                       <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Sales Program:</label></div>
@@ -2070,14 +2070,14 @@ var script = document.createElement("script");
 						<select id="SalesProgram" style="width:100%;">
                             <option value="">--SELECT--</option>
 						    <option value="Sales Channel">Sales Channel</option>
-						</select>				
+						</select>
   				</div>
         </div>
       </div>
     </div>-->
-  </div>       
-    
-<div class="Polaris-Card__Section"> 
+  </div>
+
+<div class="Polaris-Card__Section">
      <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -2091,7 +2091,7 @@ var script = document.createElement("script");
              </div>
           </div>
           </div>
-        </div>       
+        </div>
       </div>
     </div>
      <div class="Polaris-FormLayout__Items">
@@ -2115,7 +2115,7 @@ var script = document.createElement("script");
              </div>
           </div>
         </div>
-   
+
         <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -2138,8 +2138,8 @@ var script = document.createElement("script");
         </div>
      </div>
   </div>
-  
-  <div class="Polaris-Card__Section"> 
+
+  <div class="Polaris-Card__Section">
      <div role="group" class="Polaris-FormLayout--condensed">
       <div class="Polaris-FormLayout__Items">
         <div class="Polaris-FormLayout__Item">
@@ -2153,7 +2153,7 @@ var script = document.createElement("script");
              </div>
           </div>
           </div>
-        </div>       
+        </div>
       </div>
     </div>
      <div role="group" class="Polaris-FormLayout--condensed">
@@ -2169,7 +2169,7 @@ var script = document.createElement("script");
              </div>
           </div>
           </div>
-        </div>       
+        </div>
       </div>
     </div>
      <div class="Polaris-FormLayout__Items">
@@ -2193,7 +2193,7 @@ var script = document.createElement("script");
              </div>
           </div>
         </div>
-   
+
         <div class="Polaris-FormLayout__Item">
           <div class="">
           <div class="Polaris-Labelled__LabelWrapper">
@@ -2233,21 +2233,21 @@ var script = document.createElement("script");
           <h4 style="color: darkseagreen; display:none" id="Leadsuccessmsg">Customer sucessfully tagged to a rep.</h4>
         </div>
         <div>
-           <span id="LeadErrror" style="color: #f80000; display:none">This customer is already tagged to a rep.</span> 
+           <span id="LeadErrror" style="color: #f80000; display:none">This customer is already tagged to a rep.</span>
         </div>
         <div>
-           <span id="AddCustomerErrror" style="color: #f80000; display:none"></span> 
+           <span id="AddCustomerErrror" style="color: #f80000; display:none"></span>
         </div>
 </div>
 
     </div>
   </div>
 
-<!--Tagged Clients To Rep -->    
+<!--Tagged Clients To Rep -->
 <div id="SR_Clients" style="display:none;">
   <div class="Polaris-Card">
     <div class="Polaris-Card__Header">
-      <h2 class="Polaris-Heading"> 
+      <h2 class="Polaris-Heading">
         <div class="Polaris-Page-Header">
                 <div class="Polaris-Page-Header__Title">
                   <div>
@@ -2257,9 +2257,9 @@ var script = document.createElement("script");
          </div>
       </h2>
     </div>
-    <div class="Polaris-Card__Section"> 
+    <div class="Polaris-Card__Section">
     <!--View Client Orders-->
-           <div class="page_content" id="ViewRepClientOrders" style="display:none;">      
+           <div class="page_content" id="ViewRepClientOrders" style="display:none;">
                <br/>
                <div>
                    <div class="Polaris-ButtonGroup__Item">
@@ -2296,13 +2296,13 @@ var script = document.createElement("script");
            </div>
 
        <!-- All Clients -->
-           <div class="page_content" id="Clientdetails">      
-              <br>		
+           <div class="page_content" id="Clientdetails">
+              <br>
               <br>
              <div>
-			  <span class="Polaris-TextStyle--variationNegative" id="norepclients" style="display:none;">No Clients</span>               
+			  <span class="Polaris-TextStyle--variationNegative" id="norepclients" style="display:none;">No Clients</span>
               <div class="Polaris-Page__Content" id="TaggedClient" style="display:none;">
-               
+
                       <div class="Polaris-Card">
                         <div class="">
                           <div class="Polaris-DataTable__Navigation">
@@ -2329,16 +2329,16 @@ var script = document.createElement("script");
     </div>
 </div>
 </div>
-  
-  <!--Previous order details-->      
+
+  <!--Previous order details-->
 <div id="SR_PreviousOrder" style="display:none;">
-  <div class="Polaris-Card">    
-    
+  <div class="Polaris-Card">
+
 
      <!--Previous order details Page Content -->
      <div class="page_content" id="previousOrder">
          <div class="Polaris-Card__Header">
-            <h2 class="Polaris-Heading"> 
+            <h2 class="Polaris-Heading">
               <div class="Polaris-Page-Header">
                       <div class="Polaris-Page-Header__Title">
                         <div>
@@ -2380,12 +2380,12 @@ var script = document.createElement("script");
 									<path d="M15.542 1.487A21.507 21.507 0 0 0 .5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 0 0-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 1 0-.9-2.863z"></path>
 								  </svg></div>
 								</center>
-             
+
 							  <div class="popup-inner">
 										  <div class="Polaris-DataTable">
 									  <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
 										<table class="Polaris-DataTable__Table" id="ViewClientProductModel2">
-  
+
 										</table>
 									  </div>
 									</div>
@@ -2395,23 +2395,23 @@ var script = document.createElement("script");
 								<p><b>Shipping Cost: <span id="OrdersShipping2"></span></b></p>
 								<p><b>Total: <span id="OrderTotal2"></span></b></p>
 					<a class="popup-close" id="popupClose2" data-popup-close="popup-1" href="#"onclick="CloseYourModelData()">x</a>
-			</div>	
+			</div>
 					 </div>
 		</div>
-             </div>	
+             </div>
      </div>
   </div>
-</div> 
-       
- <!--My Orders details-->      
+</div>
+
+ <!--My Orders details-->
 <div id="SR_MyOrder" style="display:none;">
-  <div class="Polaris-Card">    
-    
+  <div class="Polaris-Card">
+
 
      <!--My order details Page Content -->
      <div class="page_content" id="MyOrder">
          <div class="Polaris-Card__Header">
-            <h2 class="Polaris-Heading"> 
+            <h2 class="Polaris-Heading">
               <div class="Polaris-Page-Header">
                       <div class="Polaris-Page-Header__Title">
                         <div>
@@ -2438,7 +2438,7 @@ var script = document.createElement("script");
                             <div class="Polaris-DataTable">
                               <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
                                 <table class="Polaris-DataTable__Table" id="ViewMyOrder">
-                                                               
+
                                 </table>
                               </div>
                             </div>
@@ -2463,21 +2463,21 @@ var script = document.createElement("script");
               <a class="popup-close" id="popupClose" data-popup-close="popup-1" href="#"onclick="CloseModelData()">x</a>
           </div>
       </div>
-       
+
      </div>
   </div>
-</div> 
+</div>
 
    <!--End-->
-          </div>             
+          </div>
        </main>
     <!--End Main Frame -->
-    </div>                                                   
+    </div>
 <!--End SalesRep App-->
 
 
 <script>
- 
+
   var serverData={};
   globalTotalDiscountAmt=0;
    var j=0;
@@ -2487,35 +2487,35 @@ var script = document.createElement("script");
   var moneyformate,currencyFormat;
   var format = "{% raw %}{{amount_with_comma_separator}}{% endraw %}";
   var shopname = "{{shop.name}}";
-  
+
 //calculate fixed wholesale discount
 function CalculateFixedAmountDiscount(totalprice,price,discount,qty)
 {
 	return totalprice-((discount).toFixed(2)*qty);
 }
-  
+
 function CalculateFixedAmountDiscountForPerProduct(totalprice,price,discount,qty)
 {
 	return totalprice-((discount).toFixed(2));
-}  
- 
-//Calculate discount   
+}
+
+//Calculate discount
 function CalculateDiscount(totalprice,price,discount,qty)
 {
 	return totalprice-((price*discount).toFixed(2)*qty);
-}  
+}
 
 //Calculate Commission
-function CalculateCommission(price,percentage)  
+function CalculateCommission(price,percentage)
 {
     return price*percentage;
 }
 
-function CalculateFixedAmountCommission(price,percentage)  
+function CalculateFixedAmountCommission(price,percentage)
 {
     return percentage*100*ProductQuantity;
-}  
-    
+}
+
  //Get Product Price
  function getproductprice(productprice)
   {
@@ -2523,28 +2523,28 @@ function CalculateFixedAmountCommission(price,percentage)
 		{
 			var item_price = productprice.replace(".","");
 			return Product_Price = item_price.replace(",",".");
-      
+
 	    }
 	  else{
-    
+
 		  return Product_Price = productprice.replace(",","");
 	  }
    }
-         
-//Get Wholesale Discount       
+
+//Get Wholesale Discount
 function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtydiscount,CommissionDiscountOn,CommissionDiscountType)
-{	
- var totalDiscount=0;   
+{
+ var totalDiscount=0;
  var Product_Price,Item_price;
  for(singleproduct in productArr)
  {
     var quantity=0;
     var Amount=0;
      Product_Price = (productArr[singleproduct].product_price);
-      Item_price = (productArr[singleproduct].Item_Price); 
+      Item_price = (productArr[singleproduct].Item_Price);
    var getProductId = productArr[singleproduct].variantId;
    var getProductType = productArr[singleproduct].product_type;
-   
+
       if(CommissionDiscountOn == "Product")
       {
         for(var discount in discountAr)
@@ -2553,7 +2553,7 @@ function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtyd
           if(getProductId == responseProductId)
           {
             if(CommissionDiscountType == "FixedDollarAmount")
-            {				 
+            {
 	           var discountAmount = CalculateFixedAmountDiscount(parseFloat(Product_Price),parseFloat(Item_price), parseFloat(discountAr[discount].DiscountAmt)*100,parseFloat(productArr[singleproduct].product_quantity));
 		       totalDiscount=totalDiscount+discountAmount;
             }
@@ -2570,31 +2570,31 @@ function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtyd
 			//if discounted amount and actual price are same then show "No Discount" else show discounted price
             if(discountAr[discount].DiscountAmt == 0)
             {
-               wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";  
+               wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";
             }
             else
             {
               wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
-            } 
+            }
           }
-        }        
+        }
       }
-        
+
       if(CommissionDiscountOn == "ProductType")
       {
          getProductType = productArr[singleproduct].product_type;
-        //if product type is not set 
+        //if product type is not set
         if(getProductType == "")
         {
           	getProductType = "All Other Products";
-            
+
         }
         for(var discount in discountAr)
-    	{ 
+    	{
           var responseProductType = discountAr[discount].type;
           if(getProductType.toLowerCase() == responseProductType.toLowerCase())
           {
-           
+
 				 if(discountAr[discount].DiscountAmt == 0)
 				  {
 				   discountAmount = parseFloat(Product_Price);
@@ -2612,16 +2612,16 @@ function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtyd
 			//if discounted amount and actual price are same then show "No Discount" else show discounted price
             if(discountAr[discount].DiscountAmt == 0)
             {
-               wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";  
+               wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";
             }
             else
             {
               wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
-            }        
+            }
     	  }
         }
-      }  
-   
+      }
+
       if(CommissionDiscountOn == "SalesRep")
         {
           var getSalesRepId = "{{customer.id}}";
@@ -2639,13 +2639,13 @@ function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtyd
               //if discounted amount and actual price are same then show "No Discount" else show discounted price
               if(discountAr.WholesaleDiscount == 0)
               {
-                 wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";  
+                 wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";
               }
               else
               {
                 wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
-              } 
-            }                  
+              }
+            }
         }
 
        globalTotalDiscountAmt=parseFloat(totalDiscount);
@@ -2653,52 +2653,52 @@ function getWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtyd
          $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
 
               if(finalDiscount==0){
-           $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(totalDiscount).toFixed(2)+"</b>"); 
+           $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(totalDiscount).toFixed(2)+"</b>");
        }
        else{
-          $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>"); 
+          $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>");
       }
   }
 }
-  
-//Get quantity based Wholesale Discount       
+
+//Get quantity based Wholesale Discount
 function getQuantityBasedWholesaleDiscount(productArr,discountAr,currencyFormat,wholesaleqtydiscount,CommissionDiscountOn,CommissionDiscountType,discountArray)
-{	
- var totalDiscount=0;   
+{
+ var totalDiscount=0;
  var Product_Price,Item_price;
  for(singleproduct in productArr)
  {
     var quantity=0;
     var Amount=0;
      Product_Price = (productArr[singleproduct].product_price);
-      Item_price = (productArr[singleproduct].Item_Price); 
+      Item_price = (productArr[singleproduct].Item_Price);
    var getProductId = productArr[singleproduct].variantId;
    var getProductType = productArr[singleproduct].product_type;
    if(CommissionDiscountOn == "Product")
    {
          for(var discount in discountArray)
     	 {
-    	   var responseVaraintId = discountArray[discount].VariantId;              
+    	   var responseVaraintId = discountArray[discount].VariantId;
            if(getProductId == responseVaraintId &&  productArr[singleproduct].product_quantity >= discountArray[discount].quantity)
            {
              if(discountArray[discount].quantity>quantity)
              {
                if(productArr[singleproduct].product_quantity>quantity)
                {
-                 quantity=discountArray[discount].quantity; 
+                 quantity=discountArray[discount].quantity;
                  Amount=(discountArray[discount].DiscountAmt);
                }
-                
+
              }
            }
          }
         if(quantity>0)
         {
-          CalculateDiscountedPrice(Amount);  
+          CalculateDiscountedPrice(Amount);
         }
         else
         {
-          wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount"; 
+          wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";
           totalDiscount=totalDiscount+parseFloat(Product_Price);
         }
    }
@@ -2707,31 +2707,31 @@ function getQuantityBasedWholesaleDiscount(productArr,discountAr,currencyFormat,
         if(getProductType == "")
         {
           	getProductType = "All Other Products";
-            
+
         }
          for(var discount in discountAr)
     	 {
-    	   var responseProductType = discountAr[discount].type;              
+    	   var responseProductType = discountAr[discount].type;
            if(getProductType.toLowerCase() == responseProductType.toLowerCase() &&  productArr[singleproduct].product_quantity >= discountAr[discount].quantity)
            {
              if(discountAr[discount].quantity>quantity)
              {
                if(productArr[singleproduct].product_quantity>quantity)
                {
-                 quantity=discountAr[discount].quantity; 
+                 quantity=discountAr[discount].quantity;
                  Amount=(discountAr[discount].DiscountAmt);
                }
-                
+
              }
            }
          }
         if(quantity>0)
         {
-          CalculateDiscountedPrice(Amount);  
+          CalculateDiscountedPrice(Amount);
         }
         else
         {
-          wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount"; 
+          wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";
           totalDiscount=totalDiscount+parseFloat(Product_Price);
         }
    }
@@ -2747,7 +2747,7 @@ function getQuantityBasedWholesaleDiscount(productArr,discountAr,currencyFormat,
             var discountAmount = CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price), parseFloat(Amount),parseFloat(productArr[singleproduct].product_quantity));
           totalDiscount=totalDiscount+discountAmount;
           }
-            
+
           discountAmount = discountAmount.toFixed(2);
           if(moneyformate == format)
 		  {
@@ -2755,21 +2755,21 @@ function getQuantityBasedWholesaleDiscount(productArr,discountAr,currencyFormat,
 		  }
           wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
         }
-                          
+
 
        globalTotalDiscountAmt=parseFloat(totalDiscount);
        finalDiscount=subtotal-parseFloat(globalTotalDiscountAmt);
-  
+
        $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
        if(finalDiscount==0){
-           $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(totalDiscount).toFixed(2)+"</b>"); 
+           $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(totalDiscount).toFixed(2)+"</b>");
        }
        else{
-          $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>"); 
-      } 
+          $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>");
+      }
   }
-}  
- 
+}
+
 //Get Customer Discount and Salesrep Commission
 function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,CommissionDiscountOn,CommissionDiscountType)
 {
@@ -2781,9 +2781,9 @@ function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,C
        var getProductId = productArr[singleproduct].variantId;
       Product_Price = (productArr[singleproduct].product_price);
       Item_price = (productArr[singleproduct].Item_Price);
-      product_quantity = (productArr[singleproduct].product_quantity); 
+      product_quantity = (productArr[singleproduct].product_quantity);
 
-       
+
         for(var discount in commissionAr)
     	 {
     			var responseProductId = commissionAr[discount].variantId;
@@ -2793,24 +2793,24 @@ function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,C
                   if(CommissionDiscountType == "FixedDollarAmount")
                   {
                     currencyFormat = "$";
-                    var DiscountAmount = (CalculateFixedAmountDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount*100),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);               		
+                    var DiscountAmount = (CalculateFixedAmountDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount*100),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
                     var CommissionAmount = parseFloat(commissionAr[discount].Commissionforsalerep*100*product_quantity).toFixed(2);
-                  
+
                   }
                   else
                   {
-                    var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);               		
+                    var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
                     var CommissionAmount = (CalculateCommission(DiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
-                  
+
                   }
-        			
+
 					  if(moneyformate == format)
 					  {
-						    DiscountAmount = DiscountAmount.replace(".",",");							
-							CommissionAmount = CommissionAmount.replace(".",",");							
+						    DiscountAmount = DiscountAmount.replace(".",",");
+							CommissionAmount = CommissionAmount.replace(".",",");
                       }
-                    					  	
-                      //checking for applying dicount	
+
+                      //checking for applying dicount
                       if(commissionAr[discount].BronzeDiscount == 0)
                         {
                           productArr[singleproduct]["Discount_For_Customer"] = "No Discount";
@@ -2818,20 +2818,20 @@ function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,C
                       else{
                         	productArr[singleproduct]["Discount_For_Customer"] = currencyFormat +" "+ DiscountAmount.toString();
                       }
-                     
-                      //checking for applying commission		
+
+                      //checking for applying commission
                       if(commissionAr[discount].Commissionforsalerep == 0 )
                       	{
                         	productArr[singleproduct]["Commission_Amount"] = "No Commission";
                       	}
                       else{
-                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();                      	
-    			     	}						
+                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();
+    			     	}
               	}
        }
 	}
   }
-  
+
   if(CommissionDiscountOn == "ProductType")
   {
 	for(singleproduct in productArr)
@@ -2841,25 +2841,25 @@ function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,C
       Item_price = (productArr[singleproduct].Item_Price);
       if(getProductType == "" )
         {
-            var getProductType = "All Other Products";          
+            var getProductType = "All Other Products";
         }
-       
+
       for(var discount in commissionAr)
     	{
     			var responseProductType = commissionAr[discount].type;
         		if(getProductType.toLowerCase() == responseProductType.toLowerCase())
               	{
                     console.log(commissionAr[discount].ClientDiscount);
-        			var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].ClientDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);               		
+        			var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].ClientDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
                     var CommissionAmount = (CalculateCommission(DiscountAmount,parseFloat(commissionAr[discount].ClientCommission))).toFixed(2);
-                  
+
 					  if(moneyformate == format)
 					  {
-						    DiscountAmount = DiscountAmount.replace(".",",");							
-							CommissionAmount = CommissionAmount.replace(".",",");							
+						    DiscountAmount = DiscountAmount.replace(".",",");
+							CommissionAmount = CommissionAmount.replace(".",",");
                       }
-                    					  	
-                      //checking for applying dicount	
+
+                      //checking for applying dicount
                       if(commissionAr[discount].ClientDiscount == 0)
                         {
                           productArr[singleproduct]["Discount_For_Customer"] = "No Discount";
@@ -2867,20 +2867,20 @@ function getClientCommissionandDiscount(productArr,commissionAr,currencyFormat,C
                       else{
                         	productArr[singleproduct]["Discount_For_Customer"] = currencyFormat +" "+ DiscountAmount.toString();
                       }
-                     
-                      //checking for applying commission		
+
+                      //checking for applying commission
                       if(commissionAr[discount].ClientCommission == 0 )
                       	{
                         	productArr[singleproduct]["Commission_Amount"] = "No Commission";
                       	}
                       else{
-                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();                      	
-    			     	}						
+                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();
+    			     	}
               	}
        }
 	}
-  } 
-  
+  }
+
   //Show Selected products with discount and commission applied
   ShowAppiedDiscountCommissionProducts();
 }
@@ -2894,25 +2894,25 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
       var getSalesRepId = "{{customer.id}}";
       Product_Price = (productArr[singleproduct].product_price);
       Item_price = (productArr[singleproduct].Item_Price);
-     
-       
+
+
       for(var discount in commissionAr)
     	{
     			var responseSalesRepId = commissionAr[discount].SalesRepId;
         		if(getSalesRepId == responseSalesRepId)
               	{
                     console.log(commissionAr[discount].GoldDiscount);
-        			var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].GoldDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);               		
+        			var DiscountAmount = (CalculateDiscount(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].GoldDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
                     var CommissionAmount = (CalculateCommission(DiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
-                      	
+
 					   if(moneyformate == format)
 					   {
-						    DiscountAmount = DiscountAmount.replace(".",",");							
-							CommissionAmount = CommissionAmount.replace(".",",");							
-                       }                   
+						    DiscountAmount = DiscountAmount.replace(".",",");
+							CommissionAmount = CommissionAmount.replace(".",",");
+                       }
 
-					  // checking discounted price of product and original price are same or not. if same then show no discount that means there is no discount discount or discount is not set 	
-                      //checking for applying gold dicount	
+					  // checking discounted price of product and original price are same or not. if same then show no discount that means there is no discount discount or discount is not set
+                      //checking for applying gold dicount
                       if(commissionAr[discount].GoldDiscount == 0)
                         {
                           productArr[singleproduct]["Discount_For_Customer"] = "No Discount";
@@ -2920,28 +2920,28 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
                       else{
                         	productArr[singleproduct]["Discount_For_Customer"] = currencyFormat +" "+DiscountAmount.toString();
                       }
-                     
-                      //checking for applying gold commission		
+
+                      //checking for applying gold commission
                       if(commissionAr[discount].Commissionforsalerep == 0 )
                       	{
                         	productArr[singleproduct]["Commission_Amount"] = "No Commission";
                       	}
                       else{
-                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();                      	
+                      		productArr[singleproduct]["Commission_Amount"] = currencyFormat +" "+ CommissionAmount.toString();
     			     	}
-					
+
               	}
     		}
 
 	}
-  
+
   //Show Selected products with discount and commission applied
   ShowAppiedDiscountCommissionProducts();
-}      
-  
+}
+
   //Show Selected products with discount and commission applied
   function ShowAppiedDiscountCommissionProducts()
-  {     
+  {
     var _currencyFormat = currencyFormat;
     if(Clientproduct != 0)
     {
@@ -2983,7 +2983,7 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
       var price = 0;
       discountname = thisObj.options[thisObj.selectedIndex].text;
       var Producttitle = document.getElementById("Title"+rowid).innerHTML.replace("&amp;", "&");
-  	  
+
 	  for(var singleProduct in Clientproduct)
       {
         	if(Clientproduct[singleProduct].title == Producttitle)
@@ -3009,7 +3009,7 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
                 var _discount =  (parseFloat(price) - (parseFloat(price*discount))).toFixed(2);
               	var _commission = (CalculateCommission(parseFloat(_discount ),commission)).toFixed(2);
               }
-        	  	
+
     			document.getElementById("Discount"+rowid).innerHTML = _currencyFormat + _discount;
               	document.getElementById("Commission"+rowid).innerHTML = _currencyFormat + _commission;
             }
@@ -3021,34 +3021,34 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
         document.getElementById("Commission"+rowid).innerHTML = "No Commission";
       }
 	}
-  
+
   //Base Model function
-  var onSuccessGetbaseModel = function (response,$) 
-  {    
-      var currency = "{{shop.currency}}";         
+  var onSuccessGetbaseModel = function (response,$)
+  {
+      var currency = "{{shop.currency}}";
 	  currencyFormat = response.moneyformat;
-      money = "{{shop.money_format}}"; 
+      money = "{{shop.money_format}}";
       var Splitemoney = money.split(" ");
 	  moneyformate = Splitemoney[0];
 	  console.log(moneyformate);
 
        $("#CustomerOrders_Sent").text(response.AllOrdersCount.TotalCustomerOrdersInvoiceSent);
-	   $("#CustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrderInvoicePaid); 
-       $("#WholesaleOrders_Sent").text(response.AllOrdersCount.TotalWholesaleOrdersInvoiceSent); 
-	   $("#WholesaleOrder_Paid").text(response.AllOrdersCount.TotalWholesaleOrderInvoicePaid); 
+	   $("#CustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrderInvoicePaid);
+       $("#WholesaleOrders_Sent").text(response.AllOrdersCount.TotalWholesaleOrdersInvoiceSent);
+	   $("#WholesaleOrder_Paid").text(response.AllOrdersCount.TotalWholesaleOrderInvoicePaid);
 	   $("#AffiliateOrders_Paid").text(response.AllOrdersCount.TotalAffiliatePaidOrders);
-       $("#DiscountCodeOrders_Paid").text(response.AllOrdersCount.TotalCouponCodePaidOrders); 
-	   $("#TagCustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrders);   
-	   $("#POSOrders_Paid").text(response.AllOrdersCount.TotalPOSOrder);   
+       $("#DiscountCodeOrders_Paid").text(response.AllOrdersCount.TotalCouponCodePaidOrders);
+	   $("#TagCustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrders);
+	   $("#POSOrders_Paid").text(response.AllOrdersCount.TotalPOSOrder);
 
-	   $("#CustomerOrders_Earning").text(currency+" "+response.AllOrdersEarnings.CustomerOrdersEarning.toString()); 
+	   $("#CustomerOrders_Earning").text(currency+" "+response.AllOrdersEarnings.CustomerOrdersEarning.toString());
        $("#WholesaleOrders_Earning").text(currency+" "+response.AllOrdersEarnings.WholesaleOrdersEarning.toString());
 	   $("#AffiliateOrders_Earning").text(currency+" "+response.AllOrdersEarnings.AffiliateOrdersEarning.toString());
        $("#DiscountCode_Earning").text(currency+" "+response.AllOrdersEarnings.CouponCodeEarning.toString());
-	   $("#TeamLead_Commission").text(currency+" "+response.AllOrdersEarnings.ReferralCommission.toString()); 
-	   $("#Customer_Commission").text(currency+" "+response.AllOrdersEarnings.CustomerCommission.toString());         		
-       $("#POS_Commission").text(currency+" "+response.AllOrdersEarnings.POSCommission.toString());     
-    
+	   $("#TeamLead_Commission").text(currency+" "+response.AllOrdersEarnings.ReferralCommission.toString());
+	   $("#Customer_Commission").text(currency+" "+response.AllOrdersEarnings.CustomerCommission.toString());
+       $("#POS_Commission").text(currency+" "+response.AllOrdersEarnings.POSCommission.toString());
+
       if(response.CouponCodeForSalesRep == null)
   		 {
  		   $("#CouponCode").text("Coupon Code Not Set");
@@ -3059,27 +3059,27 @@ function getCommissionPerRep(productArr,commissionAr,currencyFormat)
           	$("#CouponCode").text(response.CouponCodeForSalesRep.DiscountCode);
           	$("#dis_amt").text(response.CouponCodeForSalesRep.CustomerDiscount+"%");
           	$("#com_amt").text(response.CouponCodeForSalesRep.SalesRepCommission+"%");
-		 }        
-         
+		 }
+
 	   if(response.select.Tagcustomer)
-		{  
-			var options;  
+		{
+			var options;
 			for(var cust in response.repcustomers)
 			  {
 			   options += '<option onclick="showSelected(\'' +  response.repcustomers[cust].CustomerName + '\',\'' + response.repcustomers[cust].CustomerMailid + '\')" value="'+j+'" id="'+response.repcustomers[cust].CustomerMailid+'">'+ response.repcustomers[cust].CustomerName+ '</option>';
 				j++;
-			  }   
+			  }
 			document.getElementById('custname').innerHTML = options;
 			 }
 		else
-		{	  
+		{
           $("#CustomerWidget").hide();
 		  $(".allcustomers").hide();
 		}
 
-    
+
 var i;
-    
+
 var orderRow = '<tr>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric month" scope="col" style="height: 54px;">Month </th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric clientInvoice" scope="col" style="height: 54px;">Client Invoice Orders</th>'+
@@ -3093,7 +3093,7 @@ var orderRow = '<tr>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric customerColumn" scope="col" style="height: 54px;">Customer Orders </th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric customerColumn" scope="col" style="height: 54px;">Customer Commission</th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric POSColumn" scope="col" style="height: 54px;">POS Orders </th>'+
-'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric POSColumn" scope="col" style="height: 54px;">POS Commission</th></tr>';    
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric POSColumn" scope="col" style="height: 54px;">POS Commission</th></tr>';
     for(var count = 0; count<6; count++)
     {
       orderRow += '<tr id="row' +count +'" class = "class="Polaris-DataTable__TableRow"">'+
@@ -3110,16 +3110,16 @@ var orderRow = '<tr>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric customerColumn" style="height: 72px;">'+(currency+ " " + response.TaggedCustomerOrdersDetails[count].TagCustomerCommission.toString())+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric POSColumn" style="height: 72px;">'+(response.POSOrdersDetails[count].POSOrderCount)+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric POSColumn" style="height: 72px;">'+(currency+ " " + response.POSOrdersDetails[count].POSCommission.toString())+'</td></tr>';
-    } 
+    }
     document.getElementById('orderTable').innerHTML = orderRow;
-	
+
 	var ProductRow = '<tr>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Order" scope="col" style="height: 54px;">Order Number</th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Date" scope="col" style="height: 54px;">Order Date</th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Customer" scope="col" style="height: 54px;">Customer Name</th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Payment" scope="col" style="height: 54px;">Payment</th>'+
 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Fulfillment" scope="col" style="height: 54px;">Fulfillment</th>'+
-'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Total" scope="col" style="height: 54px;">Total</th></th></tr>';  
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric Total" scope="col" style="height: 54px;">Total</th></th></tr>';
 
 var ProductsArray = [];
 {% for order in customer.orders %}
@@ -3137,7 +3137,7 @@ var ProductsArray = [];
     {%for items in order.line_items%}
         ProductsArray.push({
           "OrderNumber":{{order.order_number}},
-          "image" :'{{ items.image | img_url: '100x100' | img_tag }}' , 
+          "image" :'{{ items.image | img_url: '100x100' | img_tag }}' ,
           "quantity" :  {{items.quantity}},
           "title" : '{{items.title}}',
           "price" : '{{items.original_line_price| money}}',
@@ -3150,8 +3150,8 @@ var ProductsArray = [];
           "ShipDate":ShipDate,
     });
     {%endfor%}
-    
-              var orderName='{{order.name}}'    
+
+              var orderName='{{order.name}}'
               var orderNumber={{order.order_number}};
        var date='{{order.created_at| date: "%b %d, %y"}}';
        var name='{{order.customer.first_name}} {{order.customer.last_name}}';
@@ -3159,119 +3159,119 @@ var ProductsArray = [];
        var fulfillment='{{order.fulfillment_status}}';
        var total='{{order.total_price| money_with_currency}}'
       ProductRow += '<tr id="row' +count +'" class = "class="Polaris-DataTable__TableRow"">'+
-      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric month" style="height: 72px;"><u><a style="color:blue;" href="javascript:void(0)" onclick=showModelData('+orderNumber+')>'+orderName+'</a></u></td>'+ 
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric month" style="height: 72px;"><u><a style="color:blue;" href="javascript:void(0)" onclick=showModelData('+orderNumber+')>'+orderName+'</a></u></td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric date" style="height: 72px;">'+date+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric name" style="height: 72px;">'+name+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric financial" style="height: 72px;">'+financial+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric fulfillment" style="height: 72px;">'+fulfillment+'</td>'+
       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric total" style="height: 72px;">'+total+'</td></tr>';
     {%endfor%}
-  
-    document.getElementById('ViewMyOrder').innerHTML = ProductRow;         
-    
+
+    document.getElementById('ViewMyOrder').innerHTML = ProductRow;
+
 
     if(!response.select.CustomerInvoice && !response.select.ClientDiscount &&!response.select.CommissionPerRep)
     {
       	    document.getElementById("sr_CustomerOrder_head").style.display = "none";
       		document.getElementById("ClientWidget").style.display = "none";
-      		
+
       		var ClientElement = [];
       		ClientElement = document.getElementsByClassName("clientInvoice");
       		var i;
-    		for (i = 0; i < ClientElement.length; i++) 
+    		for (i = 0; i < ClientElement.length; i++)
             {
         		ClientElement[i].style.display = "none";
-    		}      		
+    		}
     }
 
     if(!response.select.WholesaleInvoice && !response.select.wholesaleqtydiscount)
     {
       		document.getElementById("sr_Wholesale_head").style.display = "none";
       		document.getElementById("WholesaleWidget").style.display = "none";
-      		
+
       		var WholesaleElement = [];
       		WholesaleElement = document.getElementsByClassName("wholesaleColoumn");
       		var i;
-    		for (i = 0; i < WholesaleElement.length; i++) 
+    		for (i = 0; i < WholesaleElement.length; i++)
             {
         		WholesaleElement[i].style.display = "none";
     		}
-      		
+
     }
 
     if(!response.select.AffiliateLink && !response.select.AffiliateLinkCommissionPerRep)
     {
       		document.getElementById("sr_Affiliate_head").style.display = "none";
       		document.getElementById("AffiliateWidget").style.display = "none";
-      		
+
       		var affiliateElement = [];
       		affiliateElement = document.getElementsByClassName("affiliateColumn");
       		var i;
-    		for (i = 0; i < affiliateElement.length; i++) 
+    		for (i = 0; i < affiliateElement.length; i++)
             {
         		affiliateElement[i].style.display = "none";
     		}
-      		
+
     }
 
     if(!response.select.CouponeCode)
     {
       		document.getElementById("sr_Discount_head").style.display = "none";
      		document.getElementById("CouponeCodeWidget").style.display = "none";
-      		
+
       		var CouponeElement = [];
       		CouponeElement = document.getElementsByClassName("couponeColumn");
       		var i;
-    		for (i = 0; i < CouponeElement.length; i++) 
+    		for (i = 0; i < CouponeElement.length; i++)
             {
         		CouponeElement[i].style.display = "none";
     		}
     }
-    
+
     if(!response.select.POS)
     {
       		document.getElementById("POSWidget").style.display = "none";
-      		
+
       		var ClientElement = [];
       		ClientElement = document.getElementsByClassName("POSColumn");
       		var i;
-    		for (i = 0; i < ClientElement.length; i++) 
+    		for (i = 0; i < ClientElement.length; i++)
             {
         		ClientElement[i].style.display = "none";
-    		}      		
+    		}
     }
-		
+
     if(!response.select.referralpage)
-    {     
-	   document.getElementById("sr_Team_head").style.display = "none"; 	  
-       $("#TeamleadWidget").hide();  	  		      
+    {
+	   document.getElementById("sr_Team_head").style.display = "none";
+       $("#TeamleadWidget").hide();
     }
 	else
 	{
 	 //Get Team Details
 	  if(response.teammemberdetails!= 0)
-	   {   
+	   {
 		 console.log(response.teammemberdetails);
 		 var option;
 		   for(var info in response.teammemberdetails)
-			{ 
+			{
 			  option += '<option value="'+j+'" id="'+response.teammemberdetails[info].Id+'">'+ response.teammemberdetails[info].Name + '</option>';
-			  j++;			
+			  j++;
 			}
-		   document.getElementById('repname').innerHTML = option;  
+		   document.getElementById('repname').innerHTML = option;
 		}
 	  else
-	   {         
+	   {
 		$("#NoTeamDetails").show();
-		document.getElementById("sr_Team_head").style.display = "none"; 	  
-		$("#TeamleadWidget").hide(); 
+		document.getElementById("sr_Team_head").style.display = "none";
+		$("#TeamleadWidget").hide();
 	   }
 	}
-    
+
     if(response.select.referralpage)
     {
       document.getElementById("TeamSignUpPage").innerHTML = "{{shop.url}}/pages/sales-representative-sign-up?manager={{customer.first_name| downcase }}{{customer.id | modulo:1000}}";
-      $("#TeamSignUpPage").attr('href',"{{shop.url}}/pages/sales-representative-sign-up?manager={{customer.first_name| downcase }}{{customer.id | modulo:1000}}");  
+      $("#TeamSignUpPage").attr('href',"{{shop.url}}/pages/sales-representative-sign-up?manager={{customer.first_name| downcase }}{{customer.id | modulo:1000}}");
     }
 
 	var shopurl = window.location.protocol +"//"+ window.location.hostname;
@@ -3279,9 +3279,9 @@ var ProductsArray = [];
     {
         $("#repbio").val(response.rep_info.bio);
 		  if(response.rep_info.uniquelink == null || response.rep_info.uniquelink == " ")
-		  {	                       
+		  {
 			  document.getElementById("affiliate_link").innerHTML = shopurl + "/" + response.SingleSalesRep.SalesRepAffiliateUrl;
-			  $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);                                  
+			  $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
 		  }
 		  else{
 			  $("#uniquelink").val(response.rep_info.uniquelink);
@@ -3289,7 +3289,7 @@ var ProductsArray = [];
 			  $("#affiliate_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
 			  document.getElementById("aff_link").innerHTML = shopurl + "/" + response.rep_info.uniquelink;
 			  $("#aff_link").attr('href',response.SingleSalesRep.SalesRepAffiliateUrl);
-         
+
 		  }
     }
 	else
@@ -3304,33 +3304,33 @@ var ProductsArray = [];
     if(!response.select.SalesrepCoupon)
     {
     	document.getElementById("salesrepcoupon").style.display = "none";
-    }    
+    }
     else
     {
       	if(response.DiscountAndCommissionForCoupon != null)
 		{
       		$("#max_dis_amt").text(response.DiscountAndCommissionForCoupon.SalesRepMaxDiscount+"%");
       		$("#commission").text(response.DiscountAndCommissionForCoupon.SalesRepCommission+"%");
-		}   	
+		}
     }
-  
+
    if("{{shop.name}}" != "enzo-milano")
 	{
 	   $(".ProRep").hide();
 	}
 
 	if("{{shop.url}}" != "https://ajmal-perfumes.myshopify.com")
-	{  
+	{
       $("#dashheader").text("Current Month");
-    }    
+    }
     else{
          $("#dashheader").text("Current Month cycle: 5th - 4th");
     }
-    
+
      //Get Tagged Clients to Salesrep
   if(response.select.Tagcustomer)
   {
-    
+
     if(response.repcustomers != 0)
 	{
 		  var clientrows = '<tr>'+
@@ -3343,10 +3343,10 @@ var ProductsArray = [];
 		 for(var client in response.ClientOrders)
 		 {
 			var company = "";
-			if(response.ClientOrders[client].companyName != null) 
-             company = response.ClientOrders[client].companyName;	
+			if(response.ClientOrders[client].companyName != null)
+             company = response.ClientOrders[client].companyName;
 
-			  clientrows += '<tr class="Polaris-DataTable__TableRow">'+                
+			  clientrows += '<tr class="Polaris-DataTable__TableRow">'+
 			  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><span id="SpecialSpan" style="cursor: pointer; cursor: hand;" onclick="ClientOrdersDetails(\''+response.ClientOrders[client].CustomerId+'\',\''+response.ClientOrders[client].ClientName+'\')">'+ (response.ClientOrders[client].ClientName)+'</span></td>'+
   		      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ company +'</td>'+
   		      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ClientOrders[client].CustomerMailid+'</td>'+
@@ -3358,42 +3358,42 @@ var ProductsArray = [];
 	}
 	else
 	{
-	  $("#norepclients").show();      
+	  $("#norepclients").show();
 	}
   }
   else
     {
        document.getElementById("sr_Clients_head").style.display = "none";
-       document.getElementById("sr_Lead_head").style.display = "none";     
+       document.getElementById("sr_Lead_head").style.display = "none";
 	    var CustomerElement = [];
         CustomerElement = document.getElementsByClassName("customerColumn");
       		var i;
-    		for (i = 0; i < CustomerElement.length; i++) 
+    		for (i = 0; i < CustomerElement.length; i++)
             {
         		CustomerElement[i].style.display = "none";
     		}
-    }  
-	 
+    }
+
 	 //Hide Client Invoice button
 	  if(response.select.ClientDiscount==true){
 		$("#Choice").hide();
 	  }
 	  else{
 		$("#Choice").show();
-	  } 
+	  }
 
   if(response.select.ClientDiscount){
       $('#DiscountType').hide();
       $('#discountChoiceLabel').hide();
-    } 
+    }
     else{
       $('#DiscountType').show();
       $('#discountChoiceLabel').show();
     }
 
-  var Time=500;    
-     var ShowProductVariant=function (filter, searchtype) 
-     {          
+  var Time=500;
+     var ShowProductVariant=function (filter, searchtype)
+     {
       var productarray=[];
       var AllProducts=[];
            jQuery.getJSON("/search/suggest.json", {
@@ -3412,13 +3412,13 @@ var ProductsArray = [];
                else
                {
                  $('#clientinvoicetable').hide();
-                 $('#wholesaleinvoicetable').hide();	
-                 $('#AffiliateProductTable').hide();	
-               } 
-             });   
-      
+                 $('#wholesaleinvoicetable').hide();
+                 $('#AffiliateProductTable').hide();
+               }
+             });
+
    }
-     
+
      var GetProductsByhandle=function(AllProducts,filter,searchtype)
      {
        var productarray=[];
@@ -3442,11 +3442,11 @@ var ProductsArray = [];
                  if(searchtype == "affiliate")
                  {
                     ShowAffiliateProducts(productarray,filter,response.CommissionDiscountOn.CommissionDiscountOn);
-                 }                                
-              })                               
+                 }
+              })
          }
        }
-         
+
      var showProductTimeOut=null;
      //searchKeywords the client products by product title
    $('#ProductSearchInput').keyup( function(){
@@ -3456,8 +3456,8 @@ var ProductsArray = [];
        $('#clientinvoicetable').hide();
 	    $("#clientSpinner").hide();
        if(filter!="")
-       {       
-         $("#clientSpinner").show();  
+       {
+         $("#clientSpinner").show();
           if(showProductTimeOut==null)
           {
             showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);
@@ -3465,11 +3465,11 @@ var ProductsArray = [];
           else
           {
             Time=500;
-            showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);         
+            showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);
           }
        }
     });
-    
+
       var ShowClientProducts=function(productarray,filter)
       {
             if(filter)
@@ -3481,7 +3481,7 @@ var ProductsArray = [];
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Variant Title</th>'+
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th></tr>';
-      
+
                            for(var product in productarray)
                            {
                              for(var variant=0;productarray[product].variants.length>variant;variant++)
@@ -3489,36 +3489,36 @@ var ProductsArray = [];
                                var productprice =productarray[product].variants[variant].price/100;
                                  orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                 '<img class="sr_productImage" src="{{ 'plusIcon.png' | asset_url }}" style="cursor: pointer;" onclick="AddProductInClientInvoice(\''+productarray[product].title+'\',\''+productprice+'\',\''+productarray[product].images+'\',\''+productarray[product].type+'\',\''+productarray[product].variants[variant].id+'\',\''+productarray[product].variants[variant].option1+'\',\''+productarray[product].variants[variant].available+'\')"></td>'+                 
+                                 '<img class="sr_productImage" src="{{ 'plusIcon.png' | asset_url }}" style="cursor: pointer;" onclick="AddProductInClientInvoice(\''+productarray[product].title+'\',\''+productprice+'\',\''+productarray[product].images+'\',\''+productarray[product].type+'\',\''+productarray[product].variants[variant].id+'\',\''+productarray[product].variants[variant].option1+'\',\''+productarray[product].variants[variant].available+'\')"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="ClientInvoicequantity_'+productarray[product].variants[variant].id+'" placeholder="Quantity"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
-                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].variants[variant].option1+'</td>'+     
-                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice+  " " +currency+'</td></tr>';                                                  
-                                 
+                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].variants[variant].option1+'</td>'+
+                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice+  " " +currency+'</td></tr>';
+
                               }
                             }
-                          document.getElementById('clienttable').innerHTML = orderRow; 
+                          document.getElementById('clienttable').innerHTML = orderRow;
                           $('#clientinvoicetable').show();
-                          $("#clientSpinner").hide(); 
+                          $("#clientSpinner").hide();
                         }
-                        else 
+                        else
                         {
-                          $('#clientinvoicetable').hide();			
+                          $('#clientinvoicetable').hide();
                         }
-             
+
    }
-              
-     //searchKeywords the wholesale products by product title              
+
+     //searchKeywords the wholesale products by product title
     $('#WholesaleProductSearchInput').keyup( function(){
       clearTimeout(showProductTimeOut);
       var filter = $("#WholesaleProductSearchInput").val().toLowerCase();
        var searchtype = "wholesale";
        $('#wholesaleinvoicetable').hide();
-	   $("#wholesaleSpinner").hide(); 
+	   $("#wholesaleSpinner").hide();
        if(filter!="")
-       { 
-         $("#wholesaleSpinner").show(); 
+       {
+         $("#wholesaleSpinner").show();
           if(showProductTimeOut==null)
           {
             showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);
@@ -3529,7 +3529,7 @@ var ProductsArray = [];
             showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);
           }
        }
-    });   
+    });
 
       var ShowWholesaleProducts=function(productarray,filter)
       {
@@ -3542,7 +3542,7 @@ var ProductsArray = [];
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Variant Title</th>'+
               '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th></tr>';
-      
+
                          for(var product in productarray)
                            {
                              for(var variant=0;productarray[product].variants.length>variant;variant++)
@@ -3550,36 +3550,36 @@ var ProductsArray = [];
                                var productprice =productarray[product].variants[variant].price/100;
                                  orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                 '<img class="sr_productImage" src="{{ 'plusIcon.png' | asset_url }}" style="cursor: pointer;" onclick="AddProduct(\''+productarray[product].title+'\',\''+productprice+'\',\''+productarray[product].images+'\',\''+productarray[product].type+'\',\''+productarray[product].variants[variant].id+'\',\''+productarray[product].variants[variant].option1+'\',\''+productarray[product].variants[variant].available+'\')"></td>'+                 
+                                 '<img class="sr_productImage" src="{{ 'plusIcon.png' | asset_url }}" style="cursor: pointer;" onclick="AddProduct(\''+productarray[product].title+'\',\''+productprice+'\',\''+productarray[product].images+'\',\''+productarray[product].type+'\',\''+productarray[product].variants[variant].id+'\',\''+productarray[product].variants[variant].option1+'\',\''+productarray[product].variants[variant].available+'\')"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="quantity_'+productarray[product].variants[variant].id+'" placeholder="Quantity"></td>'+
                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
-                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].variants[variant].option1+'</td>'+     
-                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice+  " " +currency+'</td></tr>';                                                  
-                                 
+                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].variants[variant].option1+'</td>'+
+                                 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice+  " " +currency+'</td></tr>';
+
                               }
                             }
-                                                                                                                                                    
-                          document.getElementById('wholesaletable').innerHTML = orderRow; 
+
+                          document.getElementById('wholesaletable').innerHTML = orderRow;
                           $('#wholesaleinvoicetable').show();
-                          $("#wholesaleSpinner").hide(); 
+                          $("#wholesaleSpinner").hide();
              }
-           else 
+           else
            {
-             $('#wholesaleinvoicetable').hide();			
-           }                                        
-   }    
-              
-     //searchKeywords the affiliate products  by product title              
+             $('#wholesaleinvoicetable').hide();
+           }
+   }
+
+     //searchKeywords the affiliate products  by product title
     $('#AffiliateProductSearchInput').keyup( function(){
       clearTimeout(showProductTimeOut);
       var filter = $("#AffiliateProductSearchInput").val().toLowerCase();
       var searchtype = "affiliate";
        $('#AffiliateProductTable').hide();
-	   $("#affiliateSpinner").hide(); 
+	   $("#affiliateSpinner").hide();
        if(filter!="")
-       {        
-         $("#affiliateSpinner").show(); 
+       {
+         $("#affiliateSpinner").show();
           if(showProductTimeOut==null)
           {
             showProductTimeOut=setTimeout(ShowProductVariant(filter, searchtype), Time);
@@ -3599,7 +3599,7 @@ var ProductsArray = [];
         $('#AffiliateCartProductTable').show();
       }
     });
-     
+
       var ShowAffiliateProducts=function(productarray,filter,CommissionDiscountOn)
       {
             if(filter)
@@ -3635,26 +3635,26 @@ var ProductsArray = [];
                                     var productprice =productarray[product].variants[variant].price/100;
                                      orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
-                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+     
+                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommission[productdata].Commission+'%</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                     '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                     '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                     '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
+                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
                                     '</td></tr>';                                                                                                                 }
                                   }
                                }
-                       }   
+                       }
               }
               if(CommissionDiscountOn=="Product")
               {
                    for(var product in productarray)
-                   {                                                                                
-                                
+                   {
+
                                  var currency = "{{shop.currency}}";
                                  var url = new URL(response.SingleSalesRep.SalesRepAffiliateUrl);
                                   var affiliateUrl = url.searchParams.get("ambassador");
@@ -3665,28 +3665,28 @@ var ProductsArray = [];
                                    for(var productdata in response.AffiliateCommissionPerProduct)
                                    {
                                       var variantId = productarray[product].variants[variant].id ;
-                                   if(variantId == response.AffiliateCommissionPerProduct[productdata].variantId)                                   
+                                   if(variantId == response.AffiliateCommissionPerProduct[productdata].variantId)
                                    {
-                                     
+
                                      var productprice =productarray[product].variants[variant].price/100;
                                      var commission=Math.round((response.AffiliateCommissionPerProduct[productdata].Commission)*100);
                                      orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
-                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+     
+                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+commission+'%</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                     '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                     '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                     '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
-                                    '</td></tr>'; 
+                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
+                                    '</td></tr>';
                                    }
                                    }
-                                  
-                                                                                                                                                    
+
+
                                  }
                        }
               }
@@ -3695,7 +3695,7 @@ var ProductsArray = [];
                    for(var product in productarray)
                    {
                         var salesrepId = "{{customer.id}}" ;
-                             
+
                              for(var productdata in response.AffiliateCommissionPerRepModel)
                              {
                                 if(salesrepId == response.AffiliateCommissionPerRepModel[productdata].SalesRepId)
@@ -3710,36 +3710,36 @@ var ProductsArray = [];
                                     var productprice =productarray[product].variants[variant].price/100;
                                      orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
-                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+     
+                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommissionPerRepModel[productdata].Commission+'%</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                     '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                     '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                     '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
-                                    '</td></tr>';                                                                                                                 
+                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
+                                    '</td></tr>';
                                  }
                                }
                             }
-                       }  
+                       }
               }
-             
-              
-                   document.getElementById('affiliatetable').innerHTML = orderRow; 
+
+
+                   document.getElementById('affiliatetable').innerHTML = orderRow;
                    $('#AffiliateProductTable').show();
-                   $("#affiliateSpinner").hide(); 
+                   $("#affiliateSpinner").hide();
                 }
-            else 
+            else
             {
-              $('#AffiliateProductTable').hide();			
+              $('#AffiliateProductTable').hide();
             }
-       }       
+       }
 };
-	
- 
+
+
   function GetBaseModelData($){
 	 {% if customer.default_address != null %}
 		var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&data=1&city={{customer.default_address.city}}";
@@ -3751,7 +3751,7 @@ var ProductsArray = [];
        	   urlVal,
            function (data, status) {
                  onSuccessGetbaseModel(data,$);
-        		         		 
+
                   $("#SR_App").show();
 				  $("#SR_Dashboard").show();
                   $("#loadGif").hide();
@@ -3760,9 +3760,9 @@ var ProductsArray = [];
            DisplayCommisionDiscount(data);
            GetCartData();
           }
-       ); 
-  }   
- 
+       );
+  }
+
       var GetSalesRepDataForLast2months = function($)
         {
            var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=18";
@@ -3810,13 +3810,13 @@ var ProductsArray = [];
              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.AllOrdersCommission[Previousorder].CommissionType)+'</td>'+
              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric name" style="height: 72px;"><ul>'+items+'</ul></td></tr>';
            items='';
-          }  
+          }
         $("#ViewPreviousOrderloadGif").hide();
          document.getElementById('ViewPreviousOrder').innerHTML = PreviousOrderRow;
         }
-        
 
-        
+
+
         //Clickable card headers
         var ClickCustomerInvoice = function()
         {
@@ -3831,8 +3831,8 @@ var ProductsArray = [];
             $('#SR_Clients').hide();
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
-        } 
-        
+        }
+
         var ClickWholesale = function()
         {
             $('#SR_Dashboard').hide();
@@ -3847,7 +3847,7 @@ var ProductsArray = [];
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
         }
-        
+
          var ClickAffiliate = function()
         {
             $('#SR_Dashboard').hide();
@@ -3862,7 +3862,7 @@ var ProductsArray = [];
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
         }
-        
+
         var ClickDiscount = function()
         {
             $('#SR_Dashboard').hide();
@@ -3877,7 +3877,7 @@ var ProductsArray = [];
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
         }
-        
+
         var ClickCustomerCommission = function()
         {
             $('#SR_Dashboard').hide();
@@ -3891,8 +3891,8 @@ var ProductsArray = [];
             $('#SR_Clients').show();
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
-        } 
-        
+        }
+
         var ClickTeamLeadCommission = function()
         {
             $('#SR_Dashboard').hide();
@@ -3906,12 +3906,12 @@ var ProductsArray = [];
             $('#SR_Clients').hide();
             $('#SR_PreviousOrder').hide();
             $('#SR_MyOrder').hide();
-        } 
-           
+        }
+
         var DisplayCommisionDiscount = function(response)
-        {          
+        {
         	//Affiliate link
-        	
+
            if(response.CommissionDiscountOn.CommissionDiscountOn == "Product")
             {
               $("#commission_on").text("Product");
@@ -3922,8 +3922,8 @@ var ProductsArray = [];
               if(response.CommissionDiscountOn.CommissionDiscountType == "FixedDollarAmount")
               {
                 for(var discount in response.CommissionandDiscountPerProduct)
-           		{                 
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           		{
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].ProductName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.moneyformat+" "+response.CommissionandDiscountPerProduct[discount].AffiliateCommission)+'</td></tr>';
            		}
@@ -3931,13 +3931,13 @@ var ProductsArray = [];
               else
               {
                 for(var discount in response.CommissionandDiscountPerProduct)
-           		{                 
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           		{
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].ProductName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].AffiliateCommission)+"%"+'</td></tr>';
            		}
               }
-           
+
             	document.getElementById('AffiliateCommissionTable').innerHTML = row;
             }
 
@@ -3951,31 +3951,31 @@ var ProductsArray = [];
 
            		for(var discount in response.CommissionandDiscountPerProductType)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[discount].productType)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[discount].AffiliateCommission)+"%"+'</td></tr>';
            		}
-           
+
             	document.getElementById('AffiliateCommissionTable').innerHTML = row;
             }
 
             if(response.CommissionDiscountOn.CommissionDiscountOn == "SalesRep")
-            {              
+            {
               $("#commission_on").text("Sales Rep");
               	console.log(response.SalesRepCommissionModel);
            		var row = '<tr>'+
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">SalesRep Name</th>'+
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric type" scope="col" style="height: 54px;">Commission</th></tr>';
-                 
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.SalesRepCommissionModel.SalesRepName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.SalesRepCommissionModel.AffiliateCommission)*100+"%"+'</td></tr>';
-           		
+
             	document.getElementById('AffiliateCommissionTable').innerHTML = row;
             }
-           
-           //wholesale 
-                     
+
+           //wholesale
+
           if(response.select.wholesaleqtydiscount)
               {
                 $("#discount_on").text("Quantity Based Discount");
@@ -3987,7 +3987,7 @@ var ProductsArray = [];
 
            		for(var discount in response.TenantWholesaleQuantityDiscount)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.TenantWholesaleQuantityDiscount[discount].ProductType)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.TenantWholesaleQuantityDiscount[discount].WholesaleDiscount)+"%"+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.TenantWholesaleQuantityDiscount[discount].Quantity)+'</td></tr>';
@@ -4007,7 +4007,7 @@ var ProductsArray = [];
               {
                 for(var discount in response.CommissionandDiscountPerProduct)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].ProductName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.moneyformat+" "+response.CommissionandDiscountPerProduct[discount].WholesalePrice)+'</td></tr>';
            		}
@@ -4016,12 +4016,12 @@ var ProductsArray = [];
               {
                 for(var discount in response.CommissionandDiscountPerProduct)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].ProductName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[discount].WholesalePrice)+"%"+'</td></tr>';
            		}
               }
-           
+
             	document.getElementById('WholesaleDiscountTable').innerHTML = row;
             }
 
@@ -4035,10 +4035,10 @@ var ProductsArray = [];
 
            		for(var discount in response.CommissionandDiscountPerProductType)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[discount].productType)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[discount].WholesaleDiscount)+"%"+'</td></tr>';
-           		}          
+           		}
             	document.getElementById('WholesaleDiscountTable').innerHTML = row;
             }
 
@@ -4049,18 +4049,18 @@ var ProductsArray = [];
            		var row = '<tr>'+
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">SalesRep Name</th>'+
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric type" scope="col" style="height: 54px;">Commission</th></tr>';
-                  
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.SalesRepCommissionModel.SalesRepName)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.SalesRepCommissionModel.WholesaleDiscount)*100+"%"+'</td></tr>';
-           		
+
             	document.getElementById('WholesaleDiscountTable').innerHTML = row;
             }
           }
            //clientInvoice
-           
+
            //commission
-          
+
           if(response.select.ClientDiscount)
               {
                 $("#discount_commission_on").text("Client Discount Tiers");
@@ -4073,7 +4073,7 @@ var ProductsArray = [];
 
            		for(var commission in response.ClientInvoiceDiscount)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.ClientInvoiceDiscount[commission].ProductType)+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.ClientInvoiceDiscount[commission].CommissionRate)*100+"%"+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.ClientInvoiceDiscount[commission].DiscountName)+'</td>'+
@@ -4082,7 +4082,7 @@ var ProductsArray = [];
                 document.getElementById('ClientInvoiceCommissionTable').innerHTML = row;
               }
           else
-          {          
+          {
            if(response.CommissionDiscountOn.CommissionDiscountOn == "Product")
             {
               $("#discount_commission_on").text("Product");
@@ -4092,11 +4092,11 @@ var ProductsArray = [];
                 //'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric type" scope="col" style="height: 54px;">Discount</th>'+
               	'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric type" scope="col" style="height: 54px;">Commission</th></tr>';
               if(response.CommissionDiscountOn.CommissionDiscountType == "FixedDollarAmount")
-              {                
-                    
+              {
+
            		for(var commission in response.CommissionandDiscountPerProduct)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[commission].ProductName)+'</td>'+
                      //'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[commission].BronzeDiscount)+"%"+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.moneyformat+" "+response.CommissionandDiscountPerProduct[commission].CommissionForCustomerOrder)+'</td></tr>';
@@ -4106,19 +4106,19 @@ var ProductsArray = [];
               {
                 for(var commission in response.CommissionandDiscountPerProduct)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[commission].ProductName)+'</td>'+
                      //'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[commission].BronzeDiscount)+"%"+'</td>'+
                       '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProduct[commission].CommissionForCustomerOrder)+"%"+'</td></tr>';
-                     
+
            		}
-              } 
-           
+              }
+
             	document.getElementById('ClientInvoiceCommissionTable').innerHTML = row;
             }
 
             if(response.CommissionDiscountOn.CommissionDiscountOn == "ProductType")
-            {              
+            {
               $("#discount_commission_on").text("Product Type");
               	console.log(response.CommissionandDiscountPerProductType);
           		 var row = '<tr>'+
@@ -4128,11 +4128,11 @@ var ProductsArray = [];
 
            		for(var commission in response.CommissionandDiscountPerProductType)
            		{
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[commission].productType)+'</td>'+
                      //'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[commission].ClientDiscount)+"%"+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.CommissionandDiscountPerProductType[commission].ClientCommission)+"%"+'</td></tr>';
-           		}                        
+           		}
             	document.getElementById('ClientInvoiceCommissionTable').innerHTML = row;
             }
 
@@ -4144,34 +4144,34 @@ var ProductsArray = [];
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">SalesRep Name</th>'+
                 //'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">Discount</th>'+
                 '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric type" scope="col" style="height: 54px;">Commission</th></tr>';
-                  
-           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.SalesRepCommissionModel.SalesRepName)+'</td>'+
                      //'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(response.SalesRepCommissionModel.GoldDiscount)*100+"%"+'</td>'+
                      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric type" style="height: 72px;">'+(response.SalesRepCommissionModel.Commissionforsalerep)*100+"%"+'</td></tr>';
-           		
-            	document.getElementById('ClientInvoiceCommissionTable').innerHTML = row;                
+
+            	document.getElementById('ClientInvoiceCommissionTable').innerHTML = row;
             }
           }
         }
 
 		var GetCartData = function()
-        {         
-            var CartData = [];  
+        {
+            var CartData = [];
             var AffiliateProduct = [];
           	var item_count = {{cart.item_count}}
-          
+
         	{% for line in cart.items %}
                 var price = ({{line.variant.price | amount_no_decimals  }})/100;
                 var total_price = ({{line.final_line_price | amount_no_decimals  }})/100;
-          
+
           		var variant = [];
-          
+
           		variant.push({
                   "price":price,
                   "id":'{{line.variant_id}}'
                 });
-          
+
                 CartData.push({
                 "Image":'{{ line.image | product_img_url: '100x100' }}',
                 "title":'{{line.title}}',
@@ -4186,7 +4186,7 @@ var ProductsArray = [];
                 "variants": variant
               });
           	{%endfor%}
-          
+
           for(var data in CartData)
           {
             AffiliateProduct.push({
@@ -4198,16 +4198,16 @@ var ProductsArray = [];
               "type": CartData[data].product_type
             });
           }
-          
+
           if(item_count != 0 )
           {
           	ClientInvoiceCartData(CartData);
             WholesaleOrderCartData(CartData);
             ShowAffiliateCartProduct(serverData,CartData);
               //ShowAffiliateProducts(AffiliateProduct,true,response.CommissionDiscountOn.CommissionDiscountOn);
-          }          
+          }
         }
-      
+
       var ShowAffiliateCartProduct = function(response,CartData)
         {
           	var CommissionDiscountOn = response.CommissionDiscountOn.CommissionDiscountOn;
@@ -4236,56 +4236,56 @@ var ProductsArray = [];
                                  var url = new URL(response.SingleSalesRep.SalesRepAffiliateUrl);
                                   var affiliateUrl = url.searchParams.get("ambassador");
                                  var url = "{{shop.url}}/products/"+CartData[product].handle+"/?ambassador="+affiliateUrl+"";
-                                 
+
                                     var productprice =CartData[product].Item_Price;
                                      orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+CartData[product].Image+'"></td>'+
-                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+     
+                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommission[productdata].Commission+'%</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                     '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                     '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                     '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
-                                    '</td></tr>';                                                                                                                 
+                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
+                                    '</td></tr>';
                                   }
                              }
-                   }   
+                   }
           }
           if(CommissionDiscountOn=="Product")
               {
                    for(var product in CartData)
-                   {              
+                   {
                                  var currency = "{{shop.currency}}";
                                  var url = new URL(response.SingleSalesRep.SalesRepAffiliateUrl);
                                   var affiliateUrl = url.searchParams.get("ambassador");
                                  var url = "{{shop.url}}/products/"+CartData[product].handle+"/?ambassador="+affiliateUrl+"";
 
-                                 
+
                                    for(var productdata in response.AffiliateCommissionPerProduct)
                                    {
                                       var variantId = CartData[product].variantId;
-                                       if(variantId == response.AffiliateCommissionPerProduct[productdata].variantId)                                   
+                                       if(variantId == response.AffiliateCommissionPerProduct[productdata].variantId)
                                        {
                                          var productprice =CartData[product].Item_Price;
                                          var commission=Math.round((response.AffiliateCommissionPerProduct[productdata].Commission)*100);
                                          orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                         '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+CartData[product].Image+'"></td>'+
-                                        '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+     
+                                        '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+
                                         '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                         '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+commission+'%</td>'+
                                         '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                         '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                        '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                        '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                         '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                         '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                         '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                        '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
-                                        '</td></tr>'; 
-                                       }                                                                                                                                                                                     
+                                        '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
+                                        '</td></tr>';
+                                       }
                                  }
                        }
               }
@@ -4294,7 +4294,7 @@ var ProductsArray = [];
                    for(var product in CartData)
                    {
                         var salesrepId = "{{customer.id}}";
-                             
+
                              for(var productdata in response.AffiliateCommissionPerRepModel)
                              {
                                 if(salesrepId == response.AffiliateCommissionPerRepModel[productdata].SalesRepId)
@@ -4303,27 +4303,27 @@ var ProductsArray = [];
                                   var url = new URL(response.SingleSalesRep.SalesRepAffiliateUrl);
                                   var affiliateUrl = url.searchParams.get("ambassador");
                                  var url = "{{shop.url}}/products/"+CartData[product].handle+"/?ambassador="+affiliateUrl+"";
-                                 
+
                                     var productprice =CartData[product].Item_Price;
                                      orderRow += '<tr class="Polaris-DataTable__TableRow">'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+CartData[product].Image+'"></td>'+
-                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+     
+                                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+CartData[product].title+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice +  " " +currency+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommissionPerRepModel[productdata].Commission+'%</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
                                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
-                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                                    '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+
                                     '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
                                     '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
                                     '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
-                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
-                                    '</td></tr>';                                                                                                                 
-                                 }                               
+                                    '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+
+                                    '</td></tr>';
+                                 }
                             }
-                       }  
+                       }
               }
-          document.getElementById('affiliateCartProdtable').innerHTML = orderRow; 
+          document.getElementById('affiliateCartProdtable').innerHTML = orderRow;
           $('#AffiliateCartProductTable').show();
-          $("#affiliateSpinner").hide();   
-        }      
+          $("#affiliateSpinner").hide();
+        }
 </script>
