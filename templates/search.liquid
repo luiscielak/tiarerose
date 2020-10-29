@@ -7,9 +7,7 @@
   <div class="grid">
     <div class="grid__item">
       <header class="section-header">
-        <h1 class="section-header__title">
-          {{ 'general.search.title' | t }}
-        </h1>
+        <h2 class="h2 category-section__heading">{{ 'general.search.title' | t }}</h2>
       </header>
 
       {% render 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
@@ -20,7 +18,7 @@
 
         <div data-section-id="{{ section.id }}" data-section-type="collection-template">
           <div class="section-header">
-            <h2 class="section-header__title">
+            <h4 class="h2 category-section__heading">
               {{ 'general.search.result_count' | t: count: search.results_count }}
             </h2>
             {% if search.results_count == 0 %}
