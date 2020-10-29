@@ -191,14 +191,13 @@ input, textarea {
 </script>
 
 
-
-
-
 {% assign Customer = customer.metafields.TaggedCustomer %}
 {% assign key = customer.id| downcase  %}
 
 			  <h2 id="dashheader"></h2>
-        <div id="directory_card" class="page-width  category-section ">
+        <div id="directory_card" class="page-width">
+
+          <h2 class="h2 category-section__heading">Style Concierges</h2>
           {% for rep in shop.metafields.SalesTeamApp %}
 
 
