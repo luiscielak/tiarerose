@@ -40,7 +40,8 @@
               <div class="section-header__shadow">
                 {%- render 'breadcrumbs' -%}
                 <h1 class="section-header__title">
-                  {{ collection.title }}
+                  {% comment %}{{ collection.title }}{% endcomment %}
+                  Shop
                 </h1>
               </div>
             </header>
@@ -54,7 +55,8 @@
       <header class="section-header section-header--flush">
         {%- render 'breadcrumbs' -%}
         <h1 class="section-header__title">
-          {{ collection.title }}
+          {% comment %}{{ collection.title }}{% endcomment %}
+          Shop
         </h1>
       </header>
     </div>
