@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
 {{ 'theme.css' | asset_url | stylesheet_tag }}
-<style> 
+<!-- <style>
 
-  
+
   #Directorypage
   {
     display:flex;
@@ -10,35 +10,35 @@
     table{
         margin-bottom: 0px;
     }
-    
+
    .Polaris-Card{
       margin-top: 2rem;
    }
-     
+
    .Polaris-DataTable__Cell--header {
       font-weight: 700 !important;
     }
-    
+
     .Polaris-DataTable__Cell--numeric {
        text-align: left !important;
-     } 
+     }
 
   .grid-container {
   display: inline-grid;
   grid-template-columns: 50% 50%;
   grid-gap: 15px 15px;
-} 
+}
 
 .grid-item {
   text-align: left;
 }
-  
+
 @media only screen and (min-width: 750px)
 input, textarea {
     padding: 10px 18px;
     font-size: 1.4rem;
 }
-  
+
 #custnamelist {
   display : none;
   list-style-type: none;
@@ -71,7 +71,7 @@ input, textarea {
     text-decoration: none;
     text-align: center;
     white-space: normal;
-    
+
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3em;
@@ -86,7 +86,7 @@ input, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
   }
-  
+
   button:hover {
     background: linear-gradient(to bottom, black, black);
     border-color: black;
@@ -124,11 +124,11 @@ input, textarea {
     object-fit: cover;
   }
 
-</style>
+</style> -->
 <script>
   var TagToSalesRep=function(id,salesrepname)
   {
-    
+
      $("#Leadsuccessmsg").hide()
      $("#LeadErrror").hide();
      $('#LeadEmptyErrror').hide();
@@ -144,25 +144,25 @@ input, textarea {
       if(CustomerId==null){
         $('#LoggedInErrror_'+id).show();
       }
-     
+
       else
       {
         $("#TagCustomer_"+id).text("Assigning...");
       	var data = {
           "CustomerId" : CustomerId,
-		  "CustomerName" : CustomerName,    
+		  "CustomerName" : CustomerName,
           "SalesrepName":salesrepname,
           "SalesRepId":id
-    
+
          }
         var leadData = JSON.stringify(data);
         var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=26&data="+leadData;
         $.post(
 				urlVal,
-				function (data, status) {     
-                
+				function (data, status) {
+
                   if(data == "This customer is already tagged to a rep.")
-                      {        
+                      {
                         $("#Leadsuccessmsg_"+id).hide()
                         $("#AddCustomerErrror_"+id).show();
                         $("#AddCustomerErrror_"+id).html("This customer is already tagged to a rep.");
@@ -181,7 +181,7 @@ input, textarea {
                         $("#Leadsuccessmsg_"+id).hide()
                         $("#TagCustomer_"+id).text("Select Style Concierge");
                         $("#AddCustomerErrror_"+id).show();
-						$("#AddCustomerErrror_"+id).text(data);                        
+						$("#AddCustomerErrror_"+id).text(data);
                   	  }
 
                   }
@@ -189,118 +189,139 @@ input, textarea {
       }
   }
 </script>
+
+
+
+
+
 {% assign Customer = customer.metafields.TaggedCustomer %}
 {% assign key = customer.id| downcase  %}
 
 			  <h2 id="dashheader"></h2>
-                 <div id="directory_card">            
-                 {% for rep in shop.metafields.SalesTeamApp %}
-                   
-                   <center>
-                        <div class="Polaris-Card card" style="margin: 2rem; width:65%;" id="">
-                          <div style="text-align: justify;float:left;padding: 10px;margin-left: 30px;">
-                          <div class="profileImage">
-                            {%if rep[1].ProfileImagePath == null%}
-                            <image src="{{'user.png' | asset_img_url : '100x100'}}" alt="Image" style="display:block;margin: 0 auto;"></image>
-                            {%else%}
-                            <image src="{{rep[1].ProfileImagePath}}" alt="Image" style="display:block;margin: 0 auto;"></image>
-                            {%endif%}
-                            
-                            
-                          </div>
-                            <div style="width: 200px;word-break: break-all;"><p><h5>{{ rep[1].StyleMotto }}</h5></p></div>
-                          </div>
-                          <div style="text-align: justify;padding-right:3em;margin-left: 38%;">
-                            <p class="Polaris-Card__Header" style="margin-left: -21px;">
-                              <h3>{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</h3><br>
-                            <h4>{{ rep[1].City }}, {{ rep[1].State }}<br>
-                              {%if rep[1].InstagramHandle != ""%}
-                              <img src="{{'InstagramHandle.png' | asset_img_url : '15x15'}}"> <a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">{{ rep[1].InstagramHandle }}</a>
-                                <br>
-                              {%endif%}
-                              {%if rep[1].LinkedInHandle != ""%}
-                              <a href="{{ rep[1].LinkedInHandle }}" target="_blank">{{ rep[1].LinkedInHandle }}</a></h4>
-                              {%endif%}
-                          </p>
-                            <p>
-                            {{ rep[1].NumberOfYearsForExperience }} years experience as {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>
-                              Favorite brands:
-                              {%if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
-                               {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand}}
-                              
-                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
-                              {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}
-                              
-                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
-                              {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand }}
-                              
-                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
-                              {{ rep[1].FirstBrand }}, {{ rep[1].ThirdBrand }}
-                              
-                              {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand == ""%}
-                              {{ rep[1].FirstBrand }}
-                              
-                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
-                              {{ rep[1].SecondBrand }}
-                              
-                              {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
-                              {{ rep[1].ThirdBrand }}
-                              
-                              	
-                              {%endif%}
-                            <br>
-                              When I’m not curating wardrobes, I like to {{ rep[1].LikeTo }}<br>
-                            Add-on services:
-                              {%if rep[1].FirstAdditionalService != ""%}
-                                {{ rep[1].FirstAdditionalService }}
-                              	{%if rep[1].SecondAdditionalService != "" or rep[1].ThirdAdditionalService != "" %}
-                              	|
-                              	{%endif%}
-                              {%endif%}
-                              {%if rep[1].SecondAdditionalService != ""%}
-                                {{ rep[1].SecondAdditionalService }}
-                              	{%if rep[1].ThirdAdditionalService != "" %}
-                              	|
-                              	{%endif%}
-                               {%endif%}
-                              {%if rep[1].ThirdAdditionalService != ""%}
-                                {{ rep[1].ThirdAdditionalService }}
-                              {%endif%}
-                            </p>
-                          </div>
-                          <div class="Polaris-Card__Section">
-                            {% if customer.metafields.TaggedCustomer != null %}
-                            {%if Customer[key] != null %}
-                               <div class="Polaris-Card__SectionHeader">
-                                 <p>You already have a Style Concierge. Email help@tiarerose.com and we can make this change for you.</p>                     
-                            </div>
-                            {%else%}
-                            <div class="Polaris-Card__SectionHeader">
-                           <center>
-                                <div class=""><button type="button" id="TagCustomer_{{rep[0]}}" class="" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
-                           </center>                            
-                            </div>
-                            {%endif%}
-                            {%else%}
-                            <div class="Polaris-Card__SectionHeader">
-                           <center>
-                                <div class=""><button type="button" id="TagCustomer_{{rep[0]}}" class="" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
-                           </center>                            
-                            </div>
-                            {%endif%}
-                           <div>
-                               <span id="AddCustomerErrror_{{rep[0]}}" style="color: #f80000; display:none"></span> 
-                                <span style="color: darkseagreen; display:none" id="Leadsuccessmsg_{{rep[0]}}"></span>
-                                <span id="LoggedInErrror_{{rep[0]}}" style="color: #f80000; display:none">Please log in to make your selection</span> 
+        <div id="directory_card" class="page-width  category-section ">
+          {% for rep in shop.metafields.SalesTeamApp %}
 
-                             </div>
-                          </div>
 
-                        </div>
-                   </center>
+          <div class="Polaris-Card card category-section__card">
+            <div>
+              <div class="profileImage category-section__image">
+                {%if rep[1].ProfileImagePath == null%}
+                <image src="{{'user.png' | asset_img_url : '100x100'}}" alt="Image"></image>
+                {%else%}
+                <image src="{{rep[1].ProfileImagePath}}" alt="Image"></image>
+                {%endif%}
+              </div>
+              <div class="category-section__motto">{{ rep[1].StyleMotto }}</div>
+            </div>
+            <div class="category-section__body">
+
+              <div class="category-section__name">
+                <h3>{{ rep[1].FirstName }} {{rep[1].LastName| slice: 0}}</h3>
+              </div>
+
+              <div class="category-section__location">
+                {{ rep[1].City }}, {{ rep[1].State }}
+              </div>
+
+              <div class="category-section__social">
+                {%if rep[1].InstagramHandle != ""%}
+
+                <a href="https://www.instagram.com/{{ rep[1].InstagramHandle }}"  target="_blank">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram" viewBox="0 0 32 32"><path fill="#444" d="M16 3.094c4.206 0 4.7.019 6.363.094 1.538.069 2.369.325 2.925.544.738.287 1.262.625 1.813 1.175s.894 1.075 1.175 1.813c.212.556.475 1.387.544 2.925.075 1.662.094 2.156.094 6.363s-.019 4.7-.094 6.363c-.069 1.538-.325 2.369-.544 2.925-.288.738-.625 1.262-1.175 1.813s-1.075.894-1.813 1.175c-.556.212-1.387.475-2.925.544-1.663.075-2.156.094-6.363.094s-4.7-.019-6.363-.094c-1.537-.069-2.369-.325-2.925-.544-.737-.288-1.263-.625-1.813-1.175s-.894-1.075-1.175-1.813c-.212-.556-.475-1.387-.544-2.925-.075-1.663-.094-2.156-.094-6.363s.019-4.7.094-6.363c.069-1.537.325-2.369.544-2.925.287-.737.625-1.263 1.175-1.813s1.075-.894 1.813-1.175c.556-.212 1.388-.475 2.925-.544 1.662-.081 2.156-.094 6.363-.094zm0-2.838c-4.275 0-4.813.019-6.494.094-1.675.075-2.819.344-3.819.731-1.037.4-1.913.944-2.788 1.819S1.486 4.656 1.08 5.688c-.387 1-.656 2.144-.731 3.825-.075 1.675-.094 2.213-.094 6.488s.019 4.813.094 6.494c.075 1.675.344 2.819.731 3.825.4 1.038.944 1.913 1.819 2.788s1.756 1.413 2.788 1.819c1 .387 2.144.656 3.825.731s2.213.094 6.494.094 4.813-.019 6.494-.094c1.675-.075 2.819-.344 3.825-.731 1.038-.4 1.913-.944 2.788-1.819s1.413-1.756 1.819-2.788c.387-1 .656-2.144.731-3.825s.094-2.212.094-6.494-.019-4.813-.094-6.494c-.075-1.675-.344-2.819-.731-3.825-.4-1.038-.944-1.913-1.819-2.788s-1.756-1.413-2.788-1.819c-1-.387-2.144-.656-3.825-.731C20.812.275 20.275.256 16 .256z"/><path fill="#444" d="M16 7.912a8.088 8.088 0 0 0 0 16.175c4.463 0 8.087-3.625 8.087-8.088s-3.625-8.088-8.088-8.088zm0 13.338a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 1 1 0 10.5zM26.294 7.594a1.887 1.887 0 1 1-3.774.002 1.887 1.887 0 0 1 3.774-.003z"/></svg>
+                  <span class="icon__fallback-text">Instagram</span>
+                  {{ rep[1].InstagramHandle }}
+                </a>
+                {%endif%}
+                  {%if rep[1].LinkedInHandle != ""%}
+                  <a href="https://www.linkedin.com/in/{{ rep[1].LinkedInHandle }}" target="_blank">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.881 3.87 6 2.5 6S.02 4.881.02 3.5C.02 2.12 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869c0-7.88-8.922-7.593-11.018-3.714V8z"/></svg>
+                    <span class="icon__fallback-text">LinkedIn</span>
+
+                    {{ rep[1].LinkedInHandle }}
+                  </a>
+                  {%endif%}
+              </div>
+
+                <p>
+                  {{ rep[1].NumberOfYearsForExperience }} years experience as {{ rep[1].ExperienceAs }} at {{ rep[1].ExperienceAt }}.<br>
+                  Favorite brands:
+                  {%if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
+                  {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand}}
+
+                  {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
+                  {{ rep[1].FirstBrand }}, {{ rep[1].SecondBrand }}
+
+                  {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand != ""%}
+                  {{ rep[1].SecondBrand }}, {{ rep[1].ThirdBrand }}
+
+                  {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
+                  {{ rep[1].FirstBrand }}, {{ rep[1].ThirdBrand }}
+
+                  {%else if rep[1].FirstBrand != "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand == ""%}
+                  {{ rep[1].FirstBrand }}
+
+                  {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand != "" and rep[1].ThirdBrand == ""%}
+                  {{ rep[1].SecondBrand }}
+
+                  {%else if rep[1].FirstBrand == "" and rep[1].SecondBrand == "" and rep[1].ThirdBrand != ""%}
+                  {{ rep[1].ThirdBrand }}
+
+
+                  {%endif%}
+                  <br>
+                  When I’m not curating wardrobes, I like to {{ rep[1].LikeTo }}<br>
+                  Add-on services:
+                  {%if rep[1].FirstAdditionalService != ""%}
+                  {{ rep[1].FirstAdditionalService }}
+                  {%if rep[1].SecondAdditionalService != "" or rep[1].ThirdAdditionalService != "" %}
+                  |
+                  {%endif%}
+                  {%endif%}
+                  {%if rep[1].SecondAdditionalService != ""%}
+                  {{ rep[1].SecondAdditionalService }}
+                  {%if rep[1].ThirdAdditionalService != "" %}
+                  |
+                  {%endif%}
+                  {%endif%}
+                  {%if rep[1].ThirdAdditionalService != ""%}
+                  {{ rep[1].ThirdAdditionalService }}
+                  {%endif%}
+                </p>
+              </div>
+              <div class="Polaris-Card__Section">
+                {% if customer.metafields.TaggedCustomer != null %}
+                {%if Customer[key] != null %}
+                <div class="Polaris-Card__SectionHeader">
+                  <p>You already have a Style Concierge. Email help@tiarerose.com and we can make this change for you.</p>
+                </div>
+                {%else%}
+                <div class="Polaris-Card__SectionHeader">
+                  <center>
+                    <div><button type="button" id="TagCustomer_{{rep[0]}}" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
+                  </center>
+                </div>
+                {%endif%}
+                {%else%}
+                <div class="Polaris-Card__SectionHeader">
+                  <center>
+                    <div><button type="button" id="TagCustomer_{{rep[0]}}" onclick="TagToSalesRep({{rep[0]}},'{{ rep[1].FirstName }} {{rep[1].LastName}}')"><span class="Polaris-Button__Content"><span>Select Style Concierge</span></span></button></div>
+                  </center>
+                </div>
+                {%endif%}
+                <div>
+                  <span id="AddCustomerErrror_{{rep[0]}}" style="color: #f80000; display:none"></span>
+                  <span style="color: darkseagreen; display:none" id="Leadsuccessmsg_{{rep[0]}}"></span>
+                  <span id="LoggedInErrror_{{rep[0]}}" style="color: #f80000; display:none">Please log in to make your selection</span>
+
+                </div>
+              </div>
+
+            </div>
                    {% endfor %}
 
+                   <div class="category_inner" style="visibility: hidden"></div>  <!-- ToDo: Remove temp hack -->
+
                     </div>
-                
-             
-      
+
+
+
