@@ -8569,14 +8569,20 @@ select .variant-input{
 
 @media only screen and (min-width:769px){
 
-.article__grid-image{
+  .article__grid-image{
     margin-bottom:20px
-}
   }
+}
 
 .article__grid-image img{
-    display:block;
-  }
+  display:block;
+}
+
+.article__header {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
 
 .article__title{
   font-size:calc(var(--typeBaseSize) + 1px);
@@ -8596,6 +8602,7 @@ select .variant-input{
 
 .article__author{
   margin-top:2px;
+  margin-bottom:4px;
   font-size:max(calc(var(--typeHeaderSize)*0.2), 9px);
   font-family:var(--typeHeaderPrimary);
 }
